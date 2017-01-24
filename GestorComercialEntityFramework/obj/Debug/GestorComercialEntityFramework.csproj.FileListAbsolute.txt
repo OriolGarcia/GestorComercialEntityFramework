@@ -1,0 +1,17 @@
+c:\users\ogs10_000\documents\visual studio 2015\Projects\GestorComercialEntityFramework\GestorComercialEntityFramework\bin\Debug\GestorComercialEntityFramework.exe.config
+c:\users\ogs10_000\documents\visual studio 2015\Projects\GestorComercialEntityFramework\GestorComercialEntityFramework\bin\Debug\GestorComercialEntityFramework.exe
+c:\users\ogs10_000\documents\visual studio 2015\Projects\GestorComercialEntityFramework\GestorComercialEntityFramework\bin\Debug\GestorComercialEntityFramework.pdb
+c:\users\ogs10_000\documents\visual studio 2015\Projects\GestorComercialEntityFramework\GestorComercialEntityFramework\bin\Debug\EntityFramework.dll
+c:\users\ogs10_000\documents\visual studio 2015\Projects\GestorComercialEntityFramework\GestorComercialEntityFramework\bin\Debug\EntityFramework.SqlServer.dll
+c:\users\ogs10_000\documents\visual studio 2015\Projects\GestorComercialEntityFramework\GestorComercialEntityFramework\bin\Debug\MySql.Data.dll
+c:\users\ogs10_000\documents\visual studio 2015\Projects\GestorComercialEntityFramework\GestorComercialEntityFramework\bin\Debug\MySql.Data.Entity.dll
+c:\users\ogs10_000\documents\visual studio 2015\Projects\GestorComercialEntityFramework\GestorComercialEntityFramework\bin\Debug\MySql.Data.Entity.EF6.dll
+c:\users\ogs10_000\documents\visual studio 2015\Projects\GestorComercialEntityFramework\GestorComercialEntityFramework\bin\Debug\MySql.Web.dll
+c:\users\ogs10_000\documents\visual studio 2015\Projects\GestorComercialEntityFramework\GestorComercialEntityFramework\bin\Debug\EntityFramework.xml
+c:\users\ogs10_000\documents\visual studio 2015\Projects\GestorComercialEntityFramework\GestorComercialEntityFramework\bin\Debug\EntityFramework.SqlServer.xml
+c:\users\ogs10_000\documents\visual studio 2015\Projects\GestorComercialEntityFramework\GestorComercialEntityFramework\obj\Debug\GestorComercialEntityFramework.csprojResolveAssemblyReference.cache
+c:\users\ogs10_000\documents\visual studio 2015\Projects\GestorComercialEntityFramework\GestorComercialEntityFramework\obj\Debug\GestorComercialEntityFramework.csproj.GestorComercialEntityFramework.exe.config
+c:\users\ogs10_000\documents\visual studio 2015\Projects\GestorComercialEntityFramework\GestorComercialEntityFramework\obj\Debug\GestorComercialEntityFramework.Properties.Resources.resources
+c:\users\ogs10_000\documents\visual studio 2015\Projects\GestorComercialEntityFramework\GestorComercialEntityFramework\obj\Debug\GestorComercialEntityFramework.csproj.GenerateResource.Cache
+c:\users\ogs10_000\documents\visual studio 2015\Projects\GestorComercialEntityFramework\GestorComercialEntityFramework\obj\Debug\GestorComercialEntityFramework.exe
+c:\users\ogs10_000\documents\visual studio 2015\Projects\GestorComercialEntityFramework\GestorComercialEntityFramework\obj\Debug\GestorComercialEntityFramework.pdb
