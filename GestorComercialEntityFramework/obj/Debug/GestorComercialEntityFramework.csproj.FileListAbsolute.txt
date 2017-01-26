@@ -4,9 +4,7 @@ c:\users\ogs10_000\documents\visual studio 2015\Projects\GestorComercialEntityFr
 c:\users\ogs10_000\documents\visual studio 2015\Projects\GestorComercialEntityFramework\GestorComercialEntityFramework\bin\Debug\EntityFramework.dll
 c:\users\ogs10_000\documents\visual studio 2015\Projects\GestorComercialEntityFramework\GestorComercialEntityFramework\bin\Debug\EntityFramework.SqlServer.dll
 c:\users\ogs10_000\documents\visual studio 2015\Projects\GestorComercialEntityFramework\GestorComercialEntityFramework\bin\Debug\MySql.Data.dll
-c:\users\ogs10_000\documents\visual studio 2015\Projects\GestorComercialEntityFramework\GestorComercialEntityFramework\bin\Debug\MySql.Data.Entity.dll
 c:\users\ogs10_000\documents\visual studio 2015\Projects\GestorComercialEntityFramework\GestorComercialEntityFramework\bin\Debug\MySql.Data.Entity.EF6.dll
-c:\users\ogs10_000\documents\visual studio 2015\Projects\GestorComercialEntityFramework\GestorComercialEntityFramework\bin\Debug\MySql.Web.dll
 c:\users\ogs10_000\documents\visual studio 2015\Projects\GestorComercialEntityFramework\GestorComercialEntityFramework\bin\Debug\EntityFramework.xml
 c:\users\ogs10_000\documents\visual studio 2015\Projects\GestorComercialEntityFramework\GestorComercialEntityFramework\bin\Debug\EntityFramework.SqlServer.xml
 c:\users\ogs10_000\documents\visual studio 2015\Projects\GestorComercialEntityFramework\GestorComercialEntityFramework\obj\Debug\GestorComercialEntityFramework.csprojResolveAssemblyReference.cache
@@ -31,3 +29,4 @@ C:\Users\Mor\cole\m06\uf2\GestorComercialEntityFramework\GestorComercialEntityFr
 C:\Users\Mor\cole\m06\uf2\GestorComercialEntityFramework\GestorComercialEntityFramework\obj\Debug\GestorComercialEntityFramework.Form1.resources
 C:\Users\Mor\cole\m06\uf2\GestorComercialEntityFramework\GestorComercialEntityFramework\obj\Debug\GestorComercialEntityFramework.Properties.Resources.resources
 C:\Users\Mor\cole\m06\uf2\GestorComercialEntityFramework\GestorComercialEntityFramework\obj\Debug\GestorComercialEntityFramework.csproj.GenerateResource.Cache
+C:\Users\ogs10_000\documents\visual studio 2015\Projects\GestorComercialEntityFramework\GestorComercialEntityFramework\obj\Debug\GestorComercialEntityFramework.Form1.resources
