@@ -22,7 +22,7 @@ namespace GestorComercialEntityFramework
         {
             // TODO: This line of code loads data into the 'managerDataSet.products' table. You can move, or remove it, as needed.
             this.productsTableAdapter.Fill(this.managerDataSet.products);
-
+            this.costumersTableAdapter.FillByFilter(this.managerDataSet.customers,txtBCercaNomClient.Text,txtBCognomsClient.Text,txtBCiutatClient.Text);
         }
 
         private void btEliminar_Click(object sender, EventArgs e)
@@ -57,6 +57,11 @@ namespace GestorComercialEntityFramework
                 }
 
             }
+        }
+
+        private void btAfegirClient_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

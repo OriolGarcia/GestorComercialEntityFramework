@@ -30,3 +30,4 @@ C:\Users\Mor\cole\m06\uf2\GestorComercialEntityFramework\GestorComercialEntityFr
 C:\Users\Mor\cole\m06\uf2\GestorComercialEntityFramework\GestorComercialEntityFramework\obj\Debug\GestorComercialEntityFramework.Properties.Resources.resources
 C:\Users\Mor\cole\m06\uf2\GestorComercialEntityFramework\GestorComercialEntityFramework\obj\Debug\GestorComercialEntityFramework.csproj.GenerateResource.Cache
 C:\Users\ogs10_000\documents\visual studio 2015\Projects\GestorComercialEntityFramework\GestorComercialEntityFramework\obj\Debug\GestorComercialEntityFramework.Form1.resources
+C:\Users\ogs10_000\Documents\Visual Studio 2015\Projects\GestorComercialEntityFramework\GestorComercialEntityFramework\obj\Debug\GestorComercialEntityFramework.FormAfegirClient.resources
