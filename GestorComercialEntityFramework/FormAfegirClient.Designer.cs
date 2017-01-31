@@ -1,6 +1,6 @@
 ﻿namespace GestorComercialEntityFramework
 {
-    partial class btInserir
+    partial class FormAfegirClient
     {
         /// <summary>
         /// Required designer variable.
@@ -50,6 +50,7 @@
             this.txtBTelefon = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.customersTableAdapter1 = new GestorComercialEntityFramework.managerDataSetTableAdapters.customersTableAdapter();
             this.SuspendLayout();
             // 
             // label1
@@ -82,6 +83,7 @@
             // txBNom
             // 
             this.txBNom.Location = new System.Drawing.Point(95, 41);
+            this.txBNom.MaxLength = 50;
             this.txBNom.Name = "txBNom";
             this.txBNom.Size = new System.Drawing.Size(100, 20);
             this.txBNom.TabIndex = 4;
@@ -89,6 +91,7 @@
             // txtBCognom1
             // 
             this.txtBCognom1.Location = new System.Drawing.Point(289, 41);
+            this.txtBCognom1.MaxLength = 50;
             this.txtBCognom1.Name = "txtBCognom1";
             this.txtBCognom1.Size = new System.Drawing.Size(100, 20);
             this.txtBCognom1.TabIndex = 5;
@@ -103,6 +106,7 @@
             // txtBCognom2
             // 
             this.txtBCognom2.Location = new System.Drawing.Point(478, 41);
+            this.txtBCognom2.MaxLength = 50;
             this.txtBCognom2.Name = "txtBCognom2";
             this.txtBCognom2.Size = new System.Drawing.Size(100, 20);
             this.txtBCognom2.TabIndex = 8;
@@ -137,13 +141,16 @@
             // txtBCodiPostal
             // 
             this.txtBCodiPostal.Location = new System.Drawing.Point(430, 81);
+            this.txtBCodiPostal.MaxLength = 8;
             this.txtBCodiPostal.Name = "txtBCodiPostal";
             this.txtBCodiPostal.Size = new System.Drawing.Size(48, 20);
             this.txtBCodiPostal.TabIndex = 11;
+            this.txtBCodiPostal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBCodiPostal_KeyPress);
             // 
             // txtBCiutat
             // 
             this.txtBCiutat.Location = new System.Drawing.Point(135, 121);
+            this.txtBCiutat.MaxLength = 50;
             this.txtBCiutat.Name = "txtBCiutat";
             this.txtBCiutat.Size = new System.Drawing.Size(100, 20);
             this.txtBCiutat.TabIndex = 12;
@@ -187,13 +194,16 @@
             // txtBFax
             // 
             this.txtBFax.Location = new System.Drawing.Point(137, 162);
+            this.txtBFax.MaxLength = 16;
             this.txtBFax.Name = "txtBFax";
             this.txtBFax.Size = new System.Drawing.Size(100, 20);
             this.txtBFax.TabIndex = 17;
+            this.txtBFax.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBFax_KeyPress);
             // 
             // txtBEmail
             // 
             this.txtBEmail.Location = new System.Drawing.Point(324, 162);
+            this.txtBEmail.MaxLength = 50;
             this.txtBEmail.Name = "txtBEmail";
             this.txtBEmail.Size = new System.Drawing.Size(100, 20);
             this.txtBEmail.TabIndex = 18;
@@ -201,6 +211,7 @@
             // txtBProvinicia
             // 
             this.txtBProvinicia.Location = new System.Drawing.Point(310, 121);
+            this.txtBProvinicia.MaxLength = 50;
             this.txtBProvinicia.Name = "txtBProvinicia";
             this.txtBProvinicia.Size = new System.Drawing.Size(100, 20);
             this.txtBProvinicia.TabIndex = 19;
@@ -208,9 +219,11 @@
             // txtBTelefon
             // 
             this.txtBTelefon.Location = new System.Drawing.Point(470, 121);
+            this.txtBTelefon.MaxLength = 16;
             this.txtBTelefon.Name = "txtBTelefon";
             this.txtBTelefon.Size = new System.Drawing.Size(100, 20);
             this.txtBTelefon.TabIndex = 20;
+            this.txtBTelefon.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBTelefon_KeyPress);
             // 
             // button1
             // 
@@ -231,7 +244,11 @@
             this.button2.Text = "Anul·lar";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // btInserir
+            // customersTableAdapter1
+            // 
+            this.customersTableAdapter1.ClearBeforeFill = true;
+            // 
+            // FormAfegirClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -258,7 +275,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "btInserir";
+            this.Name = "FormAfegirClient";
             this.Text = "FormAfegirClient";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -289,5 +306,6 @@
         private System.Windows.Forms.TextBox txtBTelefon;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private managerDataSetTableAdapters.customersTableAdapter customersTableAdapter1;
     }
 }
