@@ -187,5 +187,14 @@ namespace GestorComercialEntityFramework
         {
             this.productsTableAdapter.FillByFilter(this.managerDataSet.products, txtBNomProducte.Text, "%" + txtBNomProducte.Text + "%");
         }
+
+        private void btAfegir_Click(object sender, EventArgs e)
+        {
+            var rows = dataGridViewProductesFactura.SelectedRows;
+            int count = rows.Count;
+            if(count > 0)
+                for (int i = 0; i < count; i++)
+                    dataGridViewProductesFacturaAfegits.Rows.Add(rows[i]);
+        }
     }
 }
