@@ -23,11 +23,17 @@ namespace GestorComercialEntityFramework
             // TODO: This line of code loads data into the 'managerDataSet1.invoice' table. You can move, or remove it, as needed.
             this.invoiceTableAdapter.Fill(this.managerDataSet.invoice);
             // TODO: This line of code loads data into the 'managerDataSet.products' table. You can move, or remove it, as needed.
-            this.productsTableAdapter.FillByFilter(this.managerDataSet.products,txtBNomProducte.Text, "%"+txtBNomProducte.Text+"%");
-            this.costumersTableAdapter.FillByFilter(this.managerDataSet.customers,  txtBNomClient.Text, "%" +  txtBNomClient.Text + "%",
+            this.productsTableAdapter.FillByFilter(this.managerDataSet.products, txtBNomProducte.Text, "%" + txtBNomProducte.Text + "%");
+            this.costumersTableAdapter.FillByFilter(this.managerDataSet.customers, txtBNomClient.Text, "%" + txtBNomClient.Text + "%",
              txtBCognomsClient.Text, "%" + txtBCognomsClient.Text + "%", txtBCiutatClient.Text, "%" + txtBCiutatClient.Text + "%");
-         //   dataGridViewProductesFactura.DataSource = productsTableAdapter.Fill(this.managerDataSet.products);
+            //   dataGridViewProductesFactura.DataSource = productsTableAdapter.Fill(this.managerDataSet.products);
             //ByFilter txtBNomClient.Text,txtBCognomsClient.Text,txtBCiutatClient.Text);
+
+            foreach (DataGridViewColumn col in dataGridViewProductesFactura.Columns)
+            {
+                dataGridViewProductesFacturaAfegits.Columns.Add((DataGridViewColumn)col.Clone());
+
+            }
         }
 
         private void btEliminar_Click(object sender, EventArgs e)
@@ -188,13 +194,18 @@ namespace GestorComercialEntityFramework
             this.productsTableAdapter.FillByFilter(this.managerDataSet.products, txtBNomProducte.Text, "%" + txtBNomProducte.Text + "%");
         }
 
-        private void btAfegir_Click(object sender, EventArgs e)
+       
+
+        private void btAfegir_Click_1(object sender, EventArgs e)
         {
             var rows = dataGridViewProductesFactura.SelectedRows;
-            int count = rows.Count;
-            if(count > 0)
+            int count = rows.Count; MessageBox.Show(count.ToString());
+            if (count > 0)
                 for (int i = 0; i < count; i++)
-                    dataGridViewProductesFacturaAfegits.Rows.Add(rows[i]);
+                {
+
+                    dataGridViewProductesFacturaAfegits.Rows.Add(rows[i].Clone());
+                }
         }
     }
 }
