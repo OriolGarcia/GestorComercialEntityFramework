@@ -12,6 +12,10 @@
 
 namespace GestorComercialEntityFramework.managerDataSetTableAdapters
 {
+    partial class productsTableAdapter
+    {
+    }
+
     partial class customersTableAdapter
     {
     }

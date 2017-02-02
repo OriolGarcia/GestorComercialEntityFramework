@@ -26,7 +26,7 @@ namespace GestorComercialEntityFramework
             this.productsTableAdapter.FillByFilter(this.managerDataSet.products,txtBNomProducte.Text, "%"+txtBNomProducte.Text+"%");
             this.costumersTableAdapter.FillByFilter(this.managerDataSet.customers,  txtBNomClient.Text, "%" +  txtBNomClient.Text + "%",
              txtBCognomsClient.Text, "%" + txtBCognomsClient.Text + "%", txtBCiutatClient.Text, "%" + txtBCiutatClient.Text + "%");
-            dataGridViewProductesFactura.DataSource = productsTableAdapter.Fill(this.managerDataSet.products);
+         //   dataGridViewProductesFactura.DataSource = productsTableAdapter.Fill(this.managerDataSet.products);
             //ByFilter txtBNomClient.Text,txtBCognomsClient.Text,txtBCiutatClient.Text);
         }
 
@@ -186,6 +186,19 @@ namespace GestorComercialEntityFramework
         private void txtBNomProducte_TextChanged(object sender, EventArgs e)
         {
             this.productsTableAdapter.FillByFilter(this.managerDataSet.products, txtBNomProducte.Text, "%" + txtBNomProducte.Text + "%");
+        }
+        private void formAfegirProducte_FormClosed(object sender, FormClosedEventArgs e)
+        {
+           // dataGridViewProductesFactura.DataSource = productsTableAdapter.Fill(this.managerDataSet.products);
+            this.productsTableAdapter.FillByFilter(this.managerDataSet.products, txtBNomProducte.Text, "%" + txtBNomProducte.Text + "%");
+        }
+        private void button6_Click(object sender, EventArgs e)
+        {
+            AfegirProducteForm formAfegirProducte = new AfegirProducteForm();
+
+            formAfegirProducte.FormClosed += new System.Windows.Forms.FormClosedEventHandler(formAfegirProducte_FormClosed);
+
+            formAfegirProducte.Show();
         }
     }
 }
