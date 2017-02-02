@@ -32,6 +32,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
+            this.btInserir = new System.Windows.Forms.Button();
+            this.btAnular = new System.Windows.Forms.Button();
+            this.productsTableAdapter1 = new GestorComercialEntityFramework.managerDataSetTableAdapters.productsTableAdapter();
             this.SuspendLayout();
             // 
             // label1
@@ -61,16 +64,43 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(143, 106);
+            this.textBox2.Location = new System.Drawing.Point(175, 102);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(100, 20);
             this.textBox2.TabIndex = 3;
+            this.textBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox2_KeyPress);
+            // 
+            // btInserir
+            // 
+            this.btInserir.Location = new System.Drawing.Point(175, 186);
+            this.btInserir.Name = "btInserir";
+            this.btInserir.Size = new System.Drawing.Size(75, 23);
+            this.btInserir.TabIndex = 4;
+            this.btInserir.Text = "Inserir Producte";
+            this.btInserir.UseVisualStyleBackColor = true;
+            this.btInserir.Click += new System.EventHandler(this.btInserir_Click);
+            // 
+            // btAnular
+            // 
+            this.btAnular.Location = new System.Drawing.Point(273, 186);
+            this.btAnular.Name = "btAnular";
+            this.btAnular.Size = new System.Drawing.Size(75, 23);
+            this.btAnular.TabIndex = 5;
+            this.btAnular.Text = "Anul·lar";
+            this.btAnular.UseVisualStyleBackColor = true;
+            this.btAnular.Click += new System.EventHandler(this.btAnular_Click);
+            // 
+            // productsTableAdapter1
+            // 
+            this.productsTableAdapter1.ClearBeforeFill = true;
             // 
             // AfegirProducteForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(475, 257);
+            this.Controls.Add(this.btAnular);
+            this.Controls.Add(this.btInserir);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label2);
@@ -88,5 +118,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Button btInserir;
+        private System.Windows.Forms.Button btAnular;
+        private managerDataSetTableAdapters.productsTableAdapter productsTableAdapter1;
     }
 }

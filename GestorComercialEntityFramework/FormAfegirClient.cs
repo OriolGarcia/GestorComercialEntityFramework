@@ -28,35 +28,21 @@ namespace GestorComercialEntityFramework
             telefon, fax, txtBEmail.Text);
             Close();
         }
-        private void checkonlynumber(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
-                 (e.KeyChar != '.'))
-            {
-                e.Handled = true;
-            }
-
-            // only allow one decimal point
-            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
-            {
-                e.Handled = true;
-            }
-        }
      
 
         private void txtBTelefon_KeyPress(object sender, KeyPressEventArgs e)
         {
-            checkonlynumber(sender, e);
+            Utils.checkonlynumber(sender, e);
         }
 
         private void txtBFax_KeyPress(object sender, KeyPressEventArgs e)
         {
-            checkonlynumber(sender, e);
+            Utils.checkonlynumber(sender, e);
         }
 
         private void txtBCodiPostal_KeyPress(object sender, KeyPressEventArgs e)
         {
-            checkonlynumber(sender, e);
+            Utils.checkonlynumber(sender, e);
         }
     }
 }

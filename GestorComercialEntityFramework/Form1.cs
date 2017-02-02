@@ -26,7 +26,7 @@ namespace GestorComercialEntityFramework
             this.productsTableAdapter.FillByFilter(this.managerDataSet.products,txtBNomProducte.Text, "%"+txtBNomProducte.Text+"%");
             this.costumersTableAdapter.FillByFilter(this.managerDataSet.customers,  txtBNomClient.Text, "%" +  txtBNomClient.Text + "%",
              txtBCognomsClient.Text, "%" + txtBCognomsClient.Text + "%", txtBCiutatClient.Text, "%" + txtBCiutatClient.Text + "%");
-            dataGridViewProductesFactura.DataSource = productsTableAdapter.Fill(this.managerDataSet.products);
+         //   dataGridViewProductesFactura.DataSource = productsTableAdapter.Fill(this.managerDataSet.products);
             //ByFilter txtBNomClient.Text,txtBCognomsClient.Text,txtBCiutatClient.Text);
         }
 
