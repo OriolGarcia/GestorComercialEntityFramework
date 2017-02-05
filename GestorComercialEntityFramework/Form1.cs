@@ -205,12 +205,21 @@ namespace GestorComercialEntityFramework
         private void btAfegir_Click_1(object sender, EventArgs e)
         {
             var rows = dataGridViewProductesFactura.SelectedRows;
-            int count = rows.Count; MessageBox.Show(count.ToString());
+            int count = rows.Count;
+            DataGridViewRow row;
             if (count > 0)
                 for (int i = 0; i < count; i++)
                 {
-
-                    dataGridViewProductesFacturaAfegits.Rows.Add(rows[i].Clone());
+                    int j = 0;
+                    row = (DataGridViewRow) rows[i].Clone();
+                    foreach (DataGridViewCell cell in rows[i].Cells)
+                    {
+                        row.Cells[j].Value = cell.Value;
+                        Console.WriteLine("Cell Value: " + cell.Value);
+                        j++;
+                    }
+                    dataGridViewProductesFacturaAfegits.Rows.Add(row);
+                    dataGridViewProductesFacturaAfegits.Refresh();
                 }
         }
 
