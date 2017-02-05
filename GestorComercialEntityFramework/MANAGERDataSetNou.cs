@@ -7,9 +7,12 @@
     }
 }
 
-namespace GestorComercialEntityFramework.MANAGERDataSetNouTableAdapters {
-    
-    
+namespace GestorComercialEntityFramework.MANAGERDataSetNouTableAdapters
+{
+    partial class productsTableAdapter
+    {
+    }
+
     public partial class customersTableAdapter {
     }
 }

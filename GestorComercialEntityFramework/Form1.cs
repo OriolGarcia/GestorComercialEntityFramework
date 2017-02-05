@@ -251,7 +251,7 @@ namespace GestorComercialEntityFramework
         {
 
         }
-        private void formAfegirProducte_FormClosed(object sender, FormClosedEventArgs e)
+        private void formProducte_FormClosed(object sender, FormClosedEventArgs e)
         {
             this.productsTableAdapter.FillByFilter(this.managerDataSet.products, txtBNomProducte.Text, "%" + txtBNomProducte.Text + "%");
         }
@@ -259,9 +259,42 @@ namespace GestorComercialEntityFramework
         {
            AfegirProducteForm formAfegirProducte = new AfegirProducteForm();
 
-            formAfegirProducte.FormClosed += new System.Windows.Forms.FormClosedEventHandler(formAfegirProducte_FormClosed);
+            formAfegirProducte.FormClosed += new System.Windows.Forms.FormClosedEventHandler(formProducte_FormClosed);
 
             formAfegirProducte.Show();
         }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+
+            int selectedRowCount = dataGridViewProducts.Rows.GetRowCount(DataGridViewElementStates.Selected);
+            if (selectedRowCount > 0)
+            {
+                for (int i = 0; i < selectedRowCount; i++)
+                {
+
+                    try
+                    {
+                       
+                        string Id = dataGridViewProducts.SelectedRows[i].Cells[0].Value.ToString();
+                        string Producte = dataGridViewProducts.SelectedRows[i].Cells[1].Value.ToString();
+                       string preu= dataGridViewProducts.SelectedRows[i].Cells[2].Value.ToString();
+                        ModificarProducteForm formModificar = new ModificarProducteForm(Id,Producte,preu);
+
+                        formModificar.FormClosed += new System.Windows.Forms.FormClosedEventHandler(formProducte_FormClosed);
+
+                        formModificar.Show();
+
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+
+
+
+                }
+            }
+            }
     }
 }

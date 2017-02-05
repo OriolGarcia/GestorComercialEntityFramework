@@ -45,6 +45,7 @@
             this.label1.Size = new System.Drawing.Size(80, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Nom producte: ";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -54,27 +55,30 @@
             this.label2.Size = new System.Drawing.Size(32, 13);
             this.label2.TabIndex = 1;
             this.label2.Text = "Preu:";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(175, 45);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.Size = new System.Drawing.Size(90, 20);
             this.textBox1.TabIndex = 2;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(175, 102);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
+            this.textBox2.Size = new System.Drawing.Size(90, 20);
             this.textBox2.TabIndex = 3;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             this.textBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox2_KeyPress);
             // 
             // btInserir
             // 
             this.btInserir.Location = new System.Drawing.Point(175, 186);
             this.btInserir.Name = "btInserir";
-            this.btInserir.Size = new System.Drawing.Size(75, 23);
+            this.btInserir.Size = new System.Drawing.Size(65, 23);
             this.btInserir.TabIndex = 4;
             this.btInserir.Text = "Inserir Producte";
             this.btInserir.UseVisualStyleBackColor = true;
@@ -84,7 +88,7 @@
             // 
             this.btAnular.Location = new System.Drawing.Point(273, 186);
             this.btAnular.Name = "btAnular";
-            this.btAnular.Size = new System.Drawing.Size(75, 23);
+            this.btAnular.Size = new System.Drawing.Size(65, 23);
             this.btAnular.TabIndex = 5;
             this.btAnular.Text = "Anul·lar";
             this.btAnular.UseVisualStyleBackColor = true;
@@ -98,7 +102,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(475, 257);
+            this.ClientSize = new System.Drawing.Size(465, 257);
             this.Controls.Add(this.btAnular);
             this.Controls.Add(this.btInserir);
             this.Controls.Add(this.textBox2);

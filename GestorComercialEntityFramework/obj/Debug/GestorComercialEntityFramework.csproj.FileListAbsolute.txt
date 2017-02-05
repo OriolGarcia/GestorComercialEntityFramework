@@ -34,3 +34,4 @@ C:\Users\ogs10_000\Documents\Visual Studio 2015\Projects\GestorComercialEntityFr
 C:\Users\ogs10_000\Documents\Visual Studio 2015\Projects\GestorComercialEntityFramework\GestorComercialEntityFramework\obj\Debug\GestorComercialEntityFramework.AfegirProducteForm.resources
 C:\Users\Mor\cole\m06\uf2\GestorComercialEntityFramework\GestorComercialEntityFramework\obj\Debug\GestorComercialEntityFramework.AfegirProducteForm.resources
 C:\Users\Mor\cole\m06\uf2\GestorComercialEntityFramework\GestorComercialEntityFramework\obj\Debug\GestorComercialEntityFramework.FormAfegirClient.resources
+C:\Users\ogs10_000\Documents\Visual Studio 2015\Projects\GestorComercialEntityFramework\GestorComercialEntityFramework\obj\Debug\GestorComercialEntityFramework.ModificarProducteForm.resources
