@@ -869,6 +869,7 @@
             this.btTreure.TabIndex = 4;
             this.btTreure.Text = "<< Treure";
             this.btTreure.UseVisualStyleBackColor = true;
+            this.btTreure.Click += new System.EventHandler(this.btTreure_Click);
             // 
             // btAfegir
             // 
