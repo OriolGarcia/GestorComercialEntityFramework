@@ -20,12 +20,18 @@ namespace GestorComercialEntityFramework
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            mANAGERDataSetNou.EnforceConstraints = false;
+            // TODO: This line of code loads data into the 'mANAGERDataSetNou.customers' table. You can move, or remove it, as needed.
+            this.customersTableAdapter2.FillByFilter2(this.mANAGERDataSetNou.customers, txtBNomClient2.Text, txtBCognomsClient2.Text, txtBTelefonClient2.Text, "%" + txtBCognomsClient2.Text + "%",
+             "%" + txtBNomClient2.Text + "%", "%" + txtBTelefonClient2.Text + "%");
+            // TODO: This line of code loads data into the 'mANAGERDataSetNou.products' table. You can move, or remove it, as needed.
+            this.productsTableAdapter2.FillByFilter(this.mANAGERDataSetNou.products, txtBNomProducte2.Text, "%" + txtBNomProducte2.Text + "%");
             // TODO: This line of code loads data into the 'managerDataSet1.invoice' table. You can move, or remove it, as needed.
             this.invoiceTableAdapter.Fill(this.managerDataSet.invoice);
             // TODO: This line of code loads data into the 'managerDataSet.products' table. You can move, or remove it, as needed.
             this.productsTableAdapter.FillByFilter(this.managerDataSet.products, txtBNomProducte.Text, "%" + txtBNomProducte.Text + "%");
             this.costumersTableAdapter.FillByFilter(this.managerDataSet.customers, txtBNomClient.Text, "%" + txtBNomClient.Text + "%",
-             txtBCognomsClient.Text, "%" + txtBCognomsClient.Text + "%", txtBCiutatClient.Text, "%" + txtBCiutatClient.Text + "%");
+             txtBCognomsClient.Text, "%" + txtBCognomsClient.Text + "%", txtBTelefonClient.Text, "%" + txtBTelefonClient.Text + "%");
             //   dataGridViewProductesFactura.DataSource = productsTableAdapter.Fill(this.managerDataSet.products);
             //ByFilter txtBNomClient.Text,txtBCognomsClient.Text,txtBCiutatClient.Text);
 
@@ -72,7 +78,7 @@ namespace GestorComercialEntityFramework
         private void formAfegirClient_FormClosed(object sender, FormClosedEventArgs e)
         {
             this.costumersTableAdapter.FillByFilter(this.managerDataSet.customers,  txtBNomClient.Text, "%" +  txtBNomClient.Text + "%",
-             txtBCognomsClient.Text, "%" + txtBCognomsClient.Text + "%", txtBCiutatClient.Text, "%" + txtBCiutatClient.Text + "%");
+             txtBCognomsClient.Text, "%" + txtBCognomsClient.Text + "%", txtBTelefonClient.Text, "%" + txtBTelefonClient.Text + "%");
             }
         private void btAfegirClient_Click(object sender, EventArgs e)
         {
@@ -101,7 +107,7 @@ namespace GestorComercialEntityFramework
             try
             {
                 this.costumersTableAdapter.FillByFilter(this.managerDataSet.customers,  txtBNomClient.Text, "%" +  txtBNomClient.Text + "%",
-               txtBCognomsClient.Text, "%" + txtBCognomsClient.Text + "%", txtBCiutatClient.Text, "%" + txtBCiutatClient.Text + "%");
+               txtBCognomsClient.Text, "%" + txtBCognomsClient.Text + "%", txtBTelefonClient.Text, "%" + txtBTelefonClient.Text + "%");
             }
             catch (System.Exception ex)
             {
@@ -115,7 +121,7 @@ namespace GestorComercialEntityFramework
             try
             {
                 this.costumersTableAdapter.FillByFilter(this.managerDataSet.customers,  txtBNomClient.Text, "%" +  txtBNomClient.Text + "%",
-                            txtBCognomsClient.Text, "%" + txtBCognomsClient.Text + "%", txtBCiutatClient.Text, "%" + txtBCiutatClient.Text + "%");
+                            txtBCognomsClient.Text, "%" + txtBCognomsClient.Text + "%", txtBTelefonClient.Text, "%" + txtBTelefonClient.Text + "%");
             }
             catch (System.Exception ex)
             {
@@ -133,7 +139,7 @@ namespace GestorComercialEntityFramework
             try
             {
                 this.costumersTableAdapter.FillByFilter(this.managerDataSet.customers, txtBNomClient.Text, "%" + txtBNomClient.Text + "%",
-              txtBCognomsClient.Text, "%" + txtBCognomsClient.Text + "%", txtBCiutatClient.Text, "%" + txtBCiutatClient.Text + "%");
+              txtBCognomsClient.Text, "%" + txtBCognomsClient.Text + "%", txtBTelefonClient.Text, "%" + txtBTelefonClient.Text + "%");
             }
             catch (System.Exception ex)
             {
@@ -146,7 +152,7 @@ namespace GestorComercialEntityFramework
             try
             {
                 this.costumersTableAdapter.FillByFilter(this.managerDataSet.customers,  txtBNomClient.Text, "%" +  txtBNomClient.Text + "%",
-               txtBCognomsClient.Text, "%" + txtBCognomsClient.Text + "%", txtBCiutatClient.Text, "%" + txtBCiutatClient.Text + "%");
+               txtBCognomsClient.Text, "%" + txtBCognomsClient.Text + "%", txtBTelefonClient.Text, "%" + txtBTelefonClient.Text + "%");
             }
             catch (System.Exception ex)
             {
@@ -181,7 +187,7 @@ namespace GestorComercialEntityFramework
                         }
 
                         this.costumersTableAdapter.FillByFilter(this.managerDataSet.customers, txtBNomClient.Text, "%" + txtBNomClient.Text + "%",
-                           txtBCognomsClient.Text, "%" + txtBCognomsClient.Text + "%", txtBCiutatClient.Text, "%" + txtBCiutatClient.Text + "%");
+                           txtBCognomsClient.Text, "%" + txtBCognomsClient.Text + "%", txtBTelefonClient.Text, "%" + txtBTelefonClient.Text + "%");
 
                     }
                 }
@@ -206,6 +212,39 @@ namespace GestorComercialEntityFramework
 
                     dataGridViewProductesFacturaAfegits.Rows.Add(rows[i].Clone());
                 }
+        }
+
+        private void txtBNomProducte2_TextChanged(object sender, EventArgs e)
+        {
+            this.productsTableAdapter2.FillByFilter(this.mANAGERDataSetNou.products, txtBNomProducte2.Text, "%" + txtBNomProducte2.Text + "%");
+        }
+
+        private void mainTabs_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btModificar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtBNomClient2_TextChanged(object sender, EventArgs e)
+        {
+            this.customersTableAdapter2.FillByFilter2(this.mANAGERDataSetNou.customers, txtBNomClient2.Text, txtBCognomsClient2.Text, txtBTelefonClient2.Text, "%" + txtBCognomsClient2.Text + "%",
+             "%" + txtBNomClient2.Text + "%",     "%" + txtBTelefonClient2.Text + "%");
+        }
+
+        private void txtBCognomsClient2_TextChanged(object sender, EventArgs e)
+        {
+            this.customersTableAdapter2.FillByFilter2(this.mANAGERDataSetNou.customers, txtBNomClient2.Text, txtBCognomsClient2.Text, txtBTelefonClient2.Text, "%" + txtBCognomsClient2.Text + "%",
+              "%" + txtBNomClient2.Text + "%", "%" + txtBTelefonClient2.Text + "%");
+        }
+
+        private void txtBTelefonClient2_TextChanged(object sender, EventArgs e)
+        {
+            this.customersTableAdapter2.FillByFilter2(this.mANAGERDataSetNou.customers, txtBNomClient2.Text, txtBCognomsClient2.Text, txtBTelefonClient2.Text, "%" + txtBCognomsClient2.Text + "%",
+            "%" + txtBNomClient2.Text + "%", "%" + txtBTelefonClient2.Text + "%");
         }
     }
 }

@@ -33,5 +33,58 @@ namespace GestorComercialEntityFramework.Properties {
                 return ((string)(this["managerConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("server=localhost;user id=MANAGER_USER;persistsecurityinfo=True;database=MANAGER")]
+        public string MANAGERConnectionString1 {
+            get {
+                return ((string)(this["MANAGERConnectionString1"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("server=localhost;user id=MANAGER_USER;persistsecurityinfo=True;database=manager")]
+        public string managerConnectionString2 {
+            get {
+                return ((string)(this["managerConnectionString2"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("server=localhost;user id=MANAGER_USER;password=fjeclot;persistsecurityinfo=True;d" +
+            "atabase=MANAGER")]
+        public string MANAGERConnectionString3 {
+            get {
+                return ((string)(this["MANAGERConnectionString3"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("server=localhost;user id=MANAGER_USER;password=fjeclot;persistsecurityinfo=True;d" +
+            "atabase=manager")]
+        public string managerConnectionString4 {
+            get {
+                return ((string)(this["managerConnectionString4"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("server=localhost;user id=MANAGER_USER;password=fjeclot;persistsecurityinfo=True;d" +
+            "atabase=MANAGER;allowuservariables=True")]
+        public string MANAGERConnectionString5 {
+            get {
+                return ((string)(this["MANAGERConnectionString5"]));
+            }
+        }
     }
 }
