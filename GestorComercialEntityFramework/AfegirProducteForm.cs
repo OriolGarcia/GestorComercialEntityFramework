@@ -19,8 +19,8 @@ namespace GestorComercialEntityFramework
 
         private void btInserir_Click(object sender, EventArgs e)
         {
-            int preu=0;
-            Int32.TryParse(textBox2.Text, out preu);
+           Decimal preu=0;
+            Decimal.TryParse(textBox2.Text, out preu);
             productsTableAdapter1.InsertQuery(textBox1.Text, preu);
             Close();
         }

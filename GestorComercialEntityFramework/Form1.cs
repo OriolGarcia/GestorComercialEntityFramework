@@ -246,5 +246,22 @@ namespace GestorComercialEntityFramework
             this.customersTableAdapter2.FillByFilter2(this.mANAGERDataSetNou.customers, txtBNomClient2.Text, txtBCognomsClient2.Text, txtBTelefonClient2.Text, "%" + txtBCognomsClient2.Text + "%",
             "%" + txtBNomClient2.Text + "%", "%" + txtBTelefonClient2.Text + "%");
         }
+
+        private void dataGridViewProductesFactura_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+        private void formAfegirProducte_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.productsTableAdapter.FillByFilter(this.managerDataSet.products, txtBNomProducte.Text, "%" + txtBNomProducte.Text + "%");
+        }
+        private void button6_Click(object sender, EventArgs e)
+        {
+           AfegirProducteForm formAfegirProducte = new AfegirProducteForm();
+
+            formAfegirProducte.FormClosed += new System.Windows.Forms.FormClosedEventHandler(formAfegirProducte_FormClosed);
+
+            formAfegirProducte.Show();
+        }
     }
 }
