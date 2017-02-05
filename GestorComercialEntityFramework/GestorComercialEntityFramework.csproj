@@ -99,6 +99,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>MANAGERDataSetNou.xsd</DependentUpon>
     </Compile>
+    <Compile Include="ModificarClientForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModificarClientForm.Designer.cs">
+      <DependentUpon>ModificarClientForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ModificarProducteForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -116,6 +122,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormAfegirClient.resx">
       <DependentUpon>FormAfegirClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModificarClientForm.resx">
+      <DependentUpon>ModificarClientForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ModificarProducteForm.resx">
       <DependentUpon>ModificarProducteForm.cs</DependentUpon>

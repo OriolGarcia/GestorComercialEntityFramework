@@ -2774,7 +2774,7 @@ namespace GestorComercialEntityFramework.MANAGERDataSetNouTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[4];
+            this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[5];
             this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT `ID`, `NAME`, `SURNAME_1`, `SURNAME_2`, `POSTAL_ADRESS`, `POSTAL_CODE`, `T" +
@@ -2794,8 +2794,10 @@ namespace GestorComercialEntityFramework.MANAGERDataSetNouTableAdapters {
             this._commandCollection[1].Parameters.Add(param);
             this._commandCollection[2] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = @"SELECT        ID, NAME, SURNAME_1, SURNAME_2, TELEPHONE FROM customers WHERE ( (LENGTH(@NAME) < 1)OR(NAME LIKE @NAMESEARCH) ) AND 
-( (LENGTH(@SURNAME) < 1)OR(SURNAME_1 LIKE @SURNAMESEARCH)OR(SURNAME_2 LIKE @SURNAMESEARCH) ) AND( (LENGTH(@TELEPHONE) < 1)OR (CAST(TELEPHONE as char) LIKE @TELEPHONESEARCH) )";
+            this._commandCollection[2].CommandText = @"SELECT         ID, NAME, SURNAME_1, SURNAME_2, POSTAL_ADRESS,POSTAL_CODE, TOWN,PROVINCE,TELEPHONE,FAX,EMAIL FROM customers WHERE ( (LENGTH(@NAME) < 1)OR(NAME LIKE @NAMESEARCH) ) AND 
+( (LENGTH(@SURNAME) < 1)OR(SURNAME_1 LIKE @SURNAMESEARCH)OR(SURNAME_2 LIKE @SURNAMESEARCH) ) AND( (LENGTH(@TELEPHONE) < 1)OR (CAST(TELEPHONE as char) LIKE @TELEPHONESEARCH) )
+
+";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@NAME";
@@ -2920,6 +2922,97 @@ namespace GestorComercialEntityFramework.MANAGERDataSetNouTableAdapters {
             param.IsNullable = true;
             param.SourceColumn = "EMAIL";
             this._commandCollection[3].Parameters.Add(param);
+            this._commandCollection[4] = new global::MySql.Data.MySqlClient.MySqlCommand();
+            this._commandCollection[4].Connection = this.Connection;
+            this._commandCollection[4].CommandText = "UPDATE `customers` SET  `NAME` = @p2, `SURNAME_1` = @p3, `SURNAME_2` = @p4, `POST" +
+                "AL_ADRESS` = @p5, `POSTAL_CODE` = @p6, `TOWN` = @p7, `PROVINCE` = @p8, `TELEPHON" +
+                "E` = @p9, `FAX` = @p10, `EMAIL` = @p11 WHERE ((`ID` = @p12))";
+            this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p2";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.TinyText;
+            param.Size = 255;
+            param.IsNullable = true;
+            param.SourceColumn = "NAME";
+            this._commandCollection[4].Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p3";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.TinyText;
+            param.Size = 255;
+            param.IsNullable = true;
+            param.SourceColumn = "SURNAME_1";
+            this._commandCollection[4].Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p4";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.TinyText;
+            param.Size = 255;
+            param.IsNullable = true;
+            param.SourceColumn = "SURNAME_2";
+            this._commandCollection[4].Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p5";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Text;
+            param.Size = 2147483647;
+            param.IsNullable = true;
+            param.SourceColumn = "POSTAL_ADRESS";
+            this._commandCollection[4].Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p6";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "POSTAL_CODE";
+            this._commandCollection[4].Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p7";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.TinyText;
+            param.Size = 255;
+            param.IsNullable = true;
+            param.SourceColumn = "TOWN";
+            this._commandCollection[4].Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p8";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.TinyText;
+            param.Size = 255;
+            param.IsNullable = true;
+            param.SourceColumn = "PROVINCE";
+            this._commandCollection[4].Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p9";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "TELEPHONE";
+            this._commandCollection[4].Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p10";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "FAX";
+            this._commandCollection[4].Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p11";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.TinyText;
+            param.Size = 255;
+            param.IsNullable = true;
+            param.SourceColumn = "EMAIL";
+            this._commandCollection[4].Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p12";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "ID";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._commandCollection[4].Parameters.Add(param);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3492,6 +3585,85 @@ namespace GestorComercialEntityFramework.MANAGERDataSetNouTableAdapters {
             else {
                 command.Parameters[9].Value = ((string)(p11));
             }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
+        public virtual int UpdateQuery(string p2, string p3, string p4, string p5, int p6, string p7, string p8, global::System.Nullable<int> p9, global::System.Nullable<int> p10, string p11, int p12) {
+            global::MySql.Data.MySqlClient.MySqlCommand command = this.CommandCollection[4];
+            if ((p2 == null)) {
+                throw new global::System.ArgumentNullException("p2");
+            }
+            else {
+                command.Parameters[0].Value = ((string)(p2));
+            }
+            if ((p3 == null)) {
+                throw new global::System.ArgumentNullException("p3");
+            }
+            else {
+                command.Parameters[1].Value = ((string)(p3));
+            }
+            if ((p4 == null)) {
+                command.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[2].Value = ((string)(p4));
+            }
+            if ((p5 == null)) {
+                throw new global::System.ArgumentNullException("p5");
+            }
+            else {
+                command.Parameters[3].Value = ((string)(p5));
+            }
+            command.Parameters[4].Value = ((int)(p6));
+            if ((p7 == null)) {
+                throw new global::System.ArgumentNullException("p7");
+            }
+            else {
+                command.Parameters[5].Value = ((string)(p7));
+            }
+            if ((p8 == null)) {
+                throw new global::System.ArgumentNullException("p8");
+            }
+            else {
+                command.Parameters[6].Value = ((string)(p8));
+            }
+            if ((p9.HasValue == true)) {
+                command.Parameters[7].Value = ((int)(p9.Value));
+            }
+            else {
+                command.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            if ((p10.HasValue == true)) {
+                command.Parameters[8].Value = ((int)(p10.Value));
+            }
+            else {
+                command.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            if ((p11 == null)) {
+                throw new global::System.ArgumentNullException("p11");
+            }
+            else {
+                command.Parameters[9].Value = ((string)(p11));
+            }
+            command.Parameters[10].Value = ((int)(p12));
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {

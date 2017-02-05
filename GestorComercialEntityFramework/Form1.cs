@@ -40,6 +40,7 @@ namespace GestorComercialEntityFramework
                 dataGridViewProductesFacturaAfegits.Columns.Add((DataGridViewColumn)col.Clone());
 
             }
+            amagarIDs();
         }
 
         private void btEliminar_Click(object sender, EventArgs e)
@@ -75,7 +76,7 @@ namespace GestorComercialEntityFramework
 
             }
         }
-        private void formAfegirClient_FormClosed(object sender, FormClosedEventArgs e)
+        private void formClient_FormClosed(object sender, FormClosedEventArgs e)
         {
             this.costumersTableAdapter.FillByFilter(this.managerDataSet.customers,  txtBNomClient.Text, "%" +  txtBNomClient.Text + "%",
              txtBCognomsClient.Text, "%" + txtBCognomsClient.Text + "%", txtBTelefonClient.Text, "%" + txtBTelefonClient.Text + "%");
@@ -84,7 +85,7 @@ namespace GestorComercialEntityFramework
         {
             FormAfegirClient formAfegirClient = new FormAfegirClient();
 
-            formAfegirClient.FormClosed += new System.Windows.Forms.FormClosedEventHandler(formAfegirClient_FormClosed);
+            formAfegirClient.FormClosed += new System.Windows.Forms.FormClosedEventHandler(formClient_FormClosed);
 
             formAfegirClient.Show();
         }
@@ -242,7 +243,45 @@ namespace GestorComercialEntityFramework
         private void btModificar_Click(object sender, EventArgs e)
         {
 
-        }
+            int selectedRowCount = dataGridViewCustumers.Rows.GetRowCount(DataGridViewElementStates.Selected);
+            if (selectedRowCount > 0)
+            {
+                for (int i = 0; i < selectedRowCount; i++)
+                {
+
+                    try
+                    {
+
+                        string Id = dataGridViewCustumers.SelectedRows[i].Cells[0].Value.ToString();
+                        string nom = dataGridViewCustumers.SelectedRows[i].Cells[1].Value.ToString();
+                        string cognom1 = dataGridViewCustumers.SelectedRows[i].Cells[2].Value.ToString();
+                        string cognom2 = dataGridViewCustumers.SelectedRows[i].Cells[3].Value.ToString();
+                        string adress = dataGridViewCustumers.SelectedRows[i].Cells[4].Value.ToString();
+                        string codipostal = dataGridViewCustumers.SelectedRows[i].Cells[5].Value.ToString();
+                        string ciutat = dataGridViewCustumers.SelectedRows[i].Cells[6].Value.ToString();
+                        string provincia = dataGridViewCustumers.SelectedRows[i].Cells[7].Value.ToString();
+                        string telefon = dataGridViewCustumers.SelectedRows[i].Cells[8].Value.ToString();
+                        string fax = dataGridViewCustumers.SelectedRows[i].Cells[9].Value.ToString();
+                        string email = dataGridViewCustumers.SelectedRows[i].Cells[10].Value.ToString();
+                       
+                        ModificarClientForm formModificar = new ModificarClientForm(Id, nom,cognom1,cognom2,adress,codipostal,ciutat,
+                            provincia,telefon,fax,email);
+                  
+                        formModificar.FormClosed += new System.Windows.Forms.FormClosedEventHandler(formClient_FormClosed);
+
+                        formModificar.Show();
+
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+
+
+
+                }
+            }
+            }
 
         private void txtBNomClient2_TextChanged(object sender, EventArgs e)
         {
@@ -311,5 +350,26 @@ namespace GestorComercialEntityFramework
                 }
             }
             }
+
+        private void amagarIDs() { 
+             if(dataGridViewCustumers.ColumnCount>0)
+                dataGridViewCustumers.Columns[0].Visible = false;
+            if (dataGridView2.ColumnCount > 0)
+                dataGridView2.Columns[0].Visible = false;
+            if (dataGridView3.ColumnCount > 0)
+                dataGridView3.Columns[0].Visible = false;
+            if (dataGridView4.ColumnCount > 0)
+                dataGridView4.Columns[0].Visible = false;
+            if (dataGridViewProductesFactura.ColumnCount > 0)
+                dataGridViewProductesFactura.Columns[0].Visible = false;
+            if (dataGridViewProductesFacturaAfegits.ColumnCount > 0)
+                dataGridViewProductesFacturaAfegits.Columns[0].Visible = false;
+        }
+
+        private void dataGridView4_SelectionChanged(object sender, EventArgs e)
+        {
+            dataGridViewProductesFacturaAfegits.Rows.Clear();
+           
+        }
     }
 }
