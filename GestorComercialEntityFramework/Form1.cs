@@ -371,5 +371,10 @@ namespace GestorComercialEntityFramework
             dataGridViewProductesFacturaAfegits.Rows.Clear();
            
         }
+
+        private void btComprar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
