@@ -4,6 +4,10 @@
 
     public partial class MANAGERDataSetNou
     {
+        partial class productsDataTable
+        {
+            
+        }
     }
 }
 

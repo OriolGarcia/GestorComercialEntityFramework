@@ -1424,6 +1424,8 @@ namespace GestorComercialEntityFramework {
             
             private global::System.Data.DataColumn columnPRICE;
             
+            private global::System.Data.DataColumn columnIMAGEPATH;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public productsDataTable() {
@@ -1483,6 +1485,14 @@ namespace GestorComercialEntityFramework {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn IMAGEPATHColumn {
+                get {
+                    return this.columnIMAGEPATH;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1518,12 +1528,13 @@ namespace GestorComercialEntityFramework {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public productsRow AddproductsRow(int ID, string NAME, decimal PRICE) {
+            public productsRow AddproductsRow(int ID, string NAME, decimal PRICE, string IMAGEPATH) {
                 productsRow rowproductsRow = ((productsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         ID,
                         NAME,
-                        PRICE};
+                        PRICE,
+                        IMAGEPATH};
                 rowproductsRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowproductsRow);
                 return rowproductsRow;
@@ -1556,6 +1567,7 @@ namespace GestorComercialEntityFramework {
                 this.columnID = base.Columns["ID"];
                 this.columnNAME = base.Columns["NAME"];
                 this.columnPRICE = base.Columns["PRICE"];
+                this.columnIMAGEPATH = base.Columns["IMAGEPATH"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1567,6 +1579,8 @@ namespace GestorComercialEntityFramework {
                 base.Columns.Add(this.columnNAME);
                 this.columnPRICE = new global::System.Data.DataColumn("PRICE", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPRICE);
+                this.columnIMAGEPATH = new global::System.Data.DataColumn("IMAGEPATH", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnIMAGEPATH);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnID}, true));
                 this.columnID.AllowDBNull = false;
@@ -2163,6 +2177,22 @@ namespace GestorComercialEntityFramework {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string IMAGEPATH {
+                get {
+                    try {
+                        return ((string)(this[this.tableproducts.IMAGEPATHColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'IMAGEPATH\' in table \'products\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableproducts.IMAGEPATHColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsNAMENull() {
                 return this.IsNull(this.tableproducts.NAMEColumn);
             }
@@ -2183,6 +2213,18 @@ namespace GestorComercialEntityFramework {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetPRICENull() {
                 this[this.tableproducts.PRICEColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsIMAGEPATHNull() {
+                return this.IsNull(this.tableproducts.IMAGEPATHColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetIMAGEPATHNull() {
+                this[this.tableproducts.IMAGEPATHColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4897,7 +4939,7 @@ namespace GestorComercialEntityFramework.managerDataSetTableAdapters {
             this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[4];
             this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT `ID`, `NAME`, `PRICE` FROM `products`";
+            this._commandCollection[0].CommandText = "SELECT `ID`, `NAME`, `PRICE`,`IMAGEPATH` FROM `products`";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[1].Connection = this.Connection;
@@ -4913,8 +4955,8 @@ namespace GestorComercialEntityFramework.managerDataSetTableAdapters {
             this._commandCollection[1].Parameters.Add(param);
             this._commandCollection[2] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "SELECT        ID, NAME, PRICE\r\nFROM            products\r\nWHERE        (LENGTH(@NA" +
-                "ME) < 1) OR\r\n                         (NAME LIKE @NAMESEARCH)";
+            this._commandCollection[2].CommandText = "SELECT ID, NAME, PRICE, IMAGEPATH FROM products WHERE (LENGTH(@NAME) < 1) OR (NAM" +
+                "E LIKE @NAMESEARCH)";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@NAME";
