@@ -19,18 +19,21 @@ namespace GestorComercialEntityFramework
         {
 
             InitializeComponent();
-            InsertColumns();
+
+            InsertColumns(dataGridViewProducts);
+            
+            
         }
-        private void InsertColumns()
+        private void InsertColumns( DataGridView dataGridView)
         {
             DataGridViewImageColumn img = new DataGridViewImageColumn();
-
+            img.Visible = true;
             img.HeaderText = "Image";
             img.Name = "Image";
             img.Width = 100;
-            dataGridViewProducts.RowTemplate.Height =100;
-            if (dataGridViewProducts.Columns["Image"] == null)
-                dataGridViewProducts.Columns.Insert(0, img);
+            dataGridView.RowTemplate.Height =100;
+            if (dataGridView.Columns["Image"] == null)
+                dataGridView.Columns.Insert(0, img);
 
 
         }
@@ -404,6 +407,7 @@ namespace GestorComercialEntityFramework
             else if (dataGridViewProductesFacturaAfegits.Rows.Count == 0) MessageBox.Show("No s'ha afegit cap producte.");
             else 
             {
+            /*
                 DataGridViewRow client = dataGridViewClientsFactura.SelectedRows[0];
                 DataGridViewRowCollection productes = dataGridViewProductesFactura.Rows;
                 if (invoiceTableAdapter.InsertQuery((int)client.Cells[0].Value, new DateTime(), IVA, descompte) != 0)
@@ -418,8 +422,10 @@ namespace GestorComercialEntityFramework
                             productesDictionary[prodId]++;
                         else productesDictionary.Add(prodId, 0);
                     }
+
+                    
                 }
-                else MessageBox.Show("Error al efectuar la compra.");
+                else MessageBox.Show("Error al efectuar la compra.");*/
             }
         }
 
@@ -434,6 +440,40 @@ namespace GestorComercialEntityFramework
                     Image image = Image.FromFile(path);
                     var newImage = new Bitmap(dataGridViewProducts.Columns[e.ColumnIndex].Width, dataGridViewProducts.Rows[e.RowIndex].Height);
                     Graphics.FromImage(newImage).DrawImage(image, 0, 0, dataGridViewProducts.Columns[e.ColumnIndex].Width, dataGridViewProducts.Rows[e.RowIndex].Height);
+                    e.Value = newImage;
+                }
+            }
+        }
+
+        private void dataGridViewProductesFactura_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (dataGridViewProductesFactura.Columns[e.ColumnIndex].Name == "Image"&&dataGridViewProductesFactura.Columns["IMAGEPATH"] != null)
+            {
+                string path = dataGridViewProductesFactura.Rows[e.RowIndex].Cells["IMAGEPATH"].Value.ToString();
+                // Your code would go here - below is just the code I used to test
+                if (File.Exists(path))
+                {
+                    Image image = Image.FromFile(path);
+                    var newImage = new Bitmap(dataGridViewProductesFactura.Columns[e.ColumnIndex].Width, dataGridViewProductesFactura.Rows[e.RowIndex].Height);
+                    Graphics.FromImage(newImage).DrawImage(image, 0, 0, dataGridViewProductesFactura.Columns[e.ColumnIndex].Width, dataGridViewProductesFactura.Rows[e.RowIndex].Height);
+                    e.Value = newImage;
+                }
+                
+            }
+        }
+
+        private void dataGridViewProductesFacturaAfegits_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            
+            if (dataGridViewProductesFacturaAfegits.Columns[e.ColumnIndex].Name == "Image" && dataGridViewProductesFacturaAfegits.Columns["IMAGEPATH"] != null)
+            {
+                string path = dataGridViewProductesFacturaAfegits.Rows[e.RowIndex].Cells["IMAGEPATH"].Value.ToString();
+                // Your code would go here - below is just the code I used to test
+                if (File.Exists(path))
+                {
+                    Image image = Image.FromFile(path);
+                    var newImage = new Bitmap(dataGridViewProductesFacturaAfegits.Columns[e.ColumnIndex].Width, dataGridViewProductesFacturaAfegits.Rows[e.RowIndex].Height);
+                    Graphics.FromImage(newImage).DrawImage(image, 0, 0, dataGridViewProductesFacturaAfegits.Columns[e.ColumnIndex].Width, dataGridViewProductesFacturaAfegits.Rows[e.RowIndex].Height);
                     e.Value = newImage;
                 }
             }
