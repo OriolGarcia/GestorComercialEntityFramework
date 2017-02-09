@@ -39,6 +39,10 @@ namespace GestorComercialEntityFramework
         }
         private void Form1_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'managerDataSet1.invoice' table. You can move, or remove it, as needed.
+            this.invoiceTableAdapter1.Fill(this.managerDataSet1.invoice);
+            // TODO: This line of code loads data into the 'managerDataSet1.inv_detail' table. You can move, or remove it, as needed.
+            this.inv_detailTableAdapter1.Fill(this.managerDataSet1.inv_detail);
             mANAGERDataSetNou.EnforceConstraints = false;
             // TODO: This line of code loads data into the 'mANAGERDataSetNou.customers' table. You can move, or remove it, as needed.
             this.customersTableAdapter2.FillByFilter2(this.mANAGERDataSetNou.customers, txtBNomClient2.Text, txtBCognomsClient2.Text, txtBTelefonClient2.Text, "%" + txtBCognomsClient2.Text + "%",
@@ -379,8 +383,8 @@ namespace GestorComercialEntityFramework
                 dataGridViewCustumers.Columns[0].Visible = false;
             if (dataGridViewInvoice.ColumnCount > 0)
                 dataGridViewInvoice.Columns[0].Visible = false;
-            if (dataGridView3.ColumnCount > 0)
-                dataGridView3.Columns[0].Visible = false;
+            if (dataGridViewProductesFacturaSelect.ColumnCount > 0)
+                dataGridViewProductesFacturaSelect.Columns[0].Visible = false;
             if (dataGridViewClientsFactura.ColumnCount > 0)
                 dataGridViewClientsFactura.Columns[0].Visible = false;
             if (dataGridViewProductesFactura.ColumnCount > 0)
@@ -487,6 +491,20 @@ namespace GestorComercialEntityFramework
                     e.Value = newImage;
                 }
             }
+        }
+
+        private void dataGridViewInvoice_RowStateChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dataGridViewInvoice.SelectedRows.Count > 0)
+            {
+                DataGridViewRow invoice = dataGridViewInvoice.SelectedRows[0];
+                //productsTableAdapter.FillByInvoice(managerDataSet)
+            }
+        }
+
+        private void splitContainer2_Panel2_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
