@@ -138,12 +138,11 @@
             this.customersTableAdapter1 = new GestorComercialEntityFramework.MANAGERDataSetNouTableAdapters.customersTableAdapter();
             this.customersTableAdapter2 = new GestorComercialEntityFramework.MANAGERDataSetNouTableAdapters.customersTableAdapter();
             this.productsTableAdapter3 = new GestorComercialEntityFramework.MANAGERDataSetNouTableAdapters.productsTableAdapter();
-            this.inv_detailTableAdapter = new GestorComercialEntityFramework.managerDataSetTableAdapters.inv_detailTableAdapter();
             this.iDDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
             this.nAMEDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pRICEDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IMAGEPATH2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProducts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.managerDataSet)).BeginInit();
@@ -1078,10 +1077,10 @@
             this.dataGridViewProductesFactura.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewProductesFactura.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.iDDataGridViewTextBoxColumn2,
-            this.ImageColumn,
             this.nAMEDataGridViewTextBoxColumn2,
             this.pRICEDataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn1});
+            this.IMAGEPATH2,
+            this.ImageColumn});
             this.dataGridViewProductesFactura.DataSource = this.productsBindingSource3;
             this.dataGridViewProductesFactura.Location = new System.Drawing.Point(56, 43);
             this.dataGridViewProductesFactura.Name = "dataGridViewProductesFactura";
@@ -1157,10 +1156,6 @@
             // 
             this.productsTableAdapter3.ClearBeforeFill = true;
             // 
-            // inv_detailTableAdapter
-            // 
-            this.inv_detailTableAdapter.ClearBeforeFill = true;
-            // 
             // iDDataGridViewTextBoxColumn2
             // 
             this.iDDataGridViewTextBoxColumn2.DataPropertyName = "ID";
@@ -1168,13 +1163,6 @@
             this.iDDataGridViewTextBoxColumn2.Name = "iDDataGridViewTextBoxColumn2";
             this.iDDataGridViewTextBoxColumn2.ReadOnly = true;
             this.iDDataGridViewTextBoxColumn2.Visible = false;
-            // 
-            // ImageColumn
-            // 
-            this.ImageColumn.DataPropertyName = "ID";
-            this.ImageColumn.HeaderText = "Image";
-            this.ImageColumn.Name = "ImageColumn";
-            this.ImageColumn.ReadOnly = true;
             // 
             // nAMEDataGridViewTextBoxColumn2
             // 
@@ -1190,13 +1178,21 @@
             this.pRICEDataGridViewTextBoxColumn1.Name = "pRICEDataGridViewTextBoxColumn1";
             this.pRICEDataGridViewTextBoxColumn1.ReadOnly = true;
             // 
-            // dataGridViewTextBoxColumn1
+            // IMAGEPATH2
             // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "IMAGEPATH";
-            this.dataGridViewTextBoxColumn1.HeaderText = "IMAGEPATH";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Visible = false;
+            this.IMAGEPATH2.DataPropertyName = "IMAGEPATH";
+            this.IMAGEPATH2.HeaderText = "IMAGEPATH";
+            this.IMAGEPATH2.Name = "IMAGEPATH2";
+            this.IMAGEPATH2.ReadOnly = true;
+            this.IMAGEPATH2.Visible = false;
+            // 
+            // ImageColumn
+            // 
+            this.ImageColumn.HeaderText = "ImageColumn";
+            this.ImageColumn.Name = "ImageColumn";
+            this.ImageColumn.ReadOnly = true;
+            this.ImageColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ImageColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // Form1
             // 
@@ -1365,10 +1361,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn IMAGEPATH;
         private managerDataSetTableAdapters.inv_detailTableAdapter inv_detailTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewImageColumn ImageColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nAMEDataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn pRICEDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IMAGEPATH2;
+        private System.Windows.Forms.DataGridViewImageColumn ImageColumn;
     }
 }
 

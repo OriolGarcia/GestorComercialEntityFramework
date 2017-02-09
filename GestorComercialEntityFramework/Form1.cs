@@ -21,8 +21,11 @@ namespace GestorComercialEntityFramework
             InitializeComponent();
 
             InsertColumns(dataGridViewProducts);
+            dataGridViewProductesFactura.Columns["ImageColumn"].Width = 100;
+            dataGridViewProductesFactura.RowTemplate.Height = 100; 
             
-            
+
+
         }
         private void InsertColumns( DataGridView dataGridView)
         {
@@ -443,6 +446,7 @@ namespace GestorComercialEntityFramework
         {
             if (dataGridViewProducts.Columns[e.ColumnIndex].Name == "Image")
             {
+                
                 string path = dataGridViewProducts.Rows[e.RowIndex].Cells["IMAGEPATH"].Value.ToString();
                 // Your code would go here - below is just the code I used to test
                 if (File.Exists(path))
@@ -457,9 +461,9 @@ namespace GestorComercialEntityFramework
 
         private void dataGridViewProductesFactura_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-            if (dataGridViewProductesFactura.Columns[e.ColumnIndex].Name == "Image"&&dataGridViewProductesFactura.Columns["IMAGEPATH"] != null)
+            if (dataGridViewProductesFactura.Columns[e.ColumnIndex].Name == "ImageColumn"&&dataGridViewProductesFactura.Columns["IMAGEPATH2"] != null)
             {
-                string path = dataGridViewProductesFactura.Rows[e.RowIndex].Cells["IMAGEPATH"].Value.ToString();
+                string path = dataGridViewProductesFactura.Rows[e.RowIndex].Cells["IMAGEPATH2"].Value.ToString();
                 // Your code would go here - below is just the code I used to test
                 if (File.Exists(path))
                 {
@@ -475,9 +479,10 @@ namespace GestorComercialEntityFramework
         private void dataGridViewProductesFacturaAfegits_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
             
-            if (dataGridViewProductesFacturaAfegits.Columns[e.ColumnIndex].Name == "Image" && dataGridViewProductesFacturaAfegits.Columns["IMAGEPATH"] != null)
+           if (dataGridViewProductesFacturaAfegits.Columns[e.ColumnIndex].Name == "ImageColumn" && dataGridViewProductesFacturaAfegits.Columns["IMAGEPATH2"] != null)
             {
-                string path = dataGridViewProductesFacturaAfegits.Rows[e.RowIndex].Cells["IMAGEPATH"].Value.ToString();
+               ;
+                string path = dataGridViewProductesFacturaAfegits.Rows[e.RowIndex].Cells["IMAGEPATH2"].Value.ToString();
                 // Your code would go here - below is just the code I used to test
                 if (File.Exists(path))
                 {
