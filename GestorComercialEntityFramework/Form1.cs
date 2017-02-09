@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,12 +13,27 @@ namespace GestorComercialEntityFramework
 {
     public partial class Form1 : Form
     {
+
+        private string pathimage =@"C:\GComercial_images";
         public Form1()
         {
-        
-            InitializeComponent();
-        }
 
+            InitializeComponent();
+            InsertColumns();
+        }
+        private void InsertColumns()
+        {
+            DataGridViewImageColumn img = new DataGridViewImageColumn();
+
+            img.HeaderText = "Image";
+            img.Name = "Image";
+            img.Width = 100;
+            dataGridViewProducts.RowTemplate.Height =100;
+            if (dataGridViewProducts.Columns["Image"] == null)
+                dataGridViewProducts.Columns.Insert(0, img);
+
+
+        }
         private void Form1_Load(object sender, EventArgs e)
         {
             mANAGERDataSetNou.EnforceConstraints = false;
@@ -311,7 +327,7 @@ namespace GestorComercialEntityFramework
         }
         private void button6_Click(object sender, EventArgs e)
         {
-           AfegirProducteForm formAfegirProducte = new AfegirProducteForm();
+           AfegirProducteForm formAfegirProducte = new AfegirProducteForm(pathimage);
 
             formAfegirProducte.FormClosed += new System.Windows.Forms.FormClosedEventHandler(formProducte_FormClosed);
 
@@ -375,6 +391,22 @@ namespace GestorComercialEntityFramework
         private void btComprar_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void dataGridViewProducts_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (dataGridViewProducts.Columns[e.ColumnIndex].Name == "Image")
+            {
+                string path = dataGridViewProducts.Rows[e.RowIndex].Cells["IMAGEPATH"].Value.ToString();
+                // Your code would go here - below is just the code I used to test
+                if (File.Exists(path))
+                {
+                    Image image = Image.FromFile(path);
+                    var newImage = new Bitmap(dataGridViewProducts.Columns[e.ColumnIndex].Width, dataGridViewProducts.Rows[e.RowIndex].Height);
+                    Graphics.FromImage(newImage).DrawImage(image, 0, 0, dataGridViewProducts.Columns[e.ColumnIndex].Width, dataGridViewProducts.Rows[e.RowIndex].Height);
+                    e.Value = newImage;
+                }
+            }
         }
     }
 }

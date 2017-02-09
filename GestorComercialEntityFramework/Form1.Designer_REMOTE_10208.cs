@@ -36,9 +36,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridViewProducts = new System.Windows.Forms.DataGridView();
-            this.productsBindingSource4 = new System.Windows.Forms.BindingSource(this.components);
-            this.managerDataSet = new GestorComercialEntityFramework.managerDataSet();
-            this.productsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.mainTabs = new System.Windows.Forms.TabControl();
             this.TabProductes = new System.Windows.Forms.TabPage();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -60,18 +57,6 @@
             this.btEliminarClient = new System.Windows.Forms.Button();
             this.btModificar = new System.Windows.Forms.Button();
             this.dataGridViewCustumers = new System.Windows.Forms.DataGridView();
-            this.iDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nAMEDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sURNAME1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sURNAME2DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pOSTALADRESSDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pOSTALCODEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tOWNDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pROVINCEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tELEPHONEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fAXDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.eMAILDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.customersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabFactures = new System.Windows.Forms.TabPage();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -91,7 +76,7 @@
             this.txtBTelefonClient2 = new System.Windows.Forms.TextBox();
             this.txtBCognomsClient2 = new System.Windows.Forms.TextBox();
             this.txtBNomClient2 = new System.Windows.Forms.TextBox();
-            this.dataGridView4 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewClientFactura = new System.Windows.Forms.DataGridView();
             this.iDDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nAMEDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sURNAME1DataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -105,11 +90,6 @@
             this.eMAILDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.customersBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.mANAGERDataSetNou = new GestorComercialEntityFramework.MANAGERDataSetNou();
-            this.tbIVA = new System.Windows.Forms.TextBox();
-            this.tbDescompte = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.lbDescompte = new System.Windows.Forms.Label();
-            this.btComprar = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.txtBNomProducte2 = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -125,25 +105,41 @@
             this.productsBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
             this.mANAGERDataSetNouBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.customersBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.productsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.productsTableAdapter = new GestorComercialEntityFramework.managerDataSetTableAdapters.productsTableAdapter();
-            this.costumersTableAdapter = new GestorComercialEntityFramework.managerDataSetTableAdapters.customersTableAdapter();
-            this.invoiceTableAdapter = new GestorComercialEntityFramework.managerDataSetTableAdapters.invoiceTableAdapter();
-            this.productsTableAdapter1 = new GestorComercialEntityFramework.managerDataSetTableAdapters.productsTableAdapter();
             this.productsBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.productsTableAdapter2 = new GestorComercialEntityFramework.MANAGERDataSetNouTableAdapters.productsTableAdapter();
             this.customersTableAdapter = new GestorComercialEntityFramework.MANAGERDataSetNouTableAdapters.customersTableAdapter();
             this.customersTableAdapter1 = new GestorComercialEntityFramework.MANAGERDataSetNouTableAdapters.customersTableAdapter();
             this.customersTableAdapter2 = new GestorComercialEntityFramework.MANAGERDataSetNouTableAdapters.customersTableAdapter();
             this.productsTableAdapter3 = new GestorComercialEntityFramework.MANAGERDataSetNouTableAdapters.productsTableAdapter();
+            this.btComprar = new System.Windows.Forms.Button();
+            this.lbDescompte = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.tbDescompte = new System.Windows.Forms.TextBox();
+            this.tbIVA = new System.Windows.Forms.TextBox();
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pRICEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IMAGEPATH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.managerDataSet = new GestorComercialEntityFramework.managerDataSet();
+            this.iDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nAMEDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sURNAME1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sURNAME2DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pOSTALADRESSDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pOSTALCODEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tOWNDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pROVINCEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tELEPHONEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fAXDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.eMAILDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.customersBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.productsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.productsTableAdapter = new GestorComercialEntityFramework.managerDataSetTableAdapters.productsTableAdapter();
+            this.costumersTableAdapter = new GestorComercialEntityFramework.managerDataSetTableAdapters.customersTableAdapter();
+            this.invoiceTableAdapter = new GestorComercialEntityFramework.managerDataSetTableAdapters.invoiceTableAdapter();
+            this.productsTableAdapter1 = new GestorComercialEntityFramework.managerDataSetTableAdapters.productsTableAdapter();
+            this.invDetailTableAdapter = new GestorComercialEntityFramework.managerDataSetTableAdapters.inv_detailTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProducts)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.managerDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).BeginInit();
             this.mainTabs.SuspendLayout();
             this.TabProductes.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -154,7 +150,6 @@
             this.splitContainer1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCustumers)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customersBindingSource)).BeginInit();
             this.tabFactures.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
             this.splitContainer2.Panel1.SuspendLayout();
@@ -169,7 +164,7 @@
             this.splitContainer3.Panel1.SuspendLayout();
             this.splitContainer3.Panel2.SuspendLayout();
             this.splitContainer3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewClientFactura)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customersBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mANAGERDataSetNou)).BeginInit();
             this.groupBox4.SuspendLayout();
@@ -178,8 +173,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mANAGERDataSetNouBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customersBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.managerDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customersBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridViewProducts
@@ -199,9 +197,8 @@
             this.dataGridViewProducts.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.iDDataGridViewTextBoxColumn,
             this.nAMEDataGridViewTextBoxColumn,
-            this.pRICEDataGridViewTextBoxColumn,
-            this.IMAGEPATH});
-            this.dataGridViewProducts.DataSource = this.productsBindingSource4;
+            this.pRICEDataGridViewTextBoxColumn});
+            this.dataGridViewProducts.DataSource = this.productsBindingSource;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -223,24 +220,8 @@
             this.dataGridViewProducts.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridViewProducts.RowHeadersVisible = false;
             this.dataGridViewProducts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewProducts.Size = new System.Drawing.Size(403, 533);
+            this.dataGridViewProducts.Size = new System.Drawing.Size(245, 302);
             this.dataGridViewProducts.TabIndex = 0;
-            this.dataGridViewProducts.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridViewProducts_CellFormatting);
-            // 
-            // productsBindingSource4
-            // 
-            this.productsBindingSource4.DataMember = "products";
-            this.productsBindingSource4.DataSource = this.managerDataSet;
-            // 
-            // managerDataSet
-            // 
-            this.managerDataSet.DataSetName = "managerDataSet";
-            this.managerDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // productsBindingSource
-            // 
-            this.productsBindingSource.DataMember = "products";
-            this.productsBindingSource.DataSource = this.managerDataSet;
             // 
             // mainTabs
             // 
@@ -276,7 +257,7 @@
             // 
             this.groupBox3.Controls.Add(this.txtBNomProducte);
             this.groupBox3.Controls.Add(this.label1);
-            this.groupBox3.Location = new System.Drawing.Point(470, 162);
+            this.groupBox3.Location = new System.Drawing.Point(314, 162);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(200, 175);
             this.groupBox3.TabIndex = 4;
@@ -302,7 +283,7 @@
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(498, 64);
+            this.button7.Location = new System.Drawing.Point(342, 64);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(112, 23);
             this.button7.TabIndex = 3;
@@ -312,7 +293,7 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(498, 35);
+            this.button6.Location = new System.Drawing.Point(342, 35);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(112, 23);
             this.button6.TabIndex = 2;
@@ -322,7 +303,7 @@
             // 
             // btEliminar
             // 
-            this.btEliminar.Location = new System.Drawing.Point(498, 104);
+            this.btEliminar.Location = new System.Drawing.Point(342, 104);
             this.btEliminar.Name = "btEliminar";
             this.btEliminar.Size = new System.Drawing.Size(112, 23);
             this.btEliminar.TabIndex = 1;
@@ -513,89 +494,6 @@
             this.dataGridViewCustumers.Size = new System.Drawing.Size(518, 268);
             this.dataGridViewCustumers.TabIndex = 0;
             // 
-            // iDDataGridViewTextBoxColumn1
-            // 
-            this.iDDataGridViewTextBoxColumn1.DataPropertyName = "ID";
-            this.iDDataGridViewTextBoxColumn1.HeaderText = "ID";
-            this.iDDataGridViewTextBoxColumn1.Name = "iDDataGridViewTextBoxColumn1";
-            this.iDDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.iDDataGridViewTextBoxColumn1.Visible = false;
-            // 
-            // nAMEDataGridViewTextBoxColumn1
-            // 
-            this.nAMEDataGridViewTextBoxColumn1.DataPropertyName = "NAME";
-            this.nAMEDataGridViewTextBoxColumn1.HeaderText = "NAME";
-            this.nAMEDataGridViewTextBoxColumn1.Name = "nAMEDataGridViewTextBoxColumn1";
-            this.nAMEDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // sURNAME1DataGridViewTextBoxColumn
-            // 
-            this.sURNAME1DataGridViewTextBoxColumn.DataPropertyName = "SURNAME_1";
-            this.sURNAME1DataGridViewTextBoxColumn.HeaderText = "SURNAME_1";
-            this.sURNAME1DataGridViewTextBoxColumn.Name = "sURNAME1DataGridViewTextBoxColumn";
-            this.sURNAME1DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // sURNAME2DataGridViewTextBoxColumn
-            // 
-            this.sURNAME2DataGridViewTextBoxColumn.DataPropertyName = "SURNAME_2";
-            this.sURNAME2DataGridViewTextBoxColumn.HeaderText = "SURNAME_2";
-            this.sURNAME2DataGridViewTextBoxColumn.Name = "sURNAME2DataGridViewTextBoxColumn";
-            this.sURNAME2DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // pOSTALADRESSDataGridViewTextBoxColumn
-            // 
-            this.pOSTALADRESSDataGridViewTextBoxColumn.DataPropertyName = "POSTAL_ADRESS";
-            this.pOSTALADRESSDataGridViewTextBoxColumn.HeaderText = "POSTAL_ADRESS";
-            this.pOSTALADRESSDataGridViewTextBoxColumn.Name = "pOSTALADRESSDataGridViewTextBoxColumn";
-            this.pOSTALADRESSDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // pOSTALCODEDataGridViewTextBoxColumn
-            // 
-            this.pOSTALCODEDataGridViewTextBoxColumn.DataPropertyName = "POSTAL_CODE";
-            this.pOSTALCODEDataGridViewTextBoxColumn.HeaderText = "POSTAL_CODE";
-            this.pOSTALCODEDataGridViewTextBoxColumn.Name = "pOSTALCODEDataGridViewTextBoxColumn";
-            this.pOSTALCODEDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // tOWNDataGridViewTextBoxColumn
-            // 
-            this.tOWNDataGridViewTextBoxColumn.DataPropertyName = "TOWN";
-            this.tOWNDataGridViewTextBoxColumn.HeaderText = "TOWN";
-            this.tOWNDataGridViewTextBoxColumn.Name = "tOWNDataGridViewTextBoxColumn";
-            this.tOWNDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // pROVINCEDataGridViewTextBoxColumn
-            // 
-            this.pROVINCEDataGridViewTextBoxColumn.DataPropertyName = "PROVINCE";
-            this.pROVINCEDataGridViewTextBoxColumn.HeaderText = "PROVINCE";
-            this.pROVINCEDataGridViewTextBoxColumn.Name = "pROVINCEDataGridViewTextBoxColumn";
-            this.pROVINCEDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // tELEPHONEDataGridViewTextBoxColumn
-            // 
-            this.tELEPHONEDataGridViewTextBoxColumn.DataPropertyName = "TELEPHONE";
-            this.tELEPHONEDataGridViewTextBoxColumn.HeaderText = "TELEPHONE";
-            this.tELEPHONEDataGridViewTextBoxColumn.Name = "tELEPHONEDataGridViewTextBoxColumn";
-            this.tELEPHONEDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // fAXDataGridViewTextBoxColumn
-            // 
-            this.fAXDataGridViewTextBoxColumn.DataPropertyName = "FAX";
-            this.fAXDataGridViewTextBoxColumn.HeaderText = "FAX";
-            this.fAXDataGridViewTextBoxColumn.Name = "fAXDataGridViewTextBoxColumn";
-            this.fAXDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // eMAILDataGridViewTextBoxColumn
-            // 
-            this.eMAILDataGridViewTextBoxColumn.DataPropertyName = "EMAIL";
-            this.eMAILDataGridViewTextBoxColumn.HeaderText = "EMAIL";
-            this.eMAILDataGridViewTextBoxColumn.Name = "eMAILDataGridViewTextBoxColumn";
-            this.eMAILDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // customersBindingSource
-            // 
-            this.customersBindingSource.DataMember = "customers";
-            this.customersBindingSource.DataSource = this.managerDataSet;
-            // 
             // tabFactures
             // 
             this.tabFactures.Controls.Add(this.splitContainer2);
@@ -728,7 +626,7 @@
             this.splitContainer3.Panel1.Controls.Add(this.txtBTelefonClient2);
             this.splitContainer3.Panel1.Controls.Add(this.txtBCognomsClient2);
             this.splitContainer3.Panel1.Controls.Add(this.txtBNomClient2);
-            this.splitContainer3.Panel1.Controls.Add(this.dataGridView4);
+            this.splitContainer3.Panel1.Controls.Add(this.dataGridViewClientFactura);
             // 
             // splitContainer3.Panel2
             // 
@@ -799,13 +697,13 @@
             this.txtBNomClient2.TabIndex = 1;
             this.txtBNomClient2.TextChanged += new System.EventHandler(this.txtBNomClient2_TextChanged);
             // 
-            // dataGridView4
+            // dataGridViewClientFactura
             // 
-            this.dataGridView4.AllowUserToAddRows = false;
-            this.dataGridView4.AutoGenerateColumns = false;
-            this.dataGridView4.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView4.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewClientFactura.AllowUserToAddRows = false;
+            this.dataGridViewClientFactura.AutoGenerateColumns = false;
+            this.dataGridViewClientFactura.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewClientFactura.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewClientFactura.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.iDDataGridViewTextBoxColumn3,
             this.nAMEDataGridViewTextBoxColumn3,
             this.sURNAME1DataGridViewTextBoxColumn1,
@@ -817,15 +715,15 @@
             this.tELEPHONEDataGridViewTextBoxColumn1,
             this.fAXDataGridViewTextBoxColumn1,
             this.eMAILDataGridViewTextBoxColumn1});
-            this.dataGridView4.DataSource = this.customersBindingSource2;
-            this.dataGridView4.Location = new System.Drawing.Point(29, 65);
-            this.dataGridView4.Name = "dataGridView4";
-            this.dataGridView4.ReadOnly = true;
-            this.dataGridView4.RowHeadersVisible = false;
-            this.dataGridView4.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView4.Size = new System.Drawing.Size(972, 114);
-            this.dataGridView4.TabIndex = 0;
-            this.dataGridView4.SelectionChanged += new System.EventHandler(this.dataGridView4_SelectionChanged);
+            this.dataGridViewClientFactura.DataSource = this.customersBindingSource2;
+            this.dataGridViewClientFactura.Location = new System.Drawing.Point(29, 65);
+            this.dataGridViewClientFactura.Name = "dataGridViewClientFactura";
+            this.dataGridViewClientFactura.ReadOnly = true;
+            this.dataGridViewClientFactura.RowHeadersVisible = false;
+            this.dataGridViewClientFactura.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewClientFactura.Size = new System.Drawing.Size(972, 114);
+            this.dataGridViewClientFactura.TabIndex = 0;
+            this.dataGridViewClientFactura.SelectionChanged += new System.EventHandler(this.dataGridView4_SelectionChanged);
             // 
             // iDDataGridViewTextBoxColumn3
             // 
@@ -914,48 +812,6 @@
             // 
             this.mANAGERDataSetNou.DataSetName = "MANAGERDataSetNou";
             this.mANAGERDataSetNou.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // tbIVA
-            // 
-            this.tbIVA.Location = new System.Drawing.Point(888, 184);
-            this.tbIVA.Name = "tbIVA";
-            this.tbIVA.Size = new System.Drawing.Size(100, 20);
-            this.tbIVA.TabIndex = 11;
-            // 
-            // tbDescompte
-            // 
-            this.tbDescompte.Location = new System.Drawing.Point(888, 152);
-            this.tbDescompte.Name = "tbDescompte";
-            this.tbDescompte.Size = new System.Drawing.Size(100, 20);
-            this.tbDescompte.TabIndex = 10;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(776, 187);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(66, 13);
-            this.label10.TabIndex = 9;
-            this.label10.Text = "IVA (0 - 100)";
-            // 
-            // lbDescompte
-            // 
-            this.lbDescompte.AutoSize = true;
-            this.lbDescompte.Location = new System.Drawing.Point(776, 155);
-            this.lbDescompte.Name = "lbDescompte";
-            this.lbDescompte.Size = new System.Drawing.Size(103, 13);
-            this.lbDescompte.TabIndex = 8;
-            this.lbDescompte.Text = "Descompte (0 - 100)";
-            // 
-            // btComprar
-            // 
-            this.btComprar.Location = new System.Drawing.Point(56, 320);
-            this.btComprar.Name = "btComprar";
-            this.btComprar.Size = new System.Drawing.Size(75, 23);
-            this.btComprar.TabIndex = 7;
-            this.btComprar.Text = "Comprar";
-            this.btComprar.UseVisualStyleBackColor = true;
-            this.btComprar.Click += new System.EventHandler(this.btComprar_Click);
             // 
             // groupBox4
             // 
@@ -1092,27 +948,6 @@
             this.customersBindingSource1.DataMember = "customers";
             this.customersBindingSource1.DataSource = this.mANAGERDataSetNouBindingSource;
             // 
-            // productsBindingSource1
-            // 
-            this.productsBindingSource1.DataMember = "products";
-            this.productsBindingSource1.DataSource = this.managerDataSet;
-            // 
-            // productsTableAdapter
-            // 
-            this.productsTableAdapter.ClearBeforeFill = true;
-            // 
-            // costumersTableAdapter
-            // 
-            this.costumersTableAdapter.ClearBeforeFill = true;
-            // 
-            // invoiceTableAdapter
-            // 
-            this.invoiceTableAdapter.ClearBeforeFill = true;
-            // 
-            // productsTableAdapter1
-            // 
-            this.productsTableAdapter1.ClearBeforeFill = true;
-            // 
             // productsBindingSource2
             // 
             this.productsBindingSource2.DataMember = "products";
@@ -1137,6 +972,48 @@
             // 
             this.productsTableAdapter3.ClearBeforeFill = true;
             // 
+            // btComprar
+            // 
+            this.btComprar.Location = new System.Drawing.Point(56, 320);
+            this.btComprar.Name = "btComprar";
+            this.btComprar.Size = new System.Drawing.Size(75, 23);
+            this.btComprar.TabIndex = 7;
+            this.btComprar.Text = "Comprar";
+            this.btComprar.UseVisualStyleBackColor = true;
+            this.btComprar.Click += new System.EventHandler(this.btComprar_Click);
+            // 
+            // lbDescompte
+            // 
+            this.lbDescompte.AutoSize = true;
+            this.lbDescompte.Location = new System.Drawing.Point(776, 155);
+            this.lbDescompte.Name = "lbDescompte";
+            this.lbDescompte.Size = new System.Drawing.Size(103, 13);
+            this.lbDescompte.TabIndex = 8;
+            this.lbDescompte.Text = "Descompte (0 - 100)";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(776, 187);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(66, 13);
+            this.label10.TabIndex = 9;
+            this.label10.Text = "IVA (0 - 100)";
+            // 
+            // tbDescompte
+            // 
+            this.tbDescompte.Location = new System.Drawing.Point(888, 152);
+            this.tbDescompte.Name = "tbDescompte";
+            this.tbDescompte.Size = new System.Drawing.Size(100, 20);
+            this.tbDescompte.TabIndex = 10;
+            // 
+            // tbIVA
+            // 
+            this.tbIVA.Location = new System.Drawing.Point(888, 184);
+            this.tbIVA.Name = "tbIVA";
+            this.tbIVA.Size = new System.Drawing.Size(100, 20);
+            this.tbIVA.TabIndex = 11;
+            // 
             // iDDataGridViewTextBoxColumn
             // 
             this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
@@ -1159,13 +1036,123 @@
             this.pRICEDataGridViewTextBoxColumn.Name = "pRICEDataGridViewTextBoxColumn";
             this.pRICEDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // IMAGEPATH
+            // productsBindingSource
             // 
-            this.IMAGEPATH.DataPropertyName = "IMAGEPATH";
-            this.IMAGEPATH.HeaderText = "IMAGEPATH";
-            this.IMAGEPATH.Name = "IMAGEPATH";
-            this.IMAGEPATH.ReadOnly = true;
-            this.IMAGEPATH.Visible = false;
+            this.productsBindingSource.DataMember = "products";
+            this.productsBindingSource.DataSource = this.managerDataSet;
+            // 
+            // managerDataSet
+            // 
+            this.managerDataSet.DataSetName = "managerDataSet";
+            this.managerDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // iDDataGridViewTextBoxColumn1
+            // 
+            this.iDDataGridViewTextBoxColumn1.DataPropertyName = "ID";
+            this.iDDataGridViewTextBoxColumn1.HeaderText = "ID";
+            this.iDDataGridViewTextBoxColumn1.Name = "iDDataGridViewTextBoxColumn1";
+            this.iDDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.iDDataGridViewTextBoxColumn1.Visible = false;
+            // 
+            // nAMEDataGridViewTextBoxColumn1
+            // 
+            this.nAMEDataGridViewTextBoxColumn1.DataPropertyName = "NAME";
+            this.nAMEDataGridViewTextBoxColumn1.HeaderText = "NAME";
+            this.nAMEDataGridViewTextBoxColumn1.Name = "nAMEDataGridViewTextBoxColumn1";
+            this.nAMEDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // sURNAME1DataGridViewTextBoxColumn
+            // 
+            this.sURNAME1DataGridViewTextBoxColumn.DataPropertyName = "SURNAME_1";
+            this.sURNAME1DataGridViewTextBoxColumn.HeaderText = "SURNAME_1";
+            this.sURNAME1DataGridViewTextBoxColumn.Name = "sURNAME1DataGridViewTextBoxColumn";
+            this.sURNAME1DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // sURNAME2DataGridViewTextBoxColumn
+            // 
+            this.sURNAME2DataGridViewTextBoxColumn.DataPropertyName = "SURNAME_2";
+            this.sURNAME2DataGridViewTextBoxColumn.HeaderText = "SURNAME_2";
+            this.sURNAME2DataGridViewTextBoxColumn.Name = "sURNAME2DataGridViewTextBoxColumn";
+            this.sURNAME2DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // pOSTALADRESSDataGridViewTextBoxColumn
+            // 
+            this.pOSTALADRESSDataGridViewTextBoxColumn.DataPropertyName = "POSTAL_ADRESS";
+            this.pOSTALADRESSDataGridViewTextBoxColumn.HeaderText = "POSTAL_ADRESS";
+            this.pOSTALADRESSDataGridViewTextBoxColumn.Name = "pOSTALADRESSDataGridViewTextBoxColumn";
+            this.pOSTALADRESSDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // pOSTALCODEDataGridViewTextBoxColumn
+            // 
+            this.pOSTALCODEDataGridViewTextBoxColumn.DataPropertyName = "POSTAL_CODE";
+            this.pOSTALCODEDataGridViewTextBoxColumn.HeaderText = "POSTAL_CODE";
+            this.pOSTALCODEDataGridViewTextBoxColumn.Name = "pOSTALCODEDataGridViewTextBoxColumn";
+            this.pOSTALCODEDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // tOWNDataGridViewTextBoxColumn
+            // 
+            this.tOWNDataGridViewTextBoxColumn.DataPropertyName = "TOWN";
+            this.tOWNDataGridViewTextBoxColumn.HeaderText = "TOWN";
+            this.tOWNDataGridViewTextBoxColumn.Name = "tOWNDataGridViewTextBoxColumn";
+            this.tOWNDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // pROVINCEDataGridViewTextBoxColumn
+            // 
+            this.pROVINCEDataGridViewTextBoxColumn.DataPropertyName = "PROVINCE";
+            this.pROVINCEDataGridViewTextBoxColumn.HeaderText = "PROVINCE";
+            this.pROVINCEDataGridViewTextBoxColumn.Name = "pROVINCEDataGridViewTextBoxColumn";
+            this.pROVINCEDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // tELEPHONEDataGridViewTextBoxColumn
+            // 
+            this.tELEPHONEDataGridViewTextBoxColumn.DataPropertyName = "TELEPHONE";
+            this.tELEPHONEDataGridViewTextBoxColumn.HeaderText = "TELEPHONE";
+            this.tELEPHONEDataGridViewTextBoxColumn.Name = "tELEPHONEDataGridViewTextBoxColumn";
+            this.tELEPHONEDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // fAXDataGridViewTextBoxColumn
+            // 
+            this.fAXDataGridViewTextBoxColumn.DataPropertyName = "FAX";
+            this.fAXDataGridViewTextBoxColumn.HeaderText = "FAX";
+            this.fAXDataGridViewTextBoxColumn.Name = "fAXDataGridViewTextBoxColumn";
+            this.fAXDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // eMAILDataGridViewTextBoxColumn
+            // 
+            this.eMAILDataGridViewTextBoxColumn.DataPropertyName = "EMAIL";
+            this.eMAILDataGridViewTextBoxColumn.HeaderText = "EMAIL";
+            this.eMAILDataGridViewTextBoxColumn.Name = "eMAILDataGridViewTextBoxColumn";
+            this.eMAILDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // customersBindingSource
+            // 
+            this.customersBindingSource.DataMember = "customers";
+            this.customersBindingSource.DataSource = this.managerDataSet;
+            // 
+            // productsBindingSource1
+            // 
+            this.productsBindingSource1.DataMember = "products";
+            this.productsBindingSource1.DataSource = this.managerDataSet;
+            // 
+            // productsTableAdapter
+            // 
+            this.productsTableAdapter.ClearBeforeFill = true;
+            // 
+            // costumersTableAdapter
+            // 
+            this.costumersTableAdapter.ClearBeforeFill = true;
+            // 
+            // invoiceTableAdapter
+            // 
+            this.invoiceTableAdapter.ClearBeforeFill = true;
+            // 
+            // productsTableAdapter1
+            // 
+            this.productsTableAdapter1.ClearBeforeFill = true;
+            // 
+            // invDetailTableAdapter
+            // 
+            this.invDetailTableAdapter.ClearBeforeFill = true;
             // 
             // Form1
             // 
@@ -1177,9 +1164,6 @@
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProducts)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.managerDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).EndInit();
             this.mainTabs.ResumeLayout(false);
             this.TabProductes.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
@@ -1192,7 +1176,6 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCustumers)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customersBindingSource)).EndInit();
             this.tabFactures.ResumeLayout(false);
             this.splitContainer2.Panel1.ResumeLayout(false);
             this.splitContainer2.Panel2.ResumeLayout(false);
@@ -1210,7 +1193,7 @@
             this.splitContainer3.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).EndInit();
             this.splitContainer3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewClientFactura)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.customersBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mANAGERDataSetNou)).EndInit();
             this.groupBox4.ResumeLayout(false);
@@ -1220,8 +1203,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mANAGERDataSetNouBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.customersBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.managerDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customersBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1236,6 +1222,9 @@
         private System.Windows.Forms.TabControl mainTabs;
         private System.Windows.Forms.TabPage TabProductes;
         private System.Windows.Forms.TabPage tabClients;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nAMEDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pRICEDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button btEliminar;
         private System.Windows.Forms.TabPage tabFactures;
         private System.Windows.Forms.TabPage tabDepVendes;
@@ -1260,7 +1249,7 @@
         private System.Windows.Forms.SplitContainer splitContainer3;
         private System.Windows.Forms.TextBox txtBCognomsClient2;
         private System.Windows.Forms.TextBox txtBNomClient2;
-        private System.Windows.Forms.DataGridView dataGridView4;
+        private System.Windows.Forms.DataGridView dataGridViewClientFactura;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.TextBox txtBNomProducte;
         private System.Windows.Forms.Label label1;
@@ -1330,11 +1319,7 @@
         private System.Windows.Forms.Label lbDescompte;
         private System.Windows.Forms.TextBox tbIVA;
         private System.Windows.Forms.TextBox tbDescompte;
-        private System.Windows.Forms.BindingSource productsBindingSource4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nAMEDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn pRICEDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IMAGEPATH;
+        private managerDataSetTableAdapters.inv_detailTableAdapter invDetailTableAdapter;
     }
 }
 

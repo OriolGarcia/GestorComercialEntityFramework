@@ -4974,7 +4974,7 @@ namespace GestorComercialEntityFramework.managerDataSetTableAdapters {
             this._commandCollection[2].Parameters.Add(param);
             this._commandCollection[3] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = "INSERT INTO `products` ( `NAME`, `PRICE`) VALUES ( @p2, @p3)";
+            this._commandCollection[3].CommandText = "INSERT INTO `products` ( `NAME`, `PRICE`,`IMAGEPATH`) VALUES ( @p2, @p3, @p4)";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p2";
@@ -4990,6 +4990,14 @@ namespace GestorComercialEntityFramework.managerDataSetTableAdapters {
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.NewDecimal;
             param.IsNullable = true;
             param.SourceColumn = "PRICE";
+            this._commandCollection[3].Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p4";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Text;
+            param.Size = 2147483647;
+            param.IsNullable = true;
+            param.SourceColumn = "IMAGEPATH";
             this._commandCollection[3].Parameters.Add(param);
         }
         
@@ -5253,7 +5261,7 @@ namespace GestorComercialEntityFramework.managerDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
-        public virtual int InsertQuery(string p2, global::System.Nullable<decimal> p3) {
+        public virtual int InsertQuery(string p2, global::System.Nullable<decimal> p3, string p4) {
             global::MySql.Data.MySqlClient.MySqlCommand command = this.CommandCollection[3];
             if ((p2 == null)) {
                 command.Parameters[0].Value = global::System.DBNull.Value;
@@ -5266,6 +5274,12 @@ namespace GestorComercialEntityFramework.managerDataSetTableAdapters {
             }
             else {
                 command.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((p4 == null)) {
+                command.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[2].Value = ((string)(p4));
             }
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 

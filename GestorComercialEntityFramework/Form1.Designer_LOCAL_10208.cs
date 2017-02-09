@@ -36,9 +36,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridViewProducts = new System.Windows.Forms.DataGridView();
-            this.productsBindingSource4 = new System.Windows.Forms.BindingSource(this.components);
-            this.managerDataSet = new GestorComercialEntityFramework.managerDataSet();
             this.productsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.managerDataSet = new GestorComercialEntityFramework.managerDataSet();
             this.mainTabs = new System.Windows.Forms.TabControl();
             this.TabProductes = new System.Windows.Forms.TabPage();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -136,14 +135,14 @@
             this.customersTableAdapter1 = new GestorComercialEntityFramework.MANAGERDataSetNouTableAdapters.customersTableAdapter();
             this.customersTableAdapter2 = new GestorComercialEntityFramework.MANAGERDataSetNouTableAdapters.customersTableAdapter();
             this.productsTableAdapter3 = new GestorComercialEntityFramework.MANAGERDataSetNouTableAdapters.productsTableAdapter();
+            this.productsBindingSource4 = new System.Windows.Forms.BindingSource(this.components);
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pRICEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IMAGEPATH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProducts)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.managerDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.managerDataSet)).BeginInit();
             this.mainTabs.SuspendLayout();
             this.TabProductes.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -180,6 +179,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.customersBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource4)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridViewProducts
@@ -223,24 +223,18 @@
             this.dataGridViewProducts.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridViewProducts.RowHeadersVisible = false;
             this.dataGridViewProducts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewProducts.Size = new System.Drawing.Size(403, 533);
+            this.dataGridViewProducts.Size = new System.Drawing.Size(245, 302);
             this.dataGridViewProducts.TabIndex = 0;
-            this.dataGridViewProducts.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridViewProducts_CellFormatting);
-            // 
-            // productsBindingSource4
-            // 
-            this.productsBindingSource4.DataMember = "products";
-            this.productsBindingSource4.DataSource = this.managerDataSet;
-            // 
-            // managerDataSet
-            // 
-            this.managerDataSet.DataSetName = "managerDataSet";
-            this.managerDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // productsBindingSource
             // 
             this.productsBindingSource.DataMember = "products";
             this.productsBindingSource.DataSource = this.managerDataSet;
+            // 
+            // managerDataSet
+            // 
+            this.managerDataSet.DataSetName = "managerDataSet";
+            this.managerDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // mainTabs
             // 
@@ -276,7 +270,7 @@
             // 
             this.groupBox3.Controls.Add(this.txtBNomProducte);
             this.groupBox3.Controls.Add(this.label1);
-            this.groupBox3.Location = new System.Drawing.Point(470, 162);
+            this.groupBox3.Location = new System.Drawing.Point(314, 162);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(200, 175);
             this.groupBox3.TabIndex = 4;
@@ -302,7 +296,7 @@
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(498, 64);
+            this.button7.Location = new System.Drawing.Point(342, 64);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(112, 23);
             this.button7.TabIndex = 3;
@@ -312,7 +306,7 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(498, 35);
+            this.button6.Location = new System.Drawing.Point(342, 35);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(112, 23);
             this.button6.TabIndex = 2;
@@ -322,7 +316,7 @@
             // 
             // btEliminar
             // 
-            this.btEliminar.Location = new System.Drawing.Point(498, 104);
+            this.btEliminar.Location = new System.Drawing.Point(342, 104);
             this.btEliminar.Name = "btEliminar";
             this.btEliminar.Size = new System.Drawing.Size(112, 23);
             this.btEliminar.TabIndex = 1;
@@ -1137,6 +1131,11 @@
             // 
             this.productsTableAdapter3.ClearBeforeFill = true;
             // 
+            // productsBindingSource4
+            // 
+            this.productsBindingSource4.DataMember = "products";
+            this.productsBindingSource4.DataSource = this.managerDataSet;
+            // 
             // iDDataGridViewTextBoxColumn
             // 
             this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
@@ -1165,7 +1164,6 @@
             this.IMAGEPATH.HeaderText = "IMAGEPATH";
             this.IMAGEPATH.Name = "IMAGEPATH";
             this.IMAGEPATH.ReadOnly = true;
-            this.IMAGEPATH.Visible = false;
             // 
             // Form1
             // 
@@ -1177,9 +1175,8 @@
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProducts)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.managerDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.managerDataSet)).EndInit();
             this.mainTabs.ResumeLayout(false);
             this.TabProductes.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
@@ -1222,6 +1219,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.customersBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource4)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1330,11 +1328,11 @@
         private System.Windows.Forms.Label lbDescompte;
         private System.Windows.Forms.TextBox tbIVA;
         private System.Windows.Forms.TextBox tbDescompte;
-        private System.Windows.Forms.BindingSource productsBindingSource4;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nAMEDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn pRICEDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn IMAGEPATH;
+        private System.Windows.Forms.BindingSource productsBindingSource4;
     }
 }
 
