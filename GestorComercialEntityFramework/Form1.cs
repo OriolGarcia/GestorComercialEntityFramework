@@ -410,7 +410,7 @@ namespace GestorComercialEntityFramework
             
                 DataGridViewRow client = dataGridViewClientsFactura.SelectedRows[0];
                 DataGridViewRowCollection productes = dataGridViewProductesFactura.Rows;
-                if (invoiceTableAdapter.InsertQuery((int)client.Cells[0].Value, new DateTime(), IVA, descompte) != 0)
+                if (invoiceTableAdapter.InsertQuery((int)client.Cells[0].Value, DateTime.Now, descompte, IVA) != 0)
                 {
                     int invId = (int)invoiceTableAdapter.MaxIdQuery(),
                         prodId;
@@ -424,7 +424,7 @@ namespace GestorComercialEntityFramework
                         prodId = (int) producte.Cells[0].Value;
                         if (productesDictionary.ContainsKey(prodId))
                             productesDictionary[prodId]++;
-                        else productesDictionary.Add(prodId, 0);
+                        else productesDictionary.Add(prodId, 1);
                     }
                     foreach (KeyValuePair<int, int> producte in productesDictionary)
                     {
