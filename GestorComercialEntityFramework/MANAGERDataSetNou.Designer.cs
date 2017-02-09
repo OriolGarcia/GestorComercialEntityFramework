@@ -5120,8 +5120,8 @@ namespace GestorComercialEntityFramework.MANAGERDataSetNouTableAdapters {
             this._commandCollection[4].Parameters.Add(param);
             this._commandCollection[5] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[5].Connection = this.Connection;
-            this._commandCollection[5].CommandText = "UPDATE  `products`  SET  `NAME` = @NOM, `PRICE` = @PREU\r\nWHERE        (`ID` = @ID" +
-                ")";
+            this._commandCollection[5].CommandText = "UPDATE  `products`  SET  `NAME` = @NOM, `PRICE` = @PREU,`IMAGEPATH`=@IMAGEPATH\r\nW" +
+                "HERE        (`ID` = @ID)";
             this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@NOM";
@@ -5137,6 +5137,14 @@ namespace GestorComercialEntityFramework.MANAGERDataSetNouTableAdapters {
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.NewDecimal;
             param.IsNullable = true;
             param.SourceColumn = "PRICE";
+            this._commandCollection[5].Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@IMAGEPATH";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Text;
+            param.Size = 2147483647;
+            param.IsNullable = true;
+            param.SourceColumn = "IMAGEPATH";
             this._commandCollection[5].Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@ID";
@@ -5463,7 +5471,7 @@ namespace GestorComercialEntityFramework.MANAGERDataSetNouTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
-        public virtual int UpdateQuery(string NOM, global::System.Nullable<decimal> PREU, int ID) {
+        public virtual int UpdateQuery(string NOM, global::System.Nullable<decimal> PREU, string IMAGEPATH, int ID) {
             global::MySql.Data.MySqlClient.MySqlCommand command = this.CommandCollection[5];
             if ((NOM == null)) {
                 command.Parameters[0].Value = global::System.DBNull.Value;
@@ -5477,7 +5485,13 @@ namespace GestorComercialEntityFramework.MANAGERDataSetNouTableAdapters {
             else {
                 command.Parameters[1].Value = global::System.DBNull.Value;
             }
-            command.Parameters[2].Value = ((int)(ID));
+            if ((IMAGEPATH == null)) {
+                command.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[2].Value = ((string)(IMAGEPATH));
+            }
+            command.Parameters[3].Value = ((int)(ID));
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {

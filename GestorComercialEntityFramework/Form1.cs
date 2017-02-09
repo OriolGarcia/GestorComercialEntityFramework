@@ -96,7 +96,10 @@ namespace GestorComercialEntityFramework
         {
             this.costumersTableAdapter.FillByFilter(this.managerDataSet.customers,  txtBNomClient.Text, "%" +  txtBNomClient.Text + "%",
              txtBCognomsClient.Text, "%" + txtBCognomsClient.Text + "%", txtBTelefonClient.Text, "%" + txtBTelefonClient.Text + "%");
-            }
+            this.customersTableAdapter2.FillByFilter2(this.mANAGERDataSetNou.customers, txtBNomClient2.Text, txtBCognomsClient2.Text, txtBTelefonClient2.Text, "%" + txtBCognomsClient2.Text + "%",
+             "%" + txtBNomClient2.Text + "%", "%" + txtBTelefonClient2.Text + "%");
+
+        }
         private void btAfegirClient_Click(object sender, EventArgs e)
         {
             FormAfegirClient formAfegirClient = new FormAfegirClient();
@@ -346,15 +349,16 @@ namespace GestorComercialEntityFramework
                     try
                     {
                        
-                        string Id = dataGridViewProducts.SelectedRows[i].Cells[0].Value.ToString();
-                        string Producte = dataGridViewProducts.SelectedRows[i].Cells[1].Value.ToString();
-                       string preu= dataGridViewProducts.SelectedRows[i].Cells[2].Value.ToString();
-                        ModificarProducteForm formModificar = new ModificarProducteForm(Id,Producte,preu);
+                        string Id = dataGridViewProducts.SelectedRows[i].Cells[1].Value.ToString();
+                        string Producte = dataGridViewProducts.SelectedRows[i].Cells[2].Value.ToString();
+                       string preu= dataGridViewProducts.SelectedRows[i].Cells[3].Value.ToString();
+                       string imagepath=  dataGridViewProducts.SelectedRows[i].Cells[4].Value.ToString();
+                        ModificarProducteForm formModificar = new ModificarProducteForm(Id,Producte,preu, imagepath);
 
                         formModificar.FormClosed += new System.Windows.Forms.FormClosedEventHandler(formProducte_FormClosed);
 
                         formModificar.Show();
-
+                        this.productsTableAdapter.FillByFilter(this.managerDataSet.products, txtBNomProducte.Text, "%" + txtBNomProducte.Text + "%");
                     }
                     catch (Exception ex)
                     {
