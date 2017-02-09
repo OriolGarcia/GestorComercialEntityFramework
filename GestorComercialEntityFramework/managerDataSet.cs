@@ -4,6 +4,10 @@
 
     partial class managerDataSet
     {
+        partial class inv_detailDataTable
+        {
+        }
+
         partial class customersDataTable
         {
         }
