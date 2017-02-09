@@ -378,8 +378,8 @@ namespace GestorComercialEntityFramework
                 dataGridView2.Columns[0].Visible = false;
             if (dataGridView3.ColumnCount > 0)
                 dataGridView3.Columns[0].Visible = false;
-            if (dataGridView4.ColumnCount > 0)
-                dataGridView4.Columns[0].Visible = false;
+            if (dataGridViewClientsFactura.ColumnCount > 0)
+                dataGridViewClientsFactura.Columns[0].Visible = false;
             if (dataGridViewProductesFactura.ColumnCount > 0)
                 dataGridViewProductesFactura.Columns[0].Visible = false;
             if (dataGridViewProductesFacturaAfegits.ColumnCount > 0)
@@ -394,7 +394,33 @@ namespace GestorComercialEntityFramework
 
         private void btComprar_Click(object sender, EventArgs e)
         {
-
+            int IVA, descompte;
+            if (!Int32.TryParse(tbIVA.Text, out IVA) || !Int32.TryParse(tbDescompte.Text, out descompte))
+            {
+                IVA = 21;
+                descompte = 0;
+            }
+            if (dataGridViewClientsFactura.SelectedRows.Count == 0) MessageBox.Show("No s'ha seleccionat cap client.");
+            else if (dataGridViewProductesFacturaAfegits.Rows.Count == 0) MessageBox.Show("No s'ha afegit cap producte.");
+            else 
+            {
+                DataGridViewRow client = dataGridViewClientsFactura.SelectedRows[0];
+                DataGridViewRowCollection productes = dataGridViewProductesFactura.Rows;
+                if (invoiceTableAdapter.InsertQuery((int)client.Cells[0].Value, new DateTime(), IVA, descompte) != 0)
+                {
+                    int invId = (int)invoiceTableAdapter.MaxIdQuery(),
+                        prodId;
+                    Dictionary<int, int> productesDictionary = new Dictionary<int, int>();
+                    foreach (DataGridViewRow producte in productes)
+                    {
+                        prodId = (int) producte.Cells[0].Value;
+                        if (productesDictionary.ContainsKey(prodId))
+                            productesDictionary[prodId]++;
+                        else productesDictionary.Add(prodId, 0);
+                    }
+                }
+                else MessageBox.Show("Error al efectuar la compra.");
+            }
         }
 
         private void dataGridViewProducts_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
