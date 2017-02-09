@@ -377,8 +377,8 @@ namespace GestorComercialEntityFramework
         private void amagarIDs() { 
              if(dataGridViewCustumers.ColumnCount>0)
                 dataGridViewCustumers.Columns[0].Visible = false;
-            if (dataGridView2.ColumnCount > 0)
-                dataGridView2.Columns[0].Visible = false;
+            if (dataGridViewInvoice.ColumnCount > 0)
+                dataGridViewInvoice.Columns[0].Visible = false;
             if (dataGridView3.ColumnCount > 0)
                 dataGridView3.Columns[0].Visible = false;
             if (dataGridViewClientsFactura.ColumnCount > 0)
@@ -398,7 +398,7 @@ namespace GestorComercialEntityFramework
         private void btComprar_Click(object sender, EventArgs e)
         {
             int IVA, descompte;
-            if (!Int32.TryParse(tbIVA.Text, out IVA) || !Int32.TryParse(tbDescompte.Text, out descompte))
+            if (!int.TryParse(tbIVA.Text, out IVA) || !int.TryParse(tbDescompte.Text, out descompte))
             {
                 IVA = 21;
                 descompte = 0;
@@ -407,14 +407,18 @@ namespace GestorComercialEntityFramework
             else if (dataGridViewProductesFacturaAfegits.Rows.Count == 0) MessageBox.Show("No s'ha afegit cap producte.");
             else 
             {
-            /*
+            
                 DataGridViewRow client = dataGridViewClientsFactura.SelectedRows[0];
                 DataGridViewRowCollection productes = dataGridViewProductesFactura.Rows;
                 if (invoiceTableAdapter.InsertQuery((int)client.Cells[0].Value, new DateTime(), IVA, descompte) != 0)
                 {
                     int invId = (int)invoiceTableAdapter.MaxIdQuery(),
                         prodId;
+                    Console.WriteLine("Inserted invoice #" + invId);
                     Dictionary<int, int> productesDictionary = new Dictionary<int, int>();
+                    string strOk = "Inserted producte ID: ", 
+                        strErr = "Could not insert producte ID: ";
+                    bool ok;
                     foreach (DataGridViewRow producte in productes)
                     {
                         prodId = (int) producte.Cells[0].Value;
@@ -422,10 +426,16 @@ namespace GestorComercialEntityFramework
                             productesDictionary[prodId]++;
                         else productesDictionary.Add(prodId, 0);
                     }
+                    foreach (KeyValuePair<int, int> producte in productesDictionary)
+                    {
+                        ok = inv_detailTableAdapter.InsertQuery(invId, producte.Key, producte.Value) > 0;
+                        Console.WriteLine((ok ? strOk : strErr) + producte.Key);
+                    }
+                    invoiceTableAdapter.Fill(managerDataSet.invoice);
+                    dataGridViewInvoice.Refresh();
 
-                    
                 }
-                else MessageBox.Show("Error al efectuar la compra.");*/
+                else MessageBox.Show("Error al efectuar la compra.");
             }
         }
 
