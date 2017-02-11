@@ -5133,17 +5133,16 @@ namespace GestorComercialEntityFramework.managerDataSetTableAdapters {
             this._commandCollection[2].Parameters.Add(param);
             this._commandCollection[3] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = "SELECT products.`ID`, products.`NAME`, products.`PRICE`, products.`IMAGEPATH` FRO" +
-                "M `products` INNER JOIN `inv_detail` on `products`.`ID` = `inv_detail`.`PROD_ID`" +
-                " INNER JOIN `invoice` ON `invoice`.`ID`=`inv_detail`.`INV_ID` WHERE `invoice`.`I" +
-                "D`=@p1";
+            this._commandCollection[3].CommandText = "SELECT `ID`, `NAME`, `PRICE`,`IMAGEPATH` FROM `products` INNER JOIN `inv_detail` " +
+                "ON `products`.`ID`=`inv_detail`.`PROD_ID` INNER JOIN `invoice` ON `inv_detail`.`" +
+                "INV_ID`=`invoice`.`ID` WHERE `inv_detail`.`PROD_ID`=@p1";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p1";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "ID";
+            param.SourceColumn = "PROD_ID";
             this._commandCollection[3].Parameters.Add(param);
             this._commandCollection[4] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[4].Connection = this.Connection;
