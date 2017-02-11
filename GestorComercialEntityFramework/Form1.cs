@@ -40,12 +40,17 @@ namespace GestorComercialEntityFramework
         }
         private void Form1_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'managerDataSet1.products' table. You can move, or remove it, as needed.
+            this.productsTableAdapter4.Fill(this.managerDataSet1.products);
+            // TODO: This line of code loads data into the 'managerDataSet1.products' table. You can move, or remove it, as needed.
+            this.productsTableAdapter4.Fill(this.managerDataSet1.products);
             // TODO: This line of code loads data into the 'managerDataSet1.invoice' table. You can move, or remove it, as needed.
             this.invoiceTableAdapter.Fill(this.managerDataSet1.invoice);
             try
             {
 
                 managerDataSet.EnforceConstraints = false;
+                managerDataSet1.EnforceConstraints = false;
                 mANAGERDataSetNou.EnforceConstraints = false;
                 // TODO: This line of code loads data into the 'mANAGERDataSetNou.customers' table. You can move, or remove it, as needed.
                 this.customersTableAdapter2.FillByFilter2(this.mANAGERDataSetNou.customers, txtBNomClient2.Text, txtBCognomsClient2.Text, txtBTelefonClient2.Text, "%" + txtBCognomsClient2.Text + "%",
@@ -395,8 +400,8 @@ namespace GestorComercialEntityFramework
                 dataGridViewCustumers.Columns[0].Visible = false;
             if (dataGridViewInvoice.ColumnCount > 0)
                 dataGridViewInvoice.Columns[0].Visible = false;
-            if (dataGridViewProductesFacturaSelect.ColumnCount > 0)
-                dataGridViewProductesFacturaSelect.Columns[0].Visible = false;
+          //  if (dataGridViewProductesFacturaSelect.ColumnCount > 0)
+           //     dataGridViewProductesFacturaSelect.Columns[0].Visible = false;
             if (dataGridViewClientsFactura.ColumnCount > 0)
                 dataGridViewClientsFactura.Columns[0].Visible = false;
             if (dataGridViewProductesFactura.ColumnCount > 0)
@@ -516,11 +521,17 @@ namespace GestorComercialEntityFramework
             if (dataGridViewInvoice.SelectedRows.Count > 0)
             {
                  DataGridViewRow invoice = dataGridViewInvoice.SelectedRows[0];
-               inv_detailTableAdapter1.FillByIDWithProducts(managerDataSet1.inv_detail,(int)invoice.Cells[0].Value);
                
-              //  productsTableAdapter.FillByInvoice(managerDataSet.products, (int)invoice.Cells[0].Value);
-               dataGridViewProductesFacturaSelect.Refresh();
+              // inv_detailTableAdapter1.FillByIDWithProducts(managerDataSet1.inv_detail,(int)invoice.Cells[0].Value);
+               
+             productsTableAdapter4.FillByInvoice(managerDataSet1.products, (int)invoice.Cells[0].Value);
+              dataGridViewProductesFacturaSelect.Refresh();
             }
+        }
+
+        private void dataGridViewProductesFacturaSelect_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
