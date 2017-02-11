@@ -5133,9 +5133,7 @@ namespace GestorComercialEntityFramework.managerDataSetTableAdapters {
             this._commandCollection[2].Parameters.Add(param);
             this._commandCollection[3] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = "SELECT `ID`, `NAME`, `PRICE`,`IMAGEPATH` FROM `products` INNER JOIN `inv_detail` " +
-                "ON `products`.`ID`=`inv_detail`.`PROD_ID` INNER JOIN `invoice` ON `inv_detail`.`" +
-                "INV_ID`=`invoice`.`ID` WHERE `inv_detail`.`PROD_ID`=@p1";
+            this._commandCollection[3].CommandText = @"SELECT `products`.`ID`, `products`.`NAME`, `products`.`PRICE`, `products`.`IMAGEPATH` FROM `products` INNER JOIN `inv_detail` ON `products`.`ID`=`inv_detail`.`PROD_ID` INNER JOIN `invoice` ON `inv_detail`.`INV_ID`=`invoice`.`ID` WHERE `inv_detail`.`PROD_ID`=@p1";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p1";
