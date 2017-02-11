@@ -380,8 +380,8 @@ namespace GestorComercialEntityFramework
                 dataGridViewCustumers.Columns[0].Visible = false;
             if (dataGridViewInvoice.ColumnCount > 0)
                 dataGridViewInvoice.Columns[0].Visible = false;
-            if (dataGridView3.ColumnCount > 0)
-                dataGridView3.Columns[0].Visible = false;
+            if (dataGridViewProductesFacturaSelect.ColumnCount > 0)
+                dataGridViewProductesFacturaSelect.Columns[0].Visible = false;
             if (dataGridViewClientsFactura.ColumnCount > 0)
                 dataGridViewClientsFactura.Columns[0].Visible = false;
             if (dataGridViewProductesFactura.ColumnCount > 0)
@@ -411,7 +411,7 @@ namespace GestorComercialEntityFramework
             
                 DataGridViewRow client = dataGridViewClientsFactura.SelectedRows[0];
                 DataGridViewRowCollection productes = dataGridViewProductesFactura.Rows;
-                if (invoiceTableAdapter.InsertQuery((int)client.Cells[0].Value, new DateTime(), IVA, descompte) != 0)
+                if (invoiceTableAdapter.InsertQuery((int)client.Cells[0].Value, DateTime.Now, IVA, descompte) != 0)
                 {
                     int invId = (int)invoiceTableAdapter.MaxIdQuery(),
                         prodId;
@@ -434,7 +434,7 @@ namespace GestorComercialEntityFramework
                     }
                     invoiceTableAdapter.Fill(managerDataSet.invoice);
                     dataGridViewInvoice.Refresh();
-
+                    MessageBox.Show("Compra efectuada.");
                 }
                 else MessageBox.Show("Error al efectuar la compra.");
             }
@@ -488,6 +488,16 @@ namespace GestorComercialEntityFramework
                     e.Value = newImage;
                 }
                 
+            }
+        }
+
+        private void dataGridViewInvoice_RowStateChanged(object sender, DataGridViewRowStateChangedEventArgs e)
+        {
+            if (dataGridViewInvoice.SelectedRows.Count > 0)
+            {
+                DataGridViewRow invoice = dataGridViewInvoice.SelectedRows[0];
+                productsTableAdapter.FillByInvoice(managerDataSet.products, (int)invoice.Cells[0].Value);
+                //dataGridViewProductesFacturaSelect.Refresh();
             }
         }
     }
