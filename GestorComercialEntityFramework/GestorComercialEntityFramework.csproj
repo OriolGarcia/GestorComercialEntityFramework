@@ -91,6 +91,14 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>managerDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="managerDataSet1.cs">
+      <DependentUpon>managerDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="managerDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>managerDataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="MANAGERDataSetNou.cs">
       <DependentUpon>MANAGERDataSetNou.xsd</DependentUpon>
     </Compile>
@@ -148,6 +156,17 @@
     </None>
     <None Include="managerDataSet.xss">
       <DependentUpon>managerDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="managerDataSet1.xsc">
+      <DependentUpon>managerDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="managerDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>managerDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="managerDataSet1.xss">
+      <DependentUpon>managerDataSet1.xsd</DependentUpon>
     </None>
     <None Include="MANAGERDataSetNou.xsc">
       <DependentUpon>MANAGERDataSetNou.xsd</DependentUpon>

@@ -40,27 +40,39 @@ namespace GestorComercialEntityFramework
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-            mANAGERDataSetNou.EnforceConstraints = false;
-            // TODO: This line of code loads data into the 'mANAGERDataSetNou.customers' table. You can move, or remove it, as needed.
-            this.customersTableAdapter2.FillByFilter2(this.mANAGERDataSetNou.customers, txtBNomClient2.Text, txtBCognomsClient2.Text, txtBTelefonClient2.Text, "%" + txtBCognomsClient2.Text + "%",
-             "%" + txtBNomClient2.Text + "%", "%" + txtBTelefonClient2.Text + "%");
-            // TODO: This line of code loads data into the 'mANAGERDataSetNou.products' table. You can move, or remove it, as needed.
-            this.productsTableAdapter2.FillByFilter(this.mANAGERDataSetNou.products, txtBNomProducte2.Text, "%" + txtBNomProducte2.Text + "%");
             // TODO: This line of code loads data into the 'managerDataSet1.invoice' table. You can move, or remove it, as needed.
-            this.invoiceTableAdapter.Fill(this.managerDataSet.invoice);
-            // TODO: This line of code loads data into the 'managerDataSet.products' table. You can move, or remove it, as needed.
-            this.productsTableAdapter.FillByFilter(this.managerDataSet.products, txtBNomProducte.Text, "%" + txtBNomProducte.Text + "%");
-            this.costumersTableAdapter.FillByFilter(this.managerDataSet.customers, txtBNomClient.Text, "%" + txtBNomClient.Text + "%",
-             txtBCognomsClient.Text, "%" + txtBCognomsClient.Text + "%", txtBTelefonClient.Text, "%" + txtBTelefonClient.Text + "%");
-            //   dataGridViewProductesFactura.DataSource = productsTableAdapter.Fill(this.managerDataSet.products);
-            //ByFilter txtBNomClient.Text,txtBCognomsClient.Text,txtBCiutatClient.Text);
-
-            foreach (DataGridViewColumn col in dataGridViewProductesFactura.Columns)
+            this.invoiceTableAdapter.Fill(this.managerDataSet1.invoice);
+            try
             {
-                dataGridViewProductesFacturaAfegits.Columns.Add((DataGridViewColumn)col.Clone());
 
+                managerDataSet.EnforceConstraints = false;
+                mANAGERDataSetNou.EnforceConstraints = false;
+                // TODO: This line of code loads data into the 'mANAGERDataSetNou.customers' table. You can move, or remove it, as needed.
+                this.customersTableAdapter2.FillByFilter2(this.mANAGERDataSetNou.customers, txtBNomClient2.Text, txtBCognomsClient2.Text, txtBTelefonClient2.Text, "%" + txtBCognomsClient2.Text + "%",
+                 "%" + txtBNomClient2.Text + "%", "%" + txtBTelefonClient2.Text + "%");
+                // TODO: This line of code loads data into the 'mANAGERDataSetNou.products' table. You can move, or remove it, as needed.
+                this.productsTableAdapter2.FillByFilter(this.mANAGERDataSetNou.products, txtBNomProducte2.Text, "%" + txtBNomProducte2.Text + "%");
+                // TODO: This line of code loads data into the 'managerDataSet1.invoice' table. You can move, or remove it, as needed.
+                this.invoiceTableAdapter3.Fill(this.managerDataSet.invoice);
+                // TODO: This line of code loads data into the 'managerDataSet.products' table. You can move, or remove it, as needed.
+                this.productsTableAdapter.FillByFilter(this.managerDataSet.products, txtBNomProducte.Text, "%" + txtBNomProducte.Text + "%");
+                this.costumersTableAdapter.FillByFilter(this.managerDataSet.customers, txtBNomClient.Text, "%" + txtBNomClient.Text + "%",
+                 txtBCognomsClient.Text, "%" + txtBCognomsClient.Text + "%", txtBTelefonClient.Text, "%" + txtBTelefonClient.Text + "%");
+                //   dataGridViewProductesFactura.DataSource = productsTableAdapter.Fill(this.managerDataSet.products);
+                //ByFilter txtBNomClient.Text,txtBCognomsClient.Text,txtBCiutatClient.Text);
+
+                foreach (DataGridViewColumn col in dataGridViewProductesFactura.Columns)
+                {
+                    dataGridViewProductesFacturaAfegits.Columns.Add((DataGridViewColumn)col.Clone());
+
+                }
+                amagarIDs();
             }
-            amagarIDs();
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+
         }
 
         private void btEliminar_Click(object sender, EventArgs e)
@@ -331,6 +343,9 @@ namespace GestorComercialEntityFramework
         private void formProducte_FormClosed(object sender, FormClosedEventArgs e)
         {
             this.productsTableAdapter.FillByFilter(this.managerDataSet.products, txtBNomProducte.Text, "%" + txtBNomProducte.Text + "%");
+            this.productsTableAdapter2.FillByFilter(this.mANAGERDataSetNou.products, txtBNomProducte2.Text, "%" + txtBNomProducte2.Text + "%");
+
+
         }
         private void button6_Click(object sender, EventArgs e)
         {
@@ -411,9 +426,9 @@ namespace GestorComercialEntityFramework
             
                 DataGridViewRow client = dataGridViewClientsFactura.SelectedRows[0];
                 DataGridViewRowCollection productes = dataGridViewProductesFactura.Rows;
-                if (invoiceTableAdapter.InsertQuery((int)client.Cells[0].Value, DateTime.Now, IVA, descompte) != 0)
+                if (invoiceTableAdapter3.InsertQuery((int)client.Cells[0].Value, DateTime.Now, IVA, descompte) != 0)
                 {
-                    int invId = (int)invoiceTableAdapter.MaxIdQuery(),
+                    int invId = (int)invoiceTableAdapter3.MaxIdQuery(),
                         prodId;
                     Console.WriteLine("Inserted invoice #" + invId);
                     Dictionary<int, int> productesDictionary = new Dictionary<int, int>();
@@ -432,7 +447,7 @@ namespace GestorComercialEntityFramework
                         ok = inv_detailTableAdapter.InsertQuery(invId, producte.Key, producte.Value) > 0;
                         Console.WriteLine((ok ? strOk : strErr) + producte.Key);
                     }
-                    invoiceTableAdapter.Fill(managerDataSet.invoice);
+                    invoiceTableAdapter3.Fill(managerDataSet.invoice);
                     dataGridViewInvoice.Refresh();
                     MessageBox.Show("Compra efectuada.");
                 }
@@ -493,11 +508,18 @@ namespace GestorComercialEntityFramework
 
         private void dataGridViewInvoice_RowStateChanged(object sender, DataGridViewRowStateChangedEventArgs e)
         {
+          
+        }
+
+        private void dataGridViewInvoice_SelectionChanged(object sender, EventArgs e)
+        {
             if (dataGridViewInvoice.SelectedRows.Count > 0)
             {
-                DataGridViewRow invoice = dataGridViewInvoice.SelectedRows[0];
-                productsTableAdapter.FillByInvoice(managerDataSet.products, (int)invoice.Cells[0].Value);
-                //dataGridViewProductesFacturaSelect.Refresh();
+                 DataGridViewRow invoice = dataGridViewInvoice.SelectedRows[0];
+               inv_detailTableAdapter1.FillByIDWithProducts(managerDataSet1.inv_detail,(int)invoice.Cells[0].Value);
+               
+              //  productsTableAdapter.FillByInvoice(managerDataSet.products, (int)invoice.Cells[0].Value);
+               dataGridViewProductesFacturaSelect.Refresh();
             }
         }
     }
