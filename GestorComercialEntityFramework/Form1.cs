@@ -527,17 +527,25 @@ namespace GestorComercialEntityFramework
              productsTableAdapter4.FillByInvoice(managerDataSet1.products, (int)invoice.Cells[0].Value);
                 double Import;
              Double.TryParse((string)productsTableAdapter4.ImportSUMA((int)invoice.Cells[0].Value).ToString(),out Import );
+
+
+              Import=  Math.Round(Import, 2, MidpointRounding.AwayFromZero);
+
+
                 label13.Text = "IMPORT : " + Import+" €";
                  
                 double Descomptepercent;
                 Double.TryParse((string)invoice.Cells["DISCOUNT"].Value.ToString(), out Descomptepercent);
                 double descompte = Import * ( Descomptepercent / 100);
+                descompte= Math.Round(descompte, 2, MidpointRounding.AwayFromZero);
                 label14.Text = "DESCOMPTE :" + descompte + " €";
                 double IVApercent;
                 Double.TryParse((string)invoice.Cells["VAT"].Value.ToString(), out IVApercent);
                 double IVA = (Import - descompte) * ( IVApercent / 100);
+                IVA=  Math.Round(IVA, 2, MidpointRounding.AwayFromZero);
                 label15.Text = "IVA :" + IVA + " €";
                 double Totalapagar = (Import - descompte) + IVA;
+               Totalapagar= Math.Round(Totalapagar, 2, MidpointRounding.AwayFromZero);
                 label16.Text = "TOTAL A PAGAR :" +Totalapagar+ " €";
                 invoice.Cells["DISCOUNT"].Value.ToString();
                 dataGridViewProductesFacturaSelect.Refresh();
@@ -572,6 +580,11 @@ namespace GestorComercialEntityFramework
         }
 
         private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label14_Click(object sender, EventArgs e)
         {
 
         }
