@@ -276,7 +276,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "FormAfegirClient";
-            this.Text = "FormAfegirClient";
+            this.Text = "Afegir Client";
             this.ResumeLayout(false);
             this.PerformLayout();
 

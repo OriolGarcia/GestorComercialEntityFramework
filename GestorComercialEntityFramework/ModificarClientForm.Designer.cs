@@ -273,7 +273,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "ModificarClientForm";
-            this.Text = "Modificar";
+            this.Text = "Modificar Client";
             this.ResumeLayout(false);
             this.PerformLayout();
 

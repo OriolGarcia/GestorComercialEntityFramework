@@ -147,7 +147,7 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.btModificar);
             this.Name = "ModificarProducteForm";
-            this.Text = "ModificarProducteForm";
+            this.Text = "Modificar Producte";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

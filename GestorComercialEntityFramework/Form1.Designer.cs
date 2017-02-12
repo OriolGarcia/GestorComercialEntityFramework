@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle55 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle56 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle57 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle58 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle59 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle60 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridViewProducts = new System.Windows.Forms.DataGridView();
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -80,10 +80,28 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             this.dataGridViewProductesFacturaSelect = new System.Windows.Forms.DataGridView();
+            this.iDDataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nAMEDataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pRICEDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.IMAGEPATH3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.QUANTITY = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tOTALDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productsBindingSource6 = new System.Windows.Forms.BindingSource(this.components);
+            this.managerDataSet1 = new GestorComercialEntityFramework.managerDataSet1();
             this.dataGridViewInvoice = new System.Windows.Forms.DataGridView();
+            this.iDDataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cUSTIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nAMEDataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sURNAME1DataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dATEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DISCOUNT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.VAT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.invoiceBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.tabDepVendes = new System.Windows.Forms.TabPage();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
@@ -121,9 +139,15 @@
             this.textBox10 = new System.Windows.Forms.TextBox();
             this.dataGridViewProductesFacturaAfegits = new System.Windows.Forms.DataGridView();
             this.dataGridViewProductesFactura = new System.Windows.Forms.DataGridView();
+            this.iDDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nAMEDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pRICEDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IMAGEPATH2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
             this.productsBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
             this.mANAGERDataSetNouBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.invdetailibfk2BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.invoiceBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.customersBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.productsBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.invdetailibfk1BindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -143,36 +167,12 @@
             this.productsTableAdapter1 = new GestorComercialEntityFramework.managerDataSetTableAdapters.productsTableAdapter();
             this.inv_detailTableAdapter = new GestorComercialEntityFramework.managerDataSetTableAdapters.inv_detailTableAdapter();
             this.invoiceTableAdapter3 = new GestorComercialEntityFramework.managerDataSetTableAdapters.invoiceTableAdapter();
-            this.label13 = new System.Windows.Forms.Label();
-            this.iDDataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nAMEDataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pRICEDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IMAGEPATH3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tOTALDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productsBindingSource6 = new System.Windows.Forms.BindingSource(this.components);
-            this.managerDataSet1 = new GestorComercialEntityFramework.managerDataSet1();
-            this.invoiceBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.productsBindingSource5 = new System.Windows.Forms.BindingSource(this.components);
             this.invdetailBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.invoiceTableAdapter = new GestorComercialEntityFramework.managerDataSet1TableAdapters.invoiceTableAdapter();
             this.inv_detailTableAdapter1 = new GestorComercialEntityFramework.managerDataSet1TableAdapters.inv_detailTableAdapter();
             this.invoiceTableAdapter1 = new GestorComercialEntityFramework.managerDataSet1TableAdapters.invoiceTableAdapter();
             this.productsTableAdapter4 = new GestorComercialEntityFramework.managerDataSet1TableAdapters.productsTableAdapter();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.iDDataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cUSTIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nAMEDataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sURNAME1DataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dATEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DISCOUNT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.VAT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iDDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nAMEDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pRICEDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IMAGEPATH2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProducts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.managerDataSet)).BeginInit();
@@ -194,6 +194,8 @@
             this.splitContainer2.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProductesFacturaSelect)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.managerDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewInvoice)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.invoiceBindingSource1)).BeginInit();
             this.tabDepVendes.SuspendLayout();
@@ -212,6 +214,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mANAGERDataSetNouBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.invdetailibfk2BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.invoiceBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customersBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.invdetailibfk1BindingSource)).BeginInit();
@@ -220,9 +223,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.invoiceBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.managerDataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.invoiceBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.invdetailBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -232,14 +232,14 @@
             this.dataGridViewProducts.AllowUserToAddRows = false;
             this.dataGridViewProducts.AutoGenerateColumns = false;
             this.dataGridViewProducts.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle55.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle55.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle55.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle55.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle55.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle55.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle55.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewProducts.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle55;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewProducts.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewProducts.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.iDDataGridViewTextBoxColumn,
@@ -247,25 +247,25 @@
             this.pRICEDataGridViewTextBoxColumn,
             this.IMAGEPATH});
             this.dataGridViewProducts.DataSource = this.productsBindingSource4;
-            dataGridViewCellStyle56.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle56.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle56.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle56.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle56.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle56.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle56.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewProducts.DefaultCellStyle = dataGridViewCellStyle56;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewProducts.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewProducts.Location = new System.Drawing.Point(48, 35);
             this.dataGridViewProducts.Name = "dataGridViewProducts";
             this.dataGridViewProducts.ReadOnly = true;
-            dataGridViewCellStyle57.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle57.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle57.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle57.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle57.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle57.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle57.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewProducts.RowHeadersDefaultCellStyle = dataGridViewCellStyle57;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewProducts.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridViewProducts.RowHeadersVisible = false;
             this.dataGridViewProducts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewProducts.Size = new System.Drawing.Size(403, 533);
@@ -537,14 +537,14 @@
             // 
             this.dataGridViewCustumers.AllowUserToAddRows = false;
             this.dataGridViewCustumers.AutoGenerateColumns = false;
-            dataGridViewCellStyle58.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle58.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle58.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle58.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle58.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle58.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle58.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewCustumers.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle58;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewCustumers.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridViewCustumers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewCustumers.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.iDDataGridViewTextBoxColumn1,
@@ -559,25 +559,25 @@
             this.fAXDataGridViewTextBoxColumn,
             this.eMAILDataGridViewTextBoxColumn});
             this.dataGridViewCustumers.DataSource = this.customersBindingSource;
-            dataGridViewCellStyle59.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle59.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle59.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle59.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle59.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle59.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle59.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewCustumers.DefaultCellStyle = dataGridViewCellStyle59;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewCustumers.DefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridViewCustumers.Location = new System.Drawing.Point(19, 25);
             this.dataGridViewCustumers.Name = "dataGridViewCustumers";
             this.dataGridViewCustumers.ReadOnly = true;
-            dataGridViewCellStyle60.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle60.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle60.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle60.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle60.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle60.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle60.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewCustumers.RowHeadersDefaultCellStyle = dataGridViewCellStyle60;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewCustumers.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridViewCustumers.RowHeadersVisible = false;
             this.dataGridViewCustumers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewCustumers.Size = new System.Drawing.Size(1002, 268);
@@ -731,6 +731,43 @@
             this.label11.TabIndex = 3;
             this.label11.Text = "Registre de Factures:";
             // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(881, 367);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(95, 13);
+            this.label16.TabIndex = 13;
+            this.label16.Text = "TOTAL A PAGAR:";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(886, 344);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(27, 13);
+            this.label15.TabIndex = 12;
+            this.label15.Text = "IVA:";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(886, 317);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(77, 13);
+            this.label14.TabIndex = 11;
+            this.label14.Text = "DESCOMPTE:";
+            this.label14.Click += new System.EventHandler(this.label14_Click);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(886, 293);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(90, 13);
+            this.label13.TabIndex = 10;
+            this.label13.Text = "IMPORT TOTAL:";
+            // 
             // dataGridViewProductesFacturaSelect
             // 
             this.dataGridViewProductesFacturaSelect.AllowUserToAddRows = false;
@@ -755,11 +792,41 @@
             this.dataGridViewProductesFacturaSelect.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewProductesFacturaSelect_CellContentClick_1);
             this.dataGridViewProductesFacturaSelect.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridViewProductesFacturaSelect_CellFormatting);
             // 
+            // iDDataGridViewTextBoxColumn4
+            // 
+            this.iDDataGridViewTextBoxColumn4.DataPropertyName = "ID";
+            this.iDDataGridViewTextBoxColumn4.HeaderText = "ID";
+            this.iDDataGridViewTextBoxColumn4.Name = "iDDataGridViewTextBoxColumn4";
+            this.iDDataGridViewTextBoxColumn4.ReadOnly = true;
+            this.iDDataGridViewTextBoxColumn4.Visible = false;
+            // 
+            // nAMEDataGridViewTextBoxColumn4
+            // 
+            this.nAMEDataGridViewTextBoxColumn4.DataPropertyName = "NAME";
+            this.nAMEDataGridViewTextBoxColumn4.HeaderText = "NAME";
+            this.nAMEDataGridViewTextBoxColumn4.Name = "nAMEDataGridViewTextBoxColumn4";
+            this.nAMEDataGridViewTextBoxColumn4.ReadOnly = true;
+            // 
+            // pRICEDataGridViewTextBoxColumn2
+            // 
+            this.pRICEDataGridViewTextBoxColumn2.DataPropertyName = "PRICE";
+            this.pRICEDataGridViewTextBoxColumn2.HeaderText = "PRICE";
+            this.pRICEDataGridViewTextBoxColumn2.Name = "pRICEDataGridViewTextBoxColumn2";
+            this.pRICEDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
             // ImageColumn2
             // 
             this.ImageColumn2.HeaderText = "Image";
             this.ImageColumn2.Name = "ImageColumn2";
             this.ImageColumn2.ReadOnly = true;
+            // 
+            // IMAGEPATH3
+            // 
+            this.IMAGEPATH3.DataPropertyName = "IMAGEPATH";
+            this.IMAGEPATH3.HeaderText = "IMAGEPATH";
+            this.IMAGEPATH3.Name = "IMAGEPATH3";
+            this.IMAGEPATH3.ReadOnly = true;
+            this.IMAGEPATH3.Visible = false;
             // 
             // QUANTITY
             // 
@@ -767,6 +834,23 @@
             this.QUANTITY.HeaderText = "QUANTITY";
             this.QUANTITY.Name = "QUANTITY";
             this.QUANTITY.ReadOnly = true;
+            // 
+            // tOTALDataGridViewTextBoxColumn
+            // 
+            this.tOTALDataGridViewTextBoxColumn.DataPropertyName = "TOTAL";
+            this.tOTALDataGridViewTextBoxColumn.HeaderText = "TOTAL";
+            this.tOTALDataGridViewTextBoxColumn.Name = "tOTALDataGridViewTextBoxColumn";
+            this.tOTALDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // productsBindingSource6
+            // 
+            this.productsBindingSource6.DataMember = "products";
+            this.productsBindingSource6.DataSource = this.managerDataSet1;
+            // 
+            // managerDataSet1
+            // 
+            this.managerDataSet1.DataSetName = "managerDataSet1";
+            this.managerDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // dataGridViewInvoice
             // 
@@ -794,6 +878,57 @@
             this.dataGridViewInvoice.TabIndex = 8;
             this.dataGridViewInvoice.RowStateChanged += new System.Windows.Forms.DataGridViewRowStateChangedEventHandler(this.dataGridViewInvoice_RowStateChanged);
             this.dataGridViewInvoice.SelectionChanged += new System.EventHandler(this.dataGridViewInvoice_SelectionChanged);
+            // 
+            // iDDataGridViewTextBoxColumn5
+            // 
+            this.iDDataGridViewTextBoxColumn5.DataPropertyName = "ID";
+            this.iDDataGridViewTextBoxColumn5.HeaderText = "ID";
+            this.iDDataGridViewTextBoxColumn5.Name = "iDDataGridViewTextBoxColumn5";
+            this.iDDataGridViewTextBoxColumn5.ReadOnly = true;
+            this.iDDataGridViewTextBoxColumn5.Visible = false;
+            // 
+            // cUSTIDDataGridViewTextBoxColumn
+            // 
+            this.cUSTIDDataGridViewTextBoxColumn.DataPropertyName = "CUST_ID";
+            this.cUSTIDDataGridViewTextBoxColumn.HeaderText = "CUST_ID";
+            this.cUSTIDDataGridViewTextBoxColumn.Name = "cUSTIDDataGridViewTextBoxColumn";
+            this.cUSTIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.cUSTIDDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // nAMEDataGridViewTextBoxColumn5
+            // 
+            this.nAMEDataGridViewTextBoxColumn5.DataPropertyName = "NAME";
+            this.nAMEDataGridViewTextBoxColumn5.HeaderText = "NAME";
+            this.nAMEDataGridViewTextBoxColumn5.Name = "nAMEDataGridViewTextBoxColumn5";
+            this.nAMEDataGridViewTextBoxColumn5.ReadOnly = true;
+            // 
+            // sURNAME1DataGridViewTextBoxColumn2
+            // 
+            this.sURNAME1DataGridViewTextBoxColumn2.DataPropertyName = "SURNAME_1";
+            this.sURNAME1DataGridViewTextBoxColumn2.HeaderText = "SURNAME_1";
+            this.sURNAME1DataGridViewTextBoxColumn2.Name = "sURNAME1DataGridViewTextBoxColumn2";
+            this.sURNAME1DataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // dATEDataGridViewTextBoxColumn
+            // 
+            this.dATEDataGridViewTextBoxColumn.DataPropertyName = "DATE";
+            this.dATEDataGridViewTextBoxColumn.HeaderText = "DATE";
+            this.dATEDataGridViewTextBoxColumn.Name = "dATEDataGridViewTextBoxColumn";
+            this.dATEDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // DISCOUNT
+            // 
+            this.DISCOUNT.DataPropertyName = "DISCOUNT";
+            this.DISCOUNT.HeaderText = "DISCOUNT";
+            this.DISCOUNT.Name = "DISCOUNT";
+            this.DISCOUNT.ReadOnly = true;
+            // 
+            // VAT
+            // 
+            this.VAT.DataPropertyName = "VAT";
+            this.VAT.HeaderText = "VAT";
+            this.VAT.Name = "VAT";
+            this.VAT.ReadOnly = true;
             // 
             // invoiceBindingSource1
             // 
@@ -1162,6 +1297,42 @@
             this.dataGridViewProductesFactura.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewProductesFactura_CellContentClick);
             this.dataGridViewProductesFactura.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridViewProductesFactura_CellFormatting);
             // 
+            // iDDataGridViewTextBoxColumn2
+            // 
+            this.iDDataGridViewTextBoxColumn2.DataPropertyName = "ID";
+            this.iDDataGridViewTextBoxColumn2.HeaderText = "ID";
+            this.iDDataGridViewTextBoxColumn2.Name = "iDDataGridViewTextBoxColumn2";
+            this.iDDataGridViewTextBoxColumn2.ReadOnly = true;
+            this.iDDataGridViewTextBoxColumn2.Visible = false;
+            // 
+            // nAMEDataGridViewTextBoxColumn2
+            // 
+            this.nAMEDataGridViewTextBoxColumn2.DataPropertyName = "NAME";
+            this.nAMEDataGridViewTextBoxColumn2.HeaderText = "NAME";
+            this.nAMEDataGridViewTextBoxColumn2.Name = "nAMEDataGridViewTextBoxColumn2";
+            this.nAMEDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // pRICEDataGridViewTextBoxColumn1
+            // 
+            this.pRICEDataGridViewTextBoxColumn1.DataPropertyName = "PRICE";
+            this.pRICEDataGridViewTextBoxColumn1.HeaderText = "PRICE";
+            this.pRICEDataGridViewTextBoxColumn1.Name = "pRICEDataGridViewTextBoxColumn1";
+            this.pRICEDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // IMAGEPATH2
+            // 
+            this.IMAGEPATH2.DataPropertyName = "IMAGEPATH";
+            this.IMAGEPATH2.HeaderText = "IMAGEPATH";
+            this.IMAGEPATH2.Name = "IMAGEPATH2";
+            this.IMAGEPATH2.ReadOnly = true;
+            this.IMAGEPATH2.Visible = false;
+            // 
+            // ImageColumn
+            // 
+            this.ImageColumn.HeaderText = "ImageColumn";
+            this.ImageColumn.Name = "ImageColumn";
+            this.ImageColumn.ReadOnly = true;
+            // 
             // productsBindingSource3
             // 
             this.productsBindingSource3.DataMember = "products";
@@ -1176,6 +1347,11 @@
             // 
             this.invdetailibfk2BindingSource.DataMember = "inv_detail_ibfk_2";
             this.invdetailibfk2BindingSource.DataSource = this.invoiceBindingSource2;
+            // 
+            // invoiceBindingSource2
+            // 
+            this.invoiceBindingSource2.DataMember = "invoice";
+            this.invoiceBindingSource2.DataSource = this.managerDataSet1;
             // 
             // customersBindingSource1
             // 
@@ -1260,67 +1436,6 @@
             // 
             this.invoiceTableAdapter3.ClearBeforeFill = true;
             // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(886, 293);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(90, 13);
-            this.label13.TabIndex = 10;
-            this.label13.Text = "IMPORT TOTAL:";
-            // 
-            // iDDataGridViewTextBoxColumn4
-            // 
-            this.iDDataGridViewTextBoxColumn4.DataPropertyName = "ID";
-            this.iDDataGridViewTextBoxColumn4.HeaderText = "ID";
-            this.iDDataGridViewTextBoxColumn4.Name = "iDDataGridViewTextBoxColumn4";
-            this.iDDataGridViewTextBoxColumn4.ReadOnly = true;
-            this.iDDataGridViewTextBoxColumn4.Visible = false;
-            // 
-            // nAMEDataGridViewTextBoxColumn4
-            // 
-            this.nAMEDataGridViewTextBoxColumn4.DataPropertyName = "NAME";
-            this.nAMEDataGridViewTextBoxColumn4.HeaderText = "NAME";
-            this.nAMEDataGridViewTextBoxColumn4.Name = "nAMEDataGridViewTextBoxColumn4";
-            this.nAMEDataGridViewTextBoxColumn4.ReadOnly = true;
-            // 
-            // pRICEDataGridViewTextBoxColumn2
-            // 
-            this.pRICEDataGridViewTextBoxColumn2.DataPropertyName = "PRICE";
-            this.pRICEDataGridViewTextBoxColumn2.HeaderText = "PRICE";
-            this.pRICEDataGridViewTextBoxColumn2.Name = "pRICEDataGridViewTextBoxColumn2";
-            this.pRICEDataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // IMAGEPATH3
-            // 
-            this.IMAGEPATH3.DataPropertyName = "IMAGEPATH";
-            this.IMAGEPATH3.HeaderText = "IMAGEPATH";
-            this.IMAGEPATH3.Name = "IMAGEPATH3";
-            this.IMAGEPATH3.ReadOnly = true;
-            this.IMAGEPATH3.Visible = false;
-            // 
-            // tOTALDataGridViewTextBoxColumn
-            // 
-            this.tOTALDataGridViewTextBoxColumn.DataPropertyName = "TOTAL";
-            this.tOTALDataGridViewTextBoxColumn.HeaderText = "TOTAL";
-            this.tOTALDataGridViewTextBoxColumn.Name = "tOTALDataGridViewTextBoxColumn";
-            this.tOTALDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // productsBindingSource6
-            // 
-            this.productsBindingSource6.DataMember = "products";
-            this.productsBindingSource6.DataSource = this.managerDataSet1;
-            // 
-            // managerDataSet1
-            // 
-            this.managerDataSet1.DataSetName = "managerDataSet1";
-            this.managerDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // invoiceBindingSource2
-            // 
-            this.invoiceBindingSource2.DataMember = "invoice";
-            this.invoiceBindingSource2.DataSource = this.managerDataSet1;
-            // 
             // productsBindingSource5
             // 
             this.productsBindingSource5.DataMember = "products";
@@ -1347,121 +1462,6 @@
             // 
             this.productsTableAdapter4.ClearBeforeFill = true;
             // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(886, 317);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(77, 13);
-            this.label14.TabIndex = 11;
-            this.label14.Text = "DESCOMPTE:";
-            this.label14.Click += new System.EventHandler(this.label14_Click);
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(886, 344);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(27, 13);
-            this.label15.TabIndex = 12;
-            this.label15.Text = "IVA:";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(881, 367);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(95, 13);
-            this.label16.TabIndex = 13;
-            this.label16.Text = "TOTAL A PAGAR:";
-            // 
-            // iDDataGridViewTextBoxColumn5
-            // 
-            this.iDDataGridViewTextBoxColumn5.DataPropertyName = "ID";
-            this.iDDataGridViewTextBoxColumn5.HeaderText = "ID";
-            this.iDDataGridViewTextBoxColumn5.Name = "iDDataGridViewTextBoxColumn5";
-            this.iDDataGridViewTextBoxColumn5.ReadOnly = true;
-            this.iDDataGridViewTextBoxColumn5.Visible = false;
-            // 
-            // cUSTIDDataGridViewTextBoxColumn
-            // 
-            this.cUSTIDDataGridViewTextBoxColumn.DataPropertyName = "CUST_ID";
-            this.cUSTIDDataGridViewTextBoxColumn.HeaderText = "CUST_ID";
-            this.cUSTIDDataGridViewTextBoxColumn.Name = "cUSTIDDataGridViewTextBoxColumn";
-            this.cUSTIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.cUSTIDDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // nAMEDataGridViewTextBoxColumn5
-            // 
-            this.nAMEDataGridViewTextBoxColumn5.DataPropertyName = "NAME";
-            this.nAMEDataGridViewTextBoxColumn5.HeaderText = "NAME";
-            this.nAMEDataGridViewTextBoxColumn5.Name = "nAMEDataGridViewTextBoxColumn5";
-            this.nAMEDataGridViewTextBoxColumn5.ReadOnly = true;
-            // 
-            // sURNAME1DataGridViewTextBoxColumn2
-            // 
-            this.sURNAME1DataGridViewTextBoxColumn2.DataPropertyName = "SURNAME_1";
-            this.sURNAME1DataGridViewTextBoxColumn2.HeaderText = "SURNAME_1";
-            this.sURNAME1DataGridViewTextBoxColumn2.Name = "sURNAME1DataGridViewTextBoxColumn2";
-            this.sURNAME1DataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // dATEDataGridViewTextBoxColumn
-            // 
-            this.dATEDataGridViewTextBoxColumn.DataPropertyName = "DATE";
-            this.dATEDataGridViewTextBoxColumn.HeaderText = "DATE";
-            this.dATEDataGridViewTextBoxColumn.Name = "dATEDataGridViewTextBoxColumn";
-            this.dATEDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // DISCOUNT
-            // 
-            this.DISCOUNT.DataPropertyName = "DISCOUNT";
-            this.DISCOUNT.HeaderText = "DISCOUNT";
-            this.DISCOUNT.Name = "DISCOUNT";
-            this.DISCOUNT.ReadOnly = true;
-            // 
-            // VAT
-            // 
-            this.VAT.DataPropertyName = "VAT";
-            this.VAT.HeaderText = "VAT";
-            this.VAT.Name = "VAT";
-            this.VAT.ReadOnly = true;
-            // 
-            // iDDataGridViewTextBoxColumn2
-            // 
-            this.iDDataGridViewTextBoxColumn2.DataPropertyName = "ID";
-            this.iDDataGridViewTextBoxColumn2.HeaderText = "ID";
-            this.iDDataGridViewTextBoxColumn2.Name = "iDDataGridViewTextBoxColumn2";
-            this.iDDataGridViewTextBoxColumn2.ReadOnly = true;
-            this.iDDataGridViewTextBoxColumn2.Visible = false;
-            // 
-            // nAMEDataGridViewTextBoxColumn2
-            // 
-            this.nAMEDataGridViewTextBoxColumn2.DataPropertyName = "NAME";
-            this.nAMEDataGridViewTextBoxColumn2.HeaderText = "NAME";
-            this.nAMEDataGridViewTextBoxColumn2.Name = "nAMEDataGridViewTextBoxColumn2";
-            this.nAMEDataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // pRICEDataGridViewTextBoxColumn1
-            // 
-            this.pRICEDataGridViewTextBoxColumn1.DataPropertyName = "PRICE";
-            this.pRICEDataGridViewTextBoxColumn1.HeaderText = "PRICE";
-            this.pRICEDataGridViewTextBoxColumn1.Name = "pRICEDataGridViewTextBoxColumn1";
-            this.pRICEDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // IMAGEPATH2
-            // 
-            this.IMAGEPATH2.DataPropertyName = "IMAGEPATH";
-            this.IMAGEPATH2.HeaderText = "IMAGEPATH";
-            this.IMAGEPATH2.Name = "IMAGEPATH2";
-            this.IMAGEPATH2.ReadOnly = true;
-            this.IMAGEPATH2.Visible = false;
-            // 
-            // ImageColumn
-            // 
-            this.ImageColumn.HeaderText = "ImageColumn";
-            this.ImageColumn.Name = "ImageColumn";
-            this.ImageColumn.ReadOnly = true;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1471,7 +1471,7 @@
             this.Controls.Add(this.mainTabs);
             this.MinimumSize = new System.Drawing.Size(1038, 649);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Gestor Comercial";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProducts)).EndInit();
@@ -1499,6 +1499,8 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProductesFacturaSelect)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.managerDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewInvoice)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.invoiceBindingSource1)).EndInit();
             this.tabDepVendes.ResumeLayout(false);
@@ -1520,6 +1522,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mANAGERDataSetNouBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.invdetailibfk2BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.invoiceBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.customersBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.invdetailibfk1BindingSource)).EndInit();
@@ -1528,9 +1531,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.invoiceBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.managerDataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.invoiceBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.invdetailBindingSource)).EndInit();
             this.ResumeLayout(false);
