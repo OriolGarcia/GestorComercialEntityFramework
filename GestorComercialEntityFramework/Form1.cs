@@ -19,7 +19,7 @@ namespace GestorComercialEntityFramework
         {
 
             InitializeComponent();
-
+            //Primer sinnsereixen les columnes o se'ls hipa mida
             InsertColumns(dataGridViewProducts);
            dataGridViewProductesFactura.Columns["ImageColumn"].Width = 100;
             dataGridViewProductesFactura.RowTemplate.Height = 100;
@@ -42,18 +42,14 @@ namespace GestorComercialEntityFramework
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'managerDataSet1.inv_detail' table. You can move, or remove it, as needed.
-            this.inv_detailTableAdapter1.Fill(this.managerDataSet1.inv_detail);
-            // TODO: This line of code loads data into the 'managerDataSet1.products' table. You can move, or remove it, as needed.
-            // this.productsTableAdapter4.Fill(this.managerDataSet1.products);
-            // TODO: This line of code loads data into the 'managerDataSet1.products' table. You can move, or remove it, as needed.
-            //   this.productsTableAdapter4.Fill(this.managerDataSet1.products);
-            // TODO: This line of code loads data into the 'managerDataSet1.invoice' table. You can move, or remove it, as needed.
-            //  this.invoiceTableAdapter.Fill(this.managerDataSet1.invoice);
+     
 
             try
             {
-               managerDataSet.EnforceConstraints = false;
+
+            //FEnt us de la sentència try catch s'inicialitzen les taules
+                this.inv_detailTableAdapter1.Fill(this.managerDataSet1.inv_detail);
+                managerDataSet.EnforceConstraints = false;
                 managerDataSet1.EnforceConstraints = false;
                 mANAGERDataSetNou.EnforceConstraints = false;
                 // TODO: This line of code loads data into the 'mANAGERDataSetNou.customers' table. You can move, or remove it, as needed.
@@ -87,6 +83,7 @@ namespace GestorComercialEntityFramework
         private void btEliminar_Click(object sender, EventArgs e)
         {
 
+        //En cas de clicar la tecla eliminar a productes hi hagi més d'una fila seleccionada s'eliminen cadascun dels registres.
             int selectedRowCount = dataGridViewProducts.Rows.GetRowCount(DataGridViewElementStates.Selected);
             if (selectedRowCount > 0)
             {
@@ -101,6 +98,8 @@ namespace GestorComercialEntityFramework
 
                         try
                         {
+
+                        /// s'agafa el id del producte i s'elimina amb Entity Framework
                             int ProductId = 0;
                             Int32.TryParse(dataGridViewProducts.SelectedRows[0].Cells[0].Value.ToString(),out ProductId);
                             this.productsTableAdapter.DeleteQuery(ProductId);
@@ -119,6 +118,7 @@ namespace GestorComercialEntityFramework
         }
         private void formClient_FormClosed(object sender, FormClosedEventArgs e)
         {
+        //En cas que una finestra del clien es tanqui s'actualitza la taula ja sigui despres de inserir o de modificar.
             this.costumersTableAdapter.FillByFilter(this.managerDataSet.customers,  txtBNomClient.Text, "%" +  txtBNomClient.Text + "%",
              txtBCognomsClient.Text, "%" + txtBCognomsClient.Text + "%", txtBTelefonClient.Text, "%" + txtBTelefonClient.Text + "%");
             this.customersTableAdapter2.FillByFilter2(this.mANAGERDataSetNou.customers, txtBNomClient2.Text, txtBCognomsClient2.Text, txtBTelefonClient2.Text, "%" + txtBCognomsClient2.Text + "%",
@@ -127,6 +127,8 @@ namespace GestorComercialEntityFramework
         }
         private void btAfegirClient_Click(object sender, EventArgs e)
         {
+
+        //S'obre el formulari de afegir client.
             FormAfegirClient formAfegirClient = new FormAfegirClient();
 
             formAfegirClient.FormClosed += new System.Windows.Forms.FormClosedEventHandler(formClient_FormClosed);
@@ -136,6 +138,8 @@ namespace GestorComercialEntityFramework
 
         private void fillToolStripButton_Click(object sender, EventArgs e)
         {
+
+        //s'omple la taula clients
             try
             {
                 this.costumersTableAdapter.Fill(this.managerDataSet.customers);
@@ -160,7 +164,7 @@ namespace GestorComercialEntityFramework
             }
 
         }
-
+        //En cas que el nom del clien canvi es torna a fer una cerca
         private void txtBNomClient_TextChanged(object sender, EventArgs e)
         {
             try
@@ -178,7 +182,7 @@ namespace GestorComercialEntityFramework
         {
 
         }
-
+        //en cas que els cognoms canviin es torna a fer la cerca
         private void txtBCognomsClient_TextChanged(object sender, EventArgs e)
         {
             try
@@ -191,7 +195,7 @@ namespace GestorComercialEntityFramework
                 System.Windows.Forms.MessageBox.Show(ex.Message);
             }
         }
-
+        //En cas que la ciutat canvii es torna a fer la cerca
         private void txtBCiutatClient_TextChanged(object sender, EventArgs e)
         {
             try
@@ -207,7 +211,7 @@ namespace GestorComercialEntityFramework
 
         private void btEliminarClient_Click(object sender, EventArgs e)
         {
-
+                //Si es vol eliminar un client en cas que hi hagi una fila o mes seleccionada es pregunta.
             int selectedRowCount = dataGridViewCustumers.Rows.GetRowCount(DataGridViewElementStates.Selected);
             if (selectedRowCount > 0)
             {
@@ -219,7 +223,7 @@ namespace GestorComercialEntityFramework
                     System.Text.StringBuilder sb = new System.Text.StringBuilder();
                     for (int i = 0; i < selectedRowCount; i++)
                     {
-
+                    //utilitzem try catch cada cop que volem eliminar un registre
                         try
                         {
                             int Id = 0;
@@ -239,12 +243,13 @@ namespace GestorComercialEntityFramework
 
             }
         }
-
+        //En cas que el nom del producte canvii fem una nova cerca
         private void txtBNomProducte_TextChanged(object sender, EventArgs e)
         {
             this.productsTableAdapter.FillByFilter(this.managerDataSet.products, txtBNomProducte.Text, "%" + txtBNomProducte.Text + "%");
         }
-
+        //Aquest botó és el botó per treure de la llista de productes comprats
+        // Les files seleccionsades s'esborren
        private void btTreure_Click(object sender, EventArgs e)
         {
             var rows = dataGridViewProductesFacturaAfegits.SelectedRows;
@@ -252,7 +257,8 @@ namespace GestorComercialEntityFramework
                 dataGridViewProductesFacturaAfegits.Rows.RemoveAt(row.Index);
             dataGridViewProductesFacturaAfegits.Refresh();
         }
-
+        //Aquest botó és el botó de afegir files
+        // Es copien totes i cadacuna de les caselles de cada fila seleccionada
         private void btAfegir_Click_1(object sender, EventArgs e)
         {
             var rows = dataGridViewProductesFactura.SelectedRows;
@@ -273,7 +279,7 @@ namespace GestorComercialEntityFramework
                     dataGridViewProductesFacturaAfegits.Refresh();
                 }
         }
-
+        //en cas que el nom del camp d cerca 2 canvii es torna a fer una cerca
         private void txtBNomProducte2_TextChanged(object sender, EventArgs e)
         {
             this.productsTableAdapter2.FillByFilter(this.mANAGERDataSetNou.products, txtBNomProducte2.Text, "%" + txtBNomProducte2.Text + "%");
@@ -283,7 +289,7 @@ namespace GestorComercialEntityFramework
         {
 
         }
-
+        //En cas que volguem fer una modificació d'un client es passa com a parametre el que hi ha i s'envia al formulari de modificació
         private void btModificar_Click(object sender, EventArgs e)
         {
 
@@ -326,19 +332,19 @@ namespace GestorComercialEntityFramework
                 }
             }
             }
-
+            //En cas que es canvii el nom del client es fa una nova cerca
         private void txtBNomClient2_TextChanged(object sender, EventArgs e)
         {
             this.customersTableAdapter2.FillByFilter2(this.mANAGERDataSetNou.customers, txtBNomClient2.Text, txtBCognomsClient2.Text, txtBTelefonClient2.Text, "%" + txtBCognomsClient2.Text + "%",
              "%" + txtBNomClient2.Text + "%",     "%" + txtBTelefonClient2.Text + "%");
         }
-
+        //idem amb els cognoms
         private void txtBCognomsClient2_TextChanged(object sender, EventArgs e)
         {
             this.customersTableAdapter2.FillByFilter2(this.mANAGERDataSetNou.customers, txtBNomClient2.Text, txtBCognomsClient2.Text, txtBTelefonClient2.Text, "%" + txtBCognomsClient2.Text + "%",
               "%" + txtBNomClient2.Text + "%", "%" + txtBTelefonClient2.Text + "%");
         }
-
+        //idem amb el telefon
         private void txtBTelefonClient2_TextChanged(object sender, EventArgs e)
         {
             this.customersTableAdapter2.FillByFilter2(this.mANAGERDataSetNou.customers, txtBNomClient2.Text, txtBCognomsClient2.Text, txtBTelefonClient2.Text, "%" + txtBCognomsClient2.Text + "%",
@@ -356,6 +362,7 @@ namespace GestorComercialEntityFramework
 
 
         }
+        //En cas que volguem afegir un no producte s'obre el formulari del nou producte
         private void button6_Click(object sender, EventArgs e)
         {
            AfegirProducteForm formAfegirProducte = new AfegirProducteForm(pathimage);
@@ -364,7 +371,7 @@ namespace GestorComercialEntityFramework
 
             formAfegirProducte.Show();
         }
-
+        //Aquest botó és el de Modificar producte.
         private void button7_Click(object sender, EventArgs e)
         {
 
@@ -376,6 +383,8 @@ namespace GestorComercialEntityFramework
 
                     try
                     {
+
+                    //Per cadascun dels items seleccionats s'obre una finestra de modificació i es passa com a parametre la informació que hi ha
                        
                         string Id = dataGridViewProducts.SelectedRows[i].Cells[1].Value.ToString();
                         string Producte = dataGridViewProducts.SelectedRows[i].Cells[2].Value.ToString();
@@ -398,7 +407,7 @@ namespace GestorComercialEntityFramework
                 }
             }
             }
-
+            //Aquest mètode serveix per amagar les ids dels datagridview
         private void amagarIDs() { 
              if(dataGridViewCustumers.ColumnCount>0)
                 dataGridViewCustumers.Columns[0].Visible = false;
@@ -419,7 +428,7 @@ namespace GestorComercialEntityFramework
             dataGridViewProductesFacturaAfegits.Rows.Clear();
            
         }
-
+        //Al comprar  es passen totes les dades seleccionades a factura sempre que hi hagi un client seleccionat i productes afegits.
         private void btComprar_Click(object sender, EventArgs e)
         {
             int IVA, descompte;
@@ -428,11 +437,12 @@ namespace GestorComercialEntityFramework
             else if (dataGridViewProductesFacturaAfegits.Rows.Count == 0) MessageBox.Show("No s'ha afegit cap producte.");
             else 
             {
-            
+            //Prmer s'insereix una nova factura
                 DataGridViewRow client = dataGridViewClientsFactura.SelectedRows[0];
                 DataGridViewRowCollection productes = dataGridViewProductesFacturaAfegits.Rows;
                 if (invoiceTableAdapter3.InsertQuery((int)client.Cells[0].Value, DateTime.Now, descompte, IVA) != 0)
                 {
+                //despres s'agafa l'ultima id
                     int invId = (int)invoiceTableAdapter3.MaxIdQuery(),
                         prodId;
                     Console.WriteLine("Inserted invoice #" + invId);
@@ -440,6 +450,8 @@ namespace GestorComercialEntityFramework
                     string strOk = "Inserted producte ID: ", 
                         strErr = "Could not insert producte ID: ";
                     bool ok;
+                    //Safageixen les ids det tots els productes afegits
+                    //es comença amb un diccionari inicialitzat a 1 i després se li va sumant 1
                     foreach (DataGridViewRow producte in productes)
                     {
                         prodId = (int) producte.Cells[0].Value;
@@ -449,26 +461,31 @@ namespace GestorComercialEntityFramework
                     }
                     foreach (KeyValuePair<int, int> producte in productesDictionary)
                     {
+                           //S'insereix els productes a factura detall en la última factura feta.
                         ok = inv_detailTableAdapter.InsertQuery(invId, producte.Key, producte.Value) > 0;
                         Console.WriteLine((ok ? strOk : strErr) + producte.Key);
                     }
+                    ////s'ompla el datagridview de la factura
                     invoiceTableAdapter3.Fill(managerDataSet.invoice);
                     dataGridViewInvoice.Refresh();
                     MessageBox.Show("Compra efectuada.");
+                    //Es buiden els productes dels afegits
                     dataGridViewProductesFacturaAfegits.Rows.Clear();
                 }
                 else MessageBox.Show("Error al efectuar la compra.");
             }
         }
-
+        //AQUEST ME`TÒDE SERVEIX PER AFEGIR IMATGES A LA CASSELLA DE IMATGES DEL DATAGRIDVIEW
         private void dataGridViewProducts_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
             if (dataGridViewProducts.Columns[e.ColumnIndex].Name == "Image")
             {
+            //s'agafa la ruta de la imatge de un camp amagat del datagridview
                 string path = dataGridViewProducts.Rows[e.RowIndex].Cells["IMAGEPATH"].Value.ToString();
-                // Your code would go here - below is just the code I used to test
+
                 if (File.Exists(path))
                 {
+                //S'agafa la imatge i s'escala finalment a la cela se li dóna com a valor la imatge
                     Image image = Image.FromFile(path);
                     var newImage = new Bitmap(dataGridViewProducts.Columns[e.ColumnIndex].Width, dataGridViewProducts.Rows[e.RowIndex].Height);
                     Graphics.FromImage(newImage).DrawImage(image, 0, 0, dataGridViewProducts.Columns[e.ColumnIndex].Width, dataGridViewProducts.Rows[e.RowIndex].Height);
@@ -476,15 +493,17 @@ namespace GestorComercialEntityFramework
                 }
             }
         }
-
+        //AQUEST ME`TÒDE SERVEIX PER AFEGIR IMATGES A LA CASSELLA DE IMATGES DEL DATAGRIDVIEW
         private void dataGridViewProductesFactura_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
              if (dataGridViewProductesFactura.Columns[e.ColumnIndex].Name == "ImageColumn"&&dataGridViewProductesFactura.Columns["IMAGEPATH2"] != null)
             {
-               string path = dataGridViewProductesFactura.Rows[e.RowIndex].Cells["IMAGEPATH2"].Value.ToString();
-                // Your code would go here - below is just the code I used to test
+                //s'agafa la ruta de la imatge de un camp amagat del datagridview  
+                string path = dataGridViewProductesFactura.Rows[e.RowIndex].Cells["IMAGEPATH2"].Value.ToString();
+          
                 if (File.Exists(path))
                 {
+                    //S'agafa la imatge i s'escala finalment a la cela se li dóna com a valor la imatge
                     Image image = Image.FromFile(path);
                     var newImage = new Bitmap(dataGridViewProductesFactura.Columns[e.ColumnIndex].Width, dataGridViewProductesFactura.Rows[e.RowIndex].Height);
                     Graphics.FromImage(newImage).DrawImage(image, 0, 0, dataGridViewProductesFactura.Columns[e.ColumnIndex].Width, dataGridViewProductesFactura.Rows[e.RowIndex].Height);
@@ -493,16 +512,18 @@ namespace GestorComercialEntityFramework
                
             } 
         }
-
+        //AQUEST ME`TÒDE SERVEIX PER AFEGIR IMATGES A LA CASSELLA DE IMATGES DEL DATAGRIDVIEW
         private void dataGridViewProductesFacturaAfegits_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
             
             if (dataGridViewProductesFacturaAfegits.Columns[e.ColumnIndex].Name == "ImageColumn" && dataGridViewProductesFacturaAfegits.Columns["IMAGEPATH2"] != null)
             {
+                //s'agafa la ruta de la imatge de un camp amagat del datagridview
                 string path = dataGridViewProductesFacturaAfegits.Rows[e.RowIndex].Cells["IMAGEPATH2"].Value.ToString();
-                // Your code would go here - below is just the code I used to test
+                
                 if (File.Exists(path))
                 {
+                    //S'agafa la imatge i s'escala finalment a la cela se li dóna com a valor la imatge
                     Image image = Image.FromFile(path);
                     var newImage = new Bitmap(dataGridViewProductesFacturaAfegits.Columns[e.ColumnIndex].Width, dataGridViewProductesFacturaAfegits.Rows[e.RowIndex].Height);
                     Graphics.FromImage(newImage).DrawImage(image, 0, 0, dataGridViewProductesFacturaAfegits.Columns[e.ColumnIndex].Width, dataGridViewProductesFacturaAfegits.Rows[e.RowIndex].Height);
@@ -516,38 +537,41 @@ namespace GestorComercialEntityFramework
         {
           
         }
-
+        //Al canviar la seleccio de la factura s'ompla de nou el data grid view factura detall amb la nova id   
         private void dataGridViewInvoice_SelectionChanged(object sender, EventArgs e)
         {
             if (dataGridViewInvoice.SelectedRows.Count > 0)
             {
                  DataGridViewRow invoice = dataGridViewInvoice.SelectedRows[0];
                
-                        
+                 //s'ompla
              productsTableAdapter4.FillByInvoice(managerDataSet1.products, (int)invoice.Cells[0].Value);
                 double Import;
+                //Es suma l'import
              Double.TryParse((string)productsTableAdapter4.ImportSUMA((int)invoice.Cells[0].Value).ToString(),out Import );
-
-
-              Import=  Math.Round(Import, 2, MidpointRounding.AwayFromZero);
-
-
+            Import=  Math.Round(Import, 2, MidpointRounding.AwayFromZero);
+            //es posa per escrit l'import
                 label13.Text = "IMPORT : " + Import+" €";
-                 
+                 // Es calcula el descompte total
                 double Descomptepercent;
                 Double.TryParse((string)invoice.Cells["DISCOUNT"].Value.ToString(), out Descomptepercent);
                 double descompte = Import * ( Descomptepercent / 100);
                 descompte= Math.Round(descompte, 2, MidpointRounding.AwayFromZero);
+                //es posa per escrit
                 label14.Text = "DESCOMPTE :" + descompte + " €";
+                //ES calcula l'iva
                 double IVApercent;
                 Double.TryParse((string)invoice.Cells["VAT"].Value.ToString(), out IVApercent);
                 double IVA = (Import - descompte) * ( IVApercent / 100);
                 IVA=  Math.Round(IVA, 2, MidpointRounding.AwayFromZero);
+                //Es posa per escrit
                 label15.Text = "IVA :" + IVA + " €";
+                //Es calcula quan s'ha de pagar
                 double Totalapagar = (Import - descompte) + IVA;
                Totalapagar= Math.Round(Totalapagar, 2, MidpointRounding.AwayFromZero);
+               //Es poa per escrit
                 label16.Text = "TOTAL A PAGAR :" +Totalapagar+ " €";
-                invoice.Cells["DISCOUNT"].Value.ToString();
+                
                 dataGridViewProductesFacturaSelect.Refresh();
             }
         }
@@ -561,16 +585,20 @@ namespace GestorComercialEntityFramework
         {
 
         }
-
+        //AQUEST ME`TÒDE SERVEIX PER AFEGIR IMATGES A LA CASSELLA DE IMATGES DEL DATAGRIDVIEW
         private void dataGridViewProductesFacturaSelect_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
             if (dataGridViewProductesFacturaSelect.Columns[e.ColumnIndex].Name == "ImageColumn2")
             {
-                         if (dataGridViewProductesFacturaSelect.Columns["IMAGEPATH3"] != null){                    string path = dataGridViewProductesFacturaSelect.Rows[e.RowIndex].Cells["IMAGEPATH3"].Value.ToString();
-                // Your code would go here - below is just the code I used to test
+                         if (dataGridViewProductesFacturaSelect.Columns["IMAGEPATH3"] != null){
+                    //s'agafa la ruta de la imatge de un camp amagat del datagridview   
+
+                    string path = dataGridViewProductesFacturaSelect.Rows[e.RowIndex].Cells["IMAGEPATH3"].Value.ToString();
+               
                 if (File.Exists(path))
                 {
-                    Image image = Image.FromFile(path);
+                        //S'agafa la imatge i s'escala finalment a la cela se li dóna com a valor la imatge
+                        Image image = Image.FromFile(path);
                     var newImage = new Bitmap(dataGridViewProductesFacturaSelect.Columns[e.ColumnIndex].Width, dataGridViewProductesFacturaSelect.Rows[e.RowIndex].Height);
                     Graphics.FromImage(newImage).DrawImage(image, 0, 0, dataGridViewProductesFacturaSelect.Columns[e.ColumnIndex].Width, dataGridViewProductesFacturaSelect.Rows[e.RowIndex].Height);
                     e.Value = newImage;
