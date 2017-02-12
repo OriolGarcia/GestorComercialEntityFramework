@@ -527,7 +527,19 @@ namespace GestorComercialEntityFramework
              productsTableAdapter4.FillByInvoice(managerDataSet1.products, (int)invoice.Cells[0].Value);
                 double Import;
              Double.TryParse((string)productsTableAdapter4.ImportSUMA((int)invoice.Cells[0].Value).ToString(),out Import );
-                label13.Text = "IMPORT TOTAL: " + Import+" €";
+                label13.Text = "IMPORT : " + Import+" €";
+                 
+                double Descomptepercent;
+                Double.TryParse((string)invoice.Cells["DISCOUNT"].Value.ToString(), out Descomptepercent);
+                double descompte = Import * ( Descomptepercent / 100);
+                label14.Text = "DESCOMPTE :" + descompte + " €";
+                double IVApercent;
+                Double.TryParse((string)invoice.Cells["VAT"].Value.ToString(), out IVApercent);
+                double IVA = (Import - descompte) * ( IVApercent / 100);
+                label15.Text = "IVA :" + IVA + " €";
+                double Totalapagar = (Import - descompte) + IVA;
+                label16.Text = "TOTAL A PAGAR :" +Totalapagar+ " €";
+                invoice.Cells["DISCOUNT"].Value.ToString();
                 dataGridViewProductesFacturaSelect.Refresh();
             }
         }
