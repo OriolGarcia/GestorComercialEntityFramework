@@ -23,6 +23,8 @@ namespace GestorComercialEntityFramework
             InsertColumns(dataGridViewProducts);
            dataGridViewProductesFactura.Columns["ImageColumn"].Width = 100;
             dataGridViewProductesFactura.RowTemplate.Height = 100;
+            dataGridViewProductesFacturaSelect.Columns["ImageColumn2"].Width = 100;
+            dataGridViewProductesFacturaSelect.RowTemplate.Height = 100;
 
         }
         private void InsertColumns( DataGridView dataGridView)
@@ -40,12 +42,14 @@ namespace GestorComercialEntityFramework
         }
         private void Form1_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'managerDataSet1.inv_detail' table. You can move, or remove it, as needed.
+            this.inv_detailTableAdapter1.Fill(this.managerDataSet1.inv_detail);
             // TODO: This line of code loads data into the 'managerDataSet1.products' table. You can move, or remove it, as needed.
-           // this.productsTableAdapter4.Fill(this.managerDataSet1.products);
+            // this.productsTableAdapter4.Fill(this.managerDataSet1.products);
             // TODO: This line of code loads data into the 'managerDataSet1.products' table. You can move, or remove it, as needed.
-         //   this.productsTableAdapter4.Fill(this.managerDataSet1.products);
+            //   this.productsTableAdapter4.Fill(this.managerDataSet1.products);
             // TODO: This line of code loads data into the 'managerDataSet1.invoice' table. You can move, or remove it, as needed.
-          //  this.invoiceTableAdapter.Fill(this.managerDataSet1.invoice);
+            //  this.invoiceTableAdapter.Fill(this.managerDataSet1.invoice);
 
             try
             {
@@ -400,11 +404,11 @@ namespace GestorComercialEntityFramework
                 dataGridViewCustumers.Columns[0].Visible = false;
             if (dataGridViewInvoice.ColumnCount > 0)
                 dataGridViewInvoice.Columns[0].Visible = false;
-          //  if (dataGridViewProductesFacturaSelect.ColumnCount > 0)
-           //     dataGridViewProductesFacturaSelect.Columns[0].Visible = false;
+            if (dataGridViewProductesFacturaSelect.ColumnCount > 0)
+                dataGridViewProductesFacturaSelect.Columns[0].Visible = false;
             if (dataGridViewClientsFactura.ColumnCount > 0)
                 dataGridViewClientsFactura.Columns[0].Visible = false;
-            if (dataGridViewProductesFactura.ColumnCount > 0)
+            if (dataGridViewProductesFactura.ColumnCount > 0)  
                 dataGridViewProductesFactura.Columns[0].Visible = false;
             if (dataGridViewProductesFacturaAfegits.ColumnCount > 0)
                 dataGridViewProductesFacturaAfegits.Columns[0].Visible = false;
@@ -419,19 +423,15 @@ namespace GestorComercialEntityFramework
         private void btComprar_Click(object sender, EventArgs e)
         {
             int IVA, descompte;
-            if (!int.TryParse(tbIVA.Text, out IVA) || !int.TryParse(tbDescompte.Text, out descompte))
-            {
-                IVA = 21;
-                descompte = 0;
-            }
+            IVA =(int) numericUpDownIVA.Value; descompte = (int)numericUpDownDescompte.Value;
             if (dataGridViewClientsFactura.SelectedRows.Count == 0) MessageBox.Show("No s'ha seleccionat cap client.");
             else if (dataGridViewProductesFacturaAfegits.Rows.Count == 0) MessageBox.Show("No s'ha afegit cap producte.");
             else 
             {
             
                 DataGridViewRow client = dataGridViewClientsFactura.SelectedRows[0];
-                DataGridViewRowCollection productes = dataGridViewProductesFactura.Rows;
-                if (invoiceTableAdapter3.InsertQuery((int)client.Cells[0].Value, DateTime.Now, IVA, descompte) != 0)
+                DataGridViewRowCollection productes = dataGridViewProductesFacturaAfegits.Rows;
+                if (invoiceTableAdapter3.InsertQuery((int)client.Cells[0].Value, DateTime.Now, descompte, IVA) != 0)
                 {
                     int invId = (int)invoiceTableAdapter3.MaxIdQuery(),
                         prodId;
@@ -445,7 +445,7 @@ namespace GestorComercialEntityFramework
                         prodId = (int) producte.Cells[0].Value;
                         if (productesDictionary.ContainsKey(prodId))
                             productesDictionary[prodId]++;
-                        else productesDictionary.Add(prodId, 0);
+                        else productesDictionary.Add(prodId, 1);
                     }
                     foreach (KeyValuePair<int, int> producte in productesDictionary)
                     {
@@ -455,6 +455,7 @@ namespace GestorComercialEntityFramework
                     invoiceTableAdapter3.Fill(managerDataSet.invoice);
                     dataGridViewInvoice.Refresh();
                     MessageBox.Show("Compra efectuada.");
+                    dataGridViewProductesFacturaAfegits.Rows.Clear();
                 }
                 else MessageBox.Show("Error al efectuar la compra.");
             }
@@ -522,10 +523,12 @@ namespace GestorComercialEntityFramework
             {
                  DataGridViewRow invoice = dataGridViewInvoice.SelectedRows[0];
                
-              // inv_detailTableAdapter1.FillByIDWithProducts(managerDataSet1.inv_detail,(int)invoice.Cells[0].Value);
-               
+                        
              productsTableAdapter4.FillByInvoice(managerDataSet1.products, (int)invoice.Cells[0].Value);
-              dataGridViewProductesFacturaSelect.Refresh();
+                double Import;
+             Double.TryParse((string)productsTableAdapter4.ImportSUMA((int)invoice.Cells[0].Value).ToString(),out Import );
+                label13.Text = "IMPORT TOTAL: " + Import+" €";
+                dataGridViewProductesFacturaSelect.Refresh();
             }
         }
 
@@ -537,6 +540,23 @@ namespace GestorComercialEntityFramework
         private void dataGridViewProductesFacturaSelect_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void dataGridViewProductesFacturaSelect_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (dataGridViewProductesFacturaSelect.Columns[e.ColumnIndex].Name == "ImageColumn2")
+            {
+                         if (dataGridViewProductesFacturaSelect.Columns["IMAGEPATH3"] != null){                    string path = dataGridViewProductesFacturaSelect.Rows[e.RowIndex].Cells["IMAGEPATH3"].Value.ToString();
+                // Your code would go here - below is just the code I used to test
+                if (File.Exists(path))
+                {
+                    Image image = Image.FromFile(path);
+                    var newImage = new Bitmap(dataGridViewProductesFacturaSelect.Columns[e.ColumnIndex].Width, dataGridViewProductesFacturaSelect.Rows[e.RowIndex].Height);
+                    Graphics.FromImage(newImage).DrawImage(image, 0, 0, dataGridViewProductesFacturaSelect.Columns[e.ColumnIndex].Width, dataGridViewProductesFacturaSelect.Rows[e.RowIndex].Height);
+                    e.Value = newImage;
+                }
+            }
+            }
         }
     }
 }

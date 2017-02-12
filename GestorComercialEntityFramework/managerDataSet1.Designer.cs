@@ -38,6 +38,8 @@ namespace GestorComercialEntityFramework {
         
         private global::System.Data.DataRelation relationinvoice_ibfk_1;
         
+        private global::System.Data.DataRelation relationcustomers_products;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -275,6 +277,7 @@ namespace GestorComercialEntityFramework {
             this.relationinv_detail_ibfk_1 = this.Relations["inv_detail_ibfk_1"];
             this.relationinv_detail_ibfk_2 = this.Relations["inv_detail_ibfk_2"];
             this.relationinvoice_ibfk_1 = this.Relations["invoice_ibfk_1"];
+            this.relationcustomers_products = this.Relations["customers_products"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -305,6 +308,10 @@ namespace GestorComercialEntityFramework {
                         this.tablecustomers.IDColumn}, new global::System.Data.DataColumn[] {
                         this.tableinvoice.CUST_IDColumn}, false);
             this.Relations.Add(this.relationinvoice_ibfk_1);
+            this.relationcustomers_products = new global::System.Data.DataRelation("customers_products", new global::System.Data.DataColumn[] {
+                        this.tablecustomers.IDColumn}, new global::System.Data.DataColumn[] {
+                        this.tableproducts.IDColumn}, false);
+            this.Relations.Add(this.relationcustomers_products);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1443,6 +1450,12 @@ namespace GestorComercialEntityFramework {
             
             private global::System.Data.DataColumn columnIMAGEPATH;
             
+            private global::System.Data.DataColumn columnTOTAL;
+            
+            private global::System.Data.DataColumn columnQUANTITY;
+            
+            private global::System.Data.DataColumn columnAMOUNT;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public productsDataTable() {
@@ -1510,6 +1523,30 @@ namespace GestorComercialEntityFramework {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn TOTALColumn {
+                get {
+                    return this.columnTOTAL;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn QUANTITYColumn {
+                get {
+                    return this.columnQUANTITY;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn AMOUNTColumn {
+                get {
+                    return this.columnAMOUNT;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1545,13 +1582,16 @@ namespace GestorComercialEntityFramework {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public productsRow AddproductsRow(string NAME, decimal PRICE, string IMAGEPATH) {
+            public productsRow AddproductsRow(string NAME, decimal PRICE, string IMAGEPATH, string TOTAL, string QUANTITY, string AMOUNT) {
                 productsRow rowproductsRow = ((productsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         NAME,
                         PRICE,
-                        IMAGEPATH};
+                        IMAGEPATH,
+                        TOTAL,
+                        QUANTITY,
+                        AMOUNT};
                 rowproductsRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowproductsRow);
                 return rowproductsRow;
@@ -1585,6 +1625,9 @@ namespace GestorComercialEntityFramework {
                 this.columnNAME = base.Columns["NAME"];
                 this.columnPRICE = base.Columns["PRICE"];
                 this.columnIMAGEPATH = base.Columns["IMAGEPATH"];
+                this.columnTOTAL = base.Columns["TOTAL"];
+                this.columnQUANTITY = base.Columns["QUANTITY"];
+                this.columnAMOUNT = base.Columns["AMOUNT"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1598,6 +1641,12 @@ namespace GestorComercialEntityFramework {
                 base.Columns.Add(this.columnPRICE);
                 this.columnIMAGEPATH = new global::System.Data.DataColumn("IMAGEPATH", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnIMAGEPATH);
+                this.columnTOTAL = new global::System.Data.DataColumn("TOTAL", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTOTAL);
+                this.columnQUANTITY = new global::System.Data.DataColumn("QUANTITY", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnQUANTITY);
+                this.columnAMOUNT = new global::System.Data.DataColumn("AMOUNT", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAMOUNT);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnID}, true));
                 this.columnID.AutoIncrement = true;
@@ -1929,6 +1978,17 @@ namespace GestorComercialEntityFramework {
                     return ((invoiceRow[])(base.GetChildRows(this.Table.ChildRelations["invoice_ibfk_1"])));
                 }
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public productsRow[] GetproductsRows() {
+                if ((this.Table.ChildRelations["customers_products"] == null)) {
+                    return new productsRow[0];
+                }
+                else {
+                    return ((productsRow[])(base.GetChildRows(this.Table.ChildRelations["customers_products"])));
+                }
+            }
         }
         
         /// <summary>
@@ -2236,6 +2296,65 @@ namespace GestorComercialEntityFramework {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string TOTAL {
+                get {
+                    try {
+                        return ((string)(this[this.tableproducts.TOTALColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'TOTAL\' in table \'products\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableproducts.TOTALColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string QUANTITY {
+                get {
+                    try {
+                        return ((string)(this[this.tableproducts.QUANTITYColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'QUANTITY\' in table \'products\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableproducts.QUANTITYColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string AMOUNT {
+                get {
+                    try {
+                        return ((string)(this[this.tableproducts.AMOUNTColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'AMOUNT\' in table \'products\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableproducts.AMOUNTColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public customersRow customersRow {
+                get {
+                    return ((customersRow)(this.GetParentRow(this.Table.ParentRelations["customers_products"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["customers_products"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsNAMENull() {
                 return this.IsNull(this.tableproducts.NAMEColumn);
             }
@@ -2268,6 +2387,42 @@ namespace GestorComercialEntityFramework {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetIMAGEPATHNull() {
                 this[this.tableproducts.IMAGEPATHColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsTOTALNull() {
+                return this.IsNull(this.tableproducts.TOTALColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetTOTALNull() {
+                this[this.tableproducts.TOTALColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsQUANTITYNull() {
+                return this.IsNull(this.tableproducts.QUANTITYColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetQUANTITYNull() {
+                this[this.tableproducts.QUANTITYColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsAMOUNTNull() {
+                return this.IsNull(this.tableproducts.AMOUNTColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetAMOUNTNull() {
+                this[this.tableproducts.AMOUNTColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4558,7 +4713,7 @@ namespace GestorComercialEntityFramework.managerDataSet1TableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[2];
+            this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[3];
             this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "INSERT INTO `products` (`NAME`, `PRICE`, `IMAGEPATH`) VALUES (@p1, @p2, @p3)";
@@ -4584,7 +4739,8 @@ namespace GestorComercialEntityFramework.managerDataSet1TableAdapters {
             this._commandCollection[0].Parameters.Add(param);
             this._commandCollection[1] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = @"SELECT `products`.`ID`, `products`.`NAME`, `products`.`PRICE`, `products`.`IMAGEPATH`,`inv_detail`.`QUANTITY`, ( `products`.`PRICE`*`inv_detail`.`QUANTITY`) AS `TOTAL`  FROM `products`  INNER JOIN `inv_detail` ON `products`.`ID`=`inv_detail`.`PROD_ID`  WHERE `inv_detail`.`INV_ID`=@p1";
+            this._commandCollection[1].CommandText = @"SELECT `products`.`ID`, `products`.`NAME`, `products`.`PRICE`, `products`.`IMAGEPATH`,
+`inv_detail`.`QUANTITY` AS `QUANTITY`, ( `products`.`PRICE`*`inv_detail`.`QUANTITY`) AS `TOTAL`  FROM `products`  INNER JOIN `inv_detail` ON `products`.`ID`=`inv_detail`.`PROD_ID`  WHERE `inv_detail`.`INV_ID`=@p1";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p1";
@@ -4593,6 +4749,19 @@ namespace GestorComercialEntityFramework.managerDataSet1TableAdapters {
             param.IsNullable = true;
             param.SourceColumn = "INV_ID";
             this._commandCollection[1].Parameters.Add(param);
+            this._commandCollection[2] = new global::MySql.Data.MySqlClient.MySqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "SELECT SUM( `products`.`PRICE`*`inv_detail`.`QUANTITY`)  AS AMOUNT FROM `products" +
+                "`  INNER JOIN `inv_detail` ON `products`.`ID`=`inv_detail`.`PROD_ID`  WHERE `inv" +
+                "_detail`.`INV_ID`=@p1";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p1";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "INV_ID";
+            this._commandCollection[2].Parameters.Add(param);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4660,6 +4829,35 @@ namespace GestorComercialEntityFramework.managerDataSet1TableAdapters {
                 }
             }
             return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual object ImportSUMA(int p1) {
+            global::MySql.Data.MySqlClient.MySqlCommand command = this.CommandCollection[2];
+            command.Parameters[0].Value = ((int)(p1));
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            object returnValue;
+            try {
+                returnValue = command.ExecuteScalar();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            if (((returnValue == null) 
+                        || (returnValue.GetType() == typeof(global::System.DBNull)))) {
+                return null;
+            }
+            else {
+                return ((object)(returnValue));
+            }
         }
     }
     

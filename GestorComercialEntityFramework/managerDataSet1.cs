@@ -4,6 +4,9 @@
 
     partial class managerDataSet1
     {
+        partial class productsDataTable
+        {
+        }
     }
 }
 

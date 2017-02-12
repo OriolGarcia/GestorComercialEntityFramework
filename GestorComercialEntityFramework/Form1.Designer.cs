@@ -78,25 +78,23 @@
             this.tabFactures = new System.Windows.Forms.TabPage();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.dataGridViewProductesFacturaSelect = new System.Windows.Forms.DataGridView();
-            this.iDDataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nAMEDataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pRICEDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iMAGEPATHDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productsBindingSource6 = new System.Windows.Forms.BindingSource(this.components);
-            this.managerDataSet1 = new GestorComercialEntityFramework.managerDataSet1();
+            this.ImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.QUANTITY = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewInvoice = new System.Windows.Forms.DataGridView();
             this.iDDataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cUSTIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nAMEDataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sURNAME1DataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dATEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dISCOUNTDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vATDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.invoiceBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
             this.tabDepVendes = new System.Windows.Forms.TabPage();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
             this.label4 = new System.Windows.Forms.Label();
@@ -119,8 +117,8 @@
             this.eMAILDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.customersBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.mANAGERDataSetNou = new GestorComercialEntityFramework.MANAGERDataSetNou();
-            this.tbIVA = new System.Windows.Forms.TextBox();
-            this.tbDescompte = new System.Windows.Forms.TextBox();
+            this.numericUpDownIVA = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDownDescompte = new System.Windows.Forms.NumericUpDown();
             this.label10 = new System.Windows.Forms.Label();
             this.lbDescompte = new System.Windows.Forms.Label();
             this.btComprar = new System.Windows.Forms.Button();
@@ -140,9 +138,7 @@
             this.ImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
             this.productsBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
             this.mANAGERDataSetNouBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.productsBindingSource5 = new System.Windows.Forms.BindingSource(this.components);
             this.invdetailibfk2BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.invoiceBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.customersBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.productsBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.invdetailibfk1BindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -152,6 +148,8 @@
             this.customersTableAdapter2 = new GestorComercialEntityFramework.MANAGERDataSetNouTableAdapters.customersTableAdapter();
             this.productsTableAdapter3 = new GestorComercialEntityFramework.MANAGERDataSetNouTableAdapters.productsTableAdapter();
             this.invoiceTableAdapter2 = new GestorComercialEntityFramework.MANAGERDataSetNouTableAdapters.invoiceTableAdapter();
+            this.invdetailibfk1BindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.invdetailibfk1BindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.invoiceBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.productsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.productsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
@@ -160,11 +158,21 @@
             this.productsTableAdapter1 = new GestorComercialEntityFramework.managerDataSetTableAdapters.productsTableAdapter();
             this.inv_detailTableAdapter = new GestorComercialEntityFramework.managerDataSetTableAdapters.inv_detailTableAdapter();
             this.invoiceTableAdapter3 = new GestorComercialEntityFramework.managerDataSetTableAdapters.invoiceTableAdapter();
+            this.iDDataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nAMEDataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pRICEDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IMAGEPATH3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tOTALDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productsBindingSource6 = new System.Windows.Forms.BindingSource(this.components);
+            this.managerDataSet1 = new GestorComercialEntityFramework.managerDataSet1();
+            this.invoiceBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.productsBindingSource5 = new System.Windows.Forms.BindingSource(this.components);
             this.invdetailBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.invoiceTableAdapter = new GestorComercialEntityFramework.managerDataSet1TableAdapters.invoiceTableAdapter();
             this.inv_detailTableAdapter1 = new GestorComercialEntityFramework.managerDataSet1TableAdapters.inv_detailTableAdapter();
             this.invoiceTableAdapter1 = new GestorComercialEntityFramework.managerDataSet1TableAdapters.invoiceTableAdapter();
             this.productsTableAdapter4 = new GestorComercialEntityFramework.managerDataSet1TableAdapters.productsTableAdapter();
+            this.label13 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProducts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.managerDataSet)).BeginInit();
@@ -186,8 +194,6 @@
             this.splitContainer2.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProductesFacturaSelect)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.managerDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewInvoice)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.invoiceBindingSource1)).BeginInit();
             this.tabDepVendes.SuspendLayout();
@@ -198,20 +204,26 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewClientsFactura)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customersBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mANAGERDataSetNou)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownIVA)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownDescompte)).BeginInit();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProductesFacturaAfegits)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProductesFactura)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mANAGERDataSetNouBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.invdetailibfk2BindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.invoiceBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customersBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.invdetailibfk1BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.invdetailibfk1BindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.invdetailibfk1BindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.invoiceBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.managerDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.invoiceBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.invdetailBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -310,7 +322,7 @@
             this.mainTabs.Location = new System.Drawing.Point(0, 0);
             this.mainTabs.Name = "mainTabs";
             this.mainTabs.SelectedIndex = 0;
-            this.mainTabs.Size = new System.Drawing.Size(1024, 610);
+            this.mainTabs.Size = new System.Drawing.Size(1277, 663);
             this.mainTabs.TabIndex = 1;
             this.mainTabs.Tag = "";
             this.mainTabs.SelectedIndexChanged += new System.EventHandler(this.mainTabs_SelectedIndexChanged);
@@ -325,7 +337,7 @@
             this.TabProductes.Location = new System.Drawing.Point(4, 22);
             this.TabProductes.Name = "TabProductes";
             this.TabProductes.Padding = new System.Windows.Forms.Padding(3);
-            this.TabProductes.Size = new System.Drawing.Size(1016, 584);
+            this.TabProductes.Size = new System.Drawing.Size(1269, 637);
             this.TabProductes.TabIndex = 0;
             this.TabProductes.Text = "Productes";
             this.TabProductes.UseVisualStyleBackColor = true;
@@ -394,7 +406,7 @@
             this.tabClients.Location = new System.Drawing.Point(4, 22);
             this.tabClients.Name = "tabClients";
             this.tabClients.Padding = new System.Windows.Forms.Padding(3);
-            this.tabClients.Size = new System.Drawing.Size(1016, 584);
+            this.tabClients.Size = new System.Drawing.Size(1269, 637);
             this.tabClients.TabIndex = 1;
             this.tabClients.Text = "Clients";
             this.tabClients.UseVisualStyleBackColor = true;
@@ -417,8 +429,8 @@
             this.splitContainer1.Panel2.Controls.Add(this.btModificar);
             this.splitContainer1.Panel2.Controls.Add(this.dataGridViewCustumers);
             this.splitContainer1.Panel2.Cursor = System.Windows.Forms.Cursors.Default;
-            this.splitContainer1.Size = new System.Drawing.Size(1010, 578);
-            this.splitContainer1.SplitterDistance = 102;
+            this.splitContainer1.Size = new System.Drawing.Size(1263, 631);
+            this.splitContainer1.SplitterDistance = 111;
             this.splitContainer1.TabIndex = 1;
             // 
             // groupBox1
@@ -432,7 +444,7 @@
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1010, 102);
+            this.groupBox1.Size = new System.Drawing.Size(1263, 111);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Cerca Avançada";
@@ -493,7 +505,7 @@
             // 
             // btAfegirClient
             // 
-            this.btAfegirClient.Location = new System.Drawing.Point(595, 160);
+            this.btAfegirClient.Location = new System.Drawing.Point(1039, 158);
             this.btAfegirClient.Name = "btAfegirClient";
             this.btAfegirClient.Size = new System.Drawing.Size(130, 23);
             this.btAfegirClient.TabIndex = 3;
@@ -503,7 +515,7 @@
             // 
             // btEliminarClient
             // 
-            this.btEliminarClient.Location = new System.Drawing.Point(595, 96);
+            this.btEliminarClient.Location = new System.Drawing.Point(1039, 94);
             this.btEliminarClient.Name = "btEliminarClient";
             this.btEliminarClient.Size = new System.Drawing.Size(130, 23);
             this.btEliminarClient.TabIndex = 2;
@@ -513,7 +525,7 @@
             // 
             // btModificar
             // 
-            this.btModificar.Location = new System.Drawing.Point(595, 48);
+            this.btModificar.Location = new System.Drawing.Point(1039, 46);
             this.btModificar.Name = "btModificar";
             this.btModificar.Size = new System.Drawing.Size(130, 23);
             this.btModificar.TabIndex = 1;
@@ -568,7 +580,7 @@
             this.dataGridViewCustumers.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridViewCustumers.RowHeadersVisible = false;
             this.dataGridViewCustumers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewCustumers.Size = new System.Drawing.Size(518, 268);
+            this.dataGridViewCustumers.Size = new System.Drawing.Size(1002, 268);
             this.dataGridViewCustumers.TabIndex = 0;
             // 
             // iDDataGridViewTextBoxColumn1
@@ -660,7 +672,7 @@
             this.tabFactures.Location = new System.Drawing.Point(4, 22);
             this.tabFactures.Name = "tabFactures";
             this.tabFactures.Padding = new System.Windows.Forms.Padding(3);
-            this.tabFactures.Size = new System.Drawing.Size(1016, 584);
+            this.tabFactures.Size = new System.Drawing.Size(1269, 637);
             this.tabFactures.TabIndex = 2;
             this.tabFactures.Text = "Factures";
             this.tabFactures.UseVisualStyleBackColor = true;
@@ -678,26 +690,46 @@
             // 
             // splitContainer2.Panel2
             // 
+            this.splitContainer2.Panel2.Controls.Add(this.label13);
             this.splitContainer2.Panel2.Controls.Add(this.dataGridViewProductesFacturaSelect);
             this.splitContainer2.Panel2.Controls.Add(this.dataGridViewInvoice);
-            this.splitContainer2.Panel2.Controls.Add(this.button3);
-            this.splitContainer2.Panel2.Controls.Add(this.button4);
-            this.splitContainer2.Size = new System.Drawing.Size(1010, 578);
-            this.splitContainer2.SplitterDistance = 137;
+            this.splitContainer2.Size = new System.Drawing.Size(1263, 631);
+            this.splitContainer2.SplitterDistance = 149;
             this.splitContainer2.TabIndex = 0;
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.label12);
+            this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.Controls.Add(this.textBox4);
             this.groupBox2.Controls.Add(this.textBox5);
             this.groupBox2.Controls.Add(this.textBox6);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox2.Location = new System.Drawing.Point(0, 0);
+            this.groupBox2.MinimumSize = new System.Drawing.Size(1008, 137);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1010, 137);
+            this.groupBox2.Size = new System.Drawing.Size(1263, 149);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Cerca Avançada";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(530, 118);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(104, 13);
+            this.label12.TabIndex = 4;
+            this.label12.Text = "Productes comprats:";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(7, 118);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(108, 13);
+            this.label11.TabIndex = 3;
+            this.label11.Text = "Registre de Factures:";
             // 
             // textBox4
             // 
@@ -722,71 +754,62 @@
             // 
             // dataGridViewProductesFacturaSelect
             // 
+            this.dataGridViewProductesFacturaSelect.AllowUserToAddRows = false;
             this.dataGridViewProductesFacturaSelect.AutoGenerateColumns = false;
+            this.dataGridViewProductesFacturaSelect.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewProductesFacturaSelect.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewProductesFacturaSelect.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.iDDataGridViewTextBoxColumn4,
             this.nAMEDataGridViewTextBoxColumn4,
             this.pRICEDataGridViewTextBoxColumn2,
-            this.iMAGEPATHDataGridViewTextBoxColumn});
+            this.ImageColumn2,
+            this.IMAGEPATH3,
+            this.QUANTITY,
+            this.tOTALDataGridViewTextBoxColumn});
             this.dataGridViewProductesFacturaSelect.DataSource = this.productsBindingSource6;
-            this.dataGridViewProductesFacturaSelect.Location = new System.Drawing.Point(564, 7);
+            this.dataGridViewProductesFacturaSelect.Location = new System.Drawing.Point(530, 7);
             this.dataGridViewProductesFacturaSelect.Name = "dataGridViewProductesFacturaSelect";
-            this.dataGridViewProductesFacturaSelect.Size = new System.Drawing.Size(466, 246);
+            this.dataGridViewProductesFacturaSelect.ReadOnly = true;
+            this.dataGridViewProductesFacturaSelect.RowHeadersVisible = false;
+            this.dataGridViewProductesFacturaSelect.Size = new System.Drawing.Size(728, 246);
             this.dataGridViewProductesFacturaSelect.TabIndex = 9;
             this.dataGridViewProductesFacturaSelect.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewProductesFacturaSelect_CellContentClick_1);
+            this.dataGridViewProductesFacturaSelect.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridViewProductesFacturaSelect_CellFormatting);
             // 
-            // iDDataGridViewTextBoxColumn4
+            // ImageColumn2
             // 
-            this.iDDataGridViewTextBoxColumn4.DataPropertyName = "ID";
-            this.iDDataGridViewTextBoxColumn4.HeaderText = "ID";
-            this.iDDataGridViewTextBoxColumn4.Name = "iDDataGridViewTextBoxColumn4";
+            this.ImageColumn2.HeaderText = "Image";
+            this.ImageColumn2.Name = "ImageColumn2";
+            this.ImageColumn2.ReadOnly = true;
             // 
-            // nAMEDataGridViewTextBoxColumn4
+            // QUANTITY
             // 
-            this.nAMEDataGridViewTextBoxColumn4.DataPropertyName = "NAME";
-            this.nAMEDataGridViewTextBoxColumn4.HeaderText = "NAME";
-            this.nAMEDataGridViewTextBoxColumn4.Name = "nAMEDataGridViewTextBoxColumn4";
-            // 
-            // pRICEDataGridViewTextBoxColumn2
-            // 
-            this.pRICEDataGridViewTextBoxColumn2.DataPropertyName = "PRICE";
-            this.pRICEDataGridViewTextBoxColumn2.HeaderText = "PRICE";
-            this.pRICEDataGridViewTextBoxColumn2.Name = "pRICEDataGridViewTextBoxColumn2";
-            // 
-            // iMAGEPATHDataGridViewTextBoxColumn
-            // 
-            this.iMAGEPATHDataGridViewTextBoxColumn.DataPropertyName = "IMAGEPATH";
-            this.iMAGEPATHDataGridViewTextBoxColumn.HeaderText = "IMAGEPATH";
-            this.iMAGEPATHDataGridViewTextBoxColumn.Name = "iMAGEPATHDataGridViewTextBoxColumn";
-            // 
-            // productsBindingSource6
-            // 
-            this.productsBindingSource6.DataMember = "products";
-            this.productsBindingSource6.DataSource = this.managerDataSet1;
-            // 
-            // managerDataSet1
-            // 
-            this.managerDataSet1.DataSetName = "managerDataSet1";
-            this.managerDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.QUANTITY.DataPropertyName = "QUANTITY";
+            this.QUANTITY.HeaderText = "QUANTITY";
+            this.QUANTITY.Name = "QUANTITY";
+            this.QUANTITY.ReadOnly = true;
             // 
             // dataGridViewInvoice
             // 
             this.dataGridViewInvoice.AllowUserToAddRows = false;
             this.dataGridViewInvoice.AllowUserToDeleteRows = false;
             this.dataGridViewInvoice.AutoGenerateColumns = false;
+            this.dataGridViewInvoice.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewInvoice.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewInvoice.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.iDDataGridViewTextBoxColumn5,
             this.cUSTIDDataGridViewTextBoxColumn,
+            this.nAMEDataGridViewTextBoxColumn5,
+            this.sURNAME1DataGridViewTextBoxColumn2,
             this.dATEDataGridViewTextBoxColumn,
             this.dISCOUNTDataGridViewTextBoxColumn,
             this.vATDataGridViewTextBoxColumn});
             this.dataGridViewInvoice.DataSource = this.invoiceBindingSource1;
-            this.dataGridViewInvoice.Location = new System.Drawing.Point(39, 7);
+            this.dataGridViewInvoice.Location = new System.Drawing.Point(5, 7);
             this.dataGridViewInvoice.MultiSelect = false;
             this.dataGridViewInvoice.Name = "dataGridViewInvoice";
             this.dataGridViewInvoice.ReadOnly = true;
+            this.dataGridViewInvoice.RowHeadersVisible = false;
             this.dataGridViewInvoice.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewInvoice.Size = new System.Drawing.Size(519, 246);
             this.dataGridViewInvoice.TabIndex = 8;
@@ -799,6 +822,7 @@
             this.iDDataGridViewTextBoxColumn5.HeaderText = "ID";
             this.iDDataGridViewTextBoxColumn5.Name = "iDDataGridViewTextBoxColumn5";
             this.iDDataGridViewTextBoxColumn5.ReadOnly = true;
+            this.iDDataGridViewTextBoxColumn5.Visible = false;
             // 
             // cUSTIDDataGridViewTextBoxColumn
             // 
@@ -806,6 +830,21 @@
             this.cUSTIDDataGridViewTextBoxColumn.HeaderText = "CUST_ID";
             this.cUSTIDDataGridViewTextBoxColumn.Name = "cUSTIDDataGridViewTextBoxColumn";
             this.cUSTIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.cUSTIDDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // nAMEDataGridViewTextBoxColumn5
+            // 
+            this.nAMEDataGridViewTextBoxColumn5.DataPropertyName = "NAME";
+            this.nAMEDataGridViewTextBoxColumn5.HeaderText = "NAME";
+            this.nAMEDataGridViewTextBoxColumn5.Name = "nAMEDataGridViewTextBoxColumn5";
+            this.nAMEDataGridViewTextBoxColumn5.ReadOnly = true;
+            // 
+            // sURNAME1DataGridViewTextBoxColumn2
+            // 
+            this.sURNAME1DataGridViewTextBoxColumn2.DataPropertyName = "SURNAME_1";
+            this.sURNAME1DataGridViewTextBoxColumn2.HeaderText = "SURNAME_1";
+            this.sURNAME1DataGridViewTextBoxColumn2.Name = "sURNAME1DataGridViewTextBoxColumn2";
+            this.sURNAME1DataGridViewTextBoxColumn2.ReadOnly = true;
             // 
             // dATEDataGridViewTextBoxColumn
             // 
@@ -833,31 +872,13 @@
             this.invoiceBindingSource1.DataMember = "invoice";
             this.invoiceBindingSource1.DataSource = this.managerDataSet;
             // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(185, 259);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(130, 23);
-            this.button3.TabIndex = 6;
-            this.button3.Text = "Eliminar Client";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(39, 259);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(130, 23);
-            this.button4.TabIndex = 5;
-            this.button4.Text = "Modificar registre";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
             // tabDepVendes
             // 
             this.tabDepVendes.Controls.Add(this.splitContainer3);
             this.tabDepVendes.Location = new System.Drawing.Point(4, 22);
             this.tabDepVendes.Name = "tabDepVendes";
             this.tabDepVendes.Padding = new System.Windows.Forms.Padding(3);
-            this.tabDepVendes.Size = new System.Drawing.Size(1016, 584);
+            this.tabDepVendes.Size = new System.Drawing.Size(1269, 637);
             this.tabDepVendes.TabIndex = 3;
             this.tabDepVendes.Text = "Dep. Vendes";
             this.tabDepVendes.UseVisualStyleBackColor = true;
@@ -881,8 +902,8 @@
             // 
             // splitContainer3.Panel2
             // 
-            this.splitContainer3.Panel2.Controls.Add(this.tbIVA);
-            this.splitContainer3.Panel2.Controls.Add(this.tbDescompte);
+            this.splitContainer3.Panel2.Controls.Add(this.numericUpDownIVA);
+            this.splitContainer3.Panel2.Controls.Add(this.numericUpDownDescompte);
             this.splitContainer3.Panel2.Controls.Add(this.label10);
             this.splitContainer3.Panel2.Controls.Add(this.lbDescompte);
             this.splitContainer3.Panel2.Controls.Add(this.btComprar);
@@ -893,8 +914,8 @@
             this.splitContainer3.Panel2.Controls.Add(this.textBox10);
             this.splitContainer3.Panel2.Controls.Add(this.dataGridViewProductesFacturaAfegits);
             this.splitContainer3.Panel2.Controls.Add(this.dataGridViewProductesFactura);
-            this.splitContainer3.Size = new System.Drawing.Size(1010, 578);
-            this.splitContainer3.SplitterDistance = 194;
+            this.splitContainer3.Size = new System.Drawing.Size(1263, 631);
+            this.splitContainer3.SplitterDistance = 211;
             this.splitContainer3.TabIndex = 0;
             // 
             // label4
@@ -1064,19 +1085,24 @@
             this.mANAGERDataSetNou.DataSetName = "MANAGERDataSetNou";
             this.mANAGERDataSetNou.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // tbIVA
+            // numericUpDownIVA
             // 
-            this.tbIVA.Location = new System.Drawing.Point(510, 281);
-            this.tbIVA.Name = "tbIVA";
-            this.tbIVA.Size = new System.Drawing.Size(100, 20);
-            this.tbIVA.TabIndex = 11;
+            this.numericUpDownIVA.Location = new System.Drawing.Point(516, 282);
+            this.numericUpDownIVA.Name = "numericUpDownIVA";
+            this.numericUpDownIVA.Size = new System.Drawing.Size(120, 20);
+            this.numericUpDownIVA.TabIndex = 13;
+            this.numericUpDownIVA.Value = new decimal(new int[] {
+            21,
+            0,
+            0,
+            0});
             // 
-            // tbDescompte
+            // numericUpDownDescompte
             // 
-            this.tbDescompte.Location = new System.Drawing.Point(510, 249);
-            this.tbDescompte.Name = "tbDescompte";
-            this.tbDescompte.Size = new System.Drawing.Size(100, 20);
-            this.tbDescompte.TabIndex = 10;
+            this.numericUpDownDescompte.Location = new System.Drawing.Point(516, 249);
+            this.numericUpDownDescompte.Name = "numericUpDownDescompte";
+            this.numericUpDownDescompte.Size = new System.Drawing.Size(120, 20);
+            this.numericUpDownDescompte.TabIndex = 12;
             // 
             // label10
             // 
@@ -1253,20 +1279,10 @@
             this.mANAGERDataSetNouBindingSource.DataSource = this.mANAGERDataSetNou;
             this.mANAGERDataSetNouBindingSource.Position = 0;
             // 
-            // productsBindingSource5
-            // 
-            this.productsBindingSource5.DataMember = "products";
-            this.productsBindingSource5.DataSource = this.managerDataSet1;
-            // 
             // invdetailibfk2BindingSource
             // 
             this.invdetailibfk2BindingSource.DataMember = "inv_detail_ibfk_2";
             this.invdetailibfk2BindingSource.DataSource = this.invoiceBindingSource2;
-            // 
-            // invoiceBindingSource2
-            // 
-            this.invoiceBindingSource2.DataMember = "invoice";
-            this.invoiceBindingSource2.DataSource = this.managerDataSet1;
             // 
             // customersBindingSource1
             // 
@@ -1306,6 +1322,16 @@
             // 
             this.invoiceTableAdapter2.ClearBeforeFill = true;
             // 
+            // invdetailibfk1BindingSource1
+            // 
+            this.invdetailibfk1BindingSource1.DataMember = "inv_detail_ibfk_1";
+            this.invdetailibfk1BindingSource1.DataSource = this.productsBindingSource6;
+            // 
+            // invdetailibfk1BindingSource2
+            // 
+            this.invdetailibfk1BindingSource2.DataMember = "inv_detail_ibfk_1";
+            this.invdetailibfk1BindingSource2.DataSource = this.productsBindingSource6;
+            // 
             // invoiceBindingSource
             // 
             this.invoiceBindingSource.DataMember = "invoice";
@@ -1341,6 +1367,63 @@
             // 
             this.invoiceTableAdapter3.ClearBeforeFill = true;
             // 
+            // iDDataGridViewTextBoxColumn4
+            // 
+            this.iDDataGridViewTextBoxColumn4.DataPropertyName = "ID";
+            this.iDDataGridViewTextBoxColumn4.HeaderText = "ID";
+            this.iDDataGridViewTextBoxColumn4.Name = "iDDataGridViewTextBoxColumn4";
+            this.iDDataGridViewTextBoxColumn4.ReadOnly = true;
+            this.iDDataGridViewTextBoxColumn4.Visible = false;
+            // 
+            // nAMEDataGridViewTextBoxColumn4
+            // 
+            this.nAMEDataGridViewTextBoxColumn4.DataPropertyName = "NAME";
+            this.nAMEDataGridViewTextBoxColumn4.HeaderText = "NAME";
+            this.nAMEDataGridViewTextBoxColumn4.Name = "nAMEDataGridViewTextBoxColumn4";
+            this.nAMEDataGridViewTextBoxColumn4.ReadOnly = true;
+            // 
+            // pRICEDataGridViewTextBoxColumn2
+            // 
+            this.pRICEDataGridViewTextBoxColumn2.DataPropertyName = "PRICE";
+            this.pRICEDataGridViewTextBoxColumn2.HeaderText = "PRICE";
+            this.pRICEDataGridViewTextBoxColumn2.Name = "pRICEDataGridViewTextBoxColumn2";
+            this.pRICEDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // IMAGEPATH3
+            // 
+            this.IMAGEPATH3.DataPropertyName = "IMAGEPATH";
+            this.IMAGEPATH3.HeaderText = "IMAGEPATH";
+            this.IMAGEPATH3.Name = "IMAGEPATH3";
+            this.IMAGEPATH3.ReadOnly = true;
+            this.IMAGEPATH3.Visible = false;
+            // 
+            // tOTALDataGridViewTextBoxColumn
+            // 
+            this.tOTALDataGridViewTextBoxColumn.DataPropertyName = "TOTAL";
+            this.tOTALDataGridViewTextBoxColumn.HeaderText = "TOTAL";
+            this.tOTALDataGridViewTextBoxColumn.Name = "tOTALDataGridViewTextBoxColumn";
+            this.tOTALDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // productsBindingSource6
+            // 
+            this.productsBindingSource6.DataMember = "products";
+            this.productsBindingSource6.DataSource = this.managerDataSet1;
+            // 
+            // managerDataSet1
+            // 
+            this.managerDataSet1.DataSetName = "managerDataSet1";
+            this.managerDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // invoiceBindingSource2
+            // 
+            this.invoiceBindingSource2.DataMember = "invoice";
+            this.invoiceBindingSource2.DataSource = this.managerDataSet1;
+            // 
+            // productsBindingSource5
+            // 
+            this.productsBindingSource5.DataMember = "products";
+            this.productsBindingSource5.DataSource = this.managerDataSet1;
+            // 
             // invdetailBindingSource
             // 
             this.invdetailBindingSource.DataMember = "inv_detail";
@@ -1362,14 +1445,26 @@
             // 
             this.productsTableAdapter4.ClearBeforeFill = true;
             // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(899, 295);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(90, 13);
+            this.label13.TabIndex = 10;
+            this.label13.Text = "IMPORT TOTAL:";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1024, 610);
+            this.AutoSize = true;
+            this.ClientSize = new System.Drawing.Size(1277, 663);
             this.Controls.Add(this.mainTabs);
+            this.MinimumSize = new System.Drawing.Size(1038, 649);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProducts)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource4)).EndInit();
@@ -1390,13 +1485,12 @@
             this.tabFactures.ResumeLayout(false);
             this.splitContainer2.Panel1.ResumeLayout(false);
             this.splitContainer2.Panel2.ResumeLayout(false);
+            this.splitContainer2.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProductesFacturaSelect)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.managerDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewInvoice)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.invoiceBindingSource1)).EndInit();
             this.tabDepVendes.ResumeLayout(false);
@@ -1409,21 +1503,27 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewClientsFactura)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.customersBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mANAGERDataSetNou)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownIVA)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownDescompte)).EndInit();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProductesFacturaAfegits)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProductesFactura)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mANAGERDataSetNouBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.invdetailibfk2BindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.invoiceBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.customersBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.invdetailibfk1BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.invdetailibfk1BindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.invdetailibfk1BindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.invoiceBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.managerDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.invoiceBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.invdetailBindingSource)).EndInit();
             this.ResumeLayout(false);
 
@@ -1456,8 +1556,6 @@
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.Button btAfegirClient;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.SplitContainer splitContainer3;
         private System.Windows.Forms.TextBox txtBCognomsClient2;
         private System.Windows.Forms.TextBox txtBNomClient2;
@@ -1524,8 +1622,6 @@
         private System.Windows.Forms.Button btComprar;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label lbDescompte;
-        private System.Windows.Forms.TextBox tbIVA;
-        private System.Windows.Forms.TextBox tbDescompte;
         private System.Windows.Forms.BindingSource productsBindingSource4;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nAMEDataGridViewTextBoxColumn;
@@ -1539,11 +1635,6 @@
         private System.Windows.Forms.DataGridViewImageColumn ImageColumn;
         private System.Windows.Forms.BindingSource invoiceBindingSource;
         private System.Windows.Forms.DataGridView dataGridViewInvoice;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cUSTIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dATEDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dISCOUNTDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn vATDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource invoiceBindingSource1;
         private managerDataSet1 managerDataSet1;
         private System.Windows.Forms.BindingSource invoiceBindingSource2;
@@ -1558,11 +1649,28 @@
         private System.Windows.Forms.DataGridView dataGridViewProductesFacturaSelect;
         private System.Windows.Forms.BindingSource productsBindingSource5;
         private managerDataSet1TableAdapters.productsTableAdapter productsTableAdapter4;
+        private System.Windows.Forms.BindingSource productsBindingSource6;
+        private System.Windows.Forms.BindingSource invdetailibfk1BindingSource1;
+        private System.Windows.Forms.NumericUpDown numericUpDownIVA;
+        private System.Windows.Forms.NumericUpDown numericUpDownDescompte;
+        private System.Windows.Forms.BindingSource invdetailibfk1BindingSource2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cUSTIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nAMEDataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sURNAME1DataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dATEDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dISCOUNTDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn vATDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn nAMEDataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn pRICEDataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iMAGEPATHDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource productsBindingSource6;
+        private System.Windows.Forms.DataGridViewImageColumn ImageColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IMAGEPATH3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn QUANTITY;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tOTALDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Label label13;
     }
 }
 
