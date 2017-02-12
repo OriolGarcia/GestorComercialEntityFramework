@@ -86,5 +86,15 @@ namespace GestorComercialEntityFramework.Properties {
                 return ((string)(this["MANAGERConnectionString5"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("server=localhost;user id=MANAGER_USER;database=manager;persistsecurityinfo=True")]
+        public string managerConnectionString6 {
+            get {
+                return ((string)(this["managerConnectionString6"]));
+            }
+        }
     }
 }

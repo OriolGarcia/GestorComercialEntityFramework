@@ -2,9 +2,11 @@
 <xs:schema id="managerDataSet1" targetNamespace="http://tempuri.org/managerDataSet1.xsd" xmlns:mstns="http://tempuri.org/managerDataSet1.xsd" xmlns="http://tempuri.org/managerDataSet1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
-      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="2" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
           <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="managerConnectionString4" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="managerConnectionString4 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.GestorComercialEntityFramework.Properties.Settings.GlobalReference.Default.managerConnectionString4" Provider="MySql.Data.MySqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="managerConnectionString2" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="managerConnectionString2 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.GestorComercialEntityFramework.Properties.Settings.GlobalReference.Default.managerConnectionString2" Provider="MySql.Data.MySqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="managerConnectionString6" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="managerConnectionString6 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.GestorComercialEntityFramework.Properties.Settings.GlobalReference.Default.managerConnectionString6" Provider="MySql.Data.MySqlClient" />
         </Connections>
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="customersTableAdapter" GeneratorDataComponentClassName="customersTableAdapter" Name="customers" UserDataComponentName="customersTableAdapter">
@@ -229,7 +231,7 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="productsTableAdapter" GeneratorDataComponentClassName="productsTableAdapter" Name="products" UserDataComponentName="productsTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="managerConnectionString4 (Settings)" DbObjectName="manager.products" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="managerConnectionString4 (Settings)" DbObjectName="" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM `products` WHERE ((`ID` = @p1) AND ((@p2 = 1 AND `NAME` IS NULL) OR (`NAME` = @p3)) AND ((@p4 = 1 AND `PRICE` IS NULL) OR (`PRICE` = @p5)))</CommandText>
@@ -252,12 +254,6 @@
                     </Parameters>
                   </DbCommand>
                 </InsertCommand>
-                <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT `ID`, `NAME`, `PRICE`, `IMAGEPATH` FROM `products`</CommandText>
-                    <Parameters />
-                  </DbCommand>
-                </SelectCommand>
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>UPDATE `products` SET `NAME` = @p1, `PRICE` = @p2, `IMAGEPATH` = @p3 WHERE ((`ID` = @p4) AND ((@p5 = 1 AND `NAME` IS NULL) OR (`NAME` = @p6)) AND ((@p7 = 1 AND `PRICE` IS NULL) OR (`PRICE` = @p8)))</CommandText>
@@ -302,7 +298,7 @@
   <xs:element name="managerDataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="managerDataSet1" msprop:Generator_UserDSName="managerDataSet1">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="customers" msprop:Generator_TableClassName="customersDataTable" msprop:Generator_TableVarName="tablecustomers" msprop:Generator_RowChangedName="customersRowChanged" msprop:Generator_TablePropName="customers" msprop:Generator_RowDeletingName="customersRowDeleting" msprop:Generator_RowChangingName="customersRowChanging" msprop:Generator_RowEvHandlerName="customersRowChangeEventHandler" msprop:Generator_RowDeletedName="customersRowDeleted" msprop:Generator_RowClassName="customersRow" msprop:Generator_UserTableName="customers" msprop:Generator_RowEvArgName="customersRowChangeEvent">
+        <xs:element name="customers" msprop:Generator_TableClassName="customersDataTable" msprop:Generator_TableVarName="tablecustomers" msprop:Generator_TablePropName="customers" msprop:Generator_RowDeletingName="customersRowDeleting" msprop:Generator_RowChangingName="customersRowChanging" msprop:Generator_RowEvHandlerName="customersRowChangeEventHandler" msprop:Generator_RowDeletedName="customersRowDeleted" msprop:Generator_UserTableName="customers" msprop:Generator_RowChangedName="customersRowChanged" msprop:Generator_RowEvArgName="customersRowChangeEvent" msprop:Generator_RowClassName="customersRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
@@ -361,7 +357,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="inv_detail" msprop:Generator_TableClassName="inv_detailDataTable" msprop:Generator_TableVarName="tableinv_detail" msprop:Generator_RowChangedName="inv_detailRowChanged" msprop:Generator_TablePropName="inv_detail" msprop:Generator_RowDeletingName="inv_detailRowDeleting" msprop:Generator_RowChangingName="inv_detailRowChanging" msprop:Generator_RowEvHandlerName="inv_detailRowChangeEventHandler" msprop:Generator_RowDeletedName="inv_detailRowDeleted" msprop:Generator_RowClassName="inv_detailRow" msprop:Generator_UserTableName="inv_detail" msprop:Generator_RowEvArgName="inv_detailRowChangeEvent">
+        <xs:element name="inv_detail" msprop:Generator_TableClassName="inv_detailDataTable" msprop:Generator_TableVarName="tableinv_detail" msprop:Generator_TablePropName="inv_detail" msprop:Generator_RowDeletingName="inv_detailRowDeleting" msprop:Generator_RowChangingName="inv_detailRowChanging" msprop:Generator_RowEvHandlerName="inv_detailRowChangeEventHandler" msprop:Generator_RowDeletedName="inv_detailRowDeleted" msprop:Generator_UserTableName="inv_detail" msprop:Generator_RowChangedName="inv_detailRowChanged" msprop:Generator_RowEvArgName="inv_detailRowChangeEvent" msprop:Generator_RowClassName="inv_detailRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="INV_ID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnINV_ID" msprop:Generator_ColumnPropNameInRow="INV_ID" msprop:Generator_ColumnPropNameInTable="INV_IDColumn" msprop:Generator_UserColumnName="INV_ID" type="xs:int" />
@@ -370,7 +366,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="invoice" msprop:Generator_TableClassName="invoiceDataTable" msprop:Generator_TableVarName="tableinvoice" msprop:Generator_RowChangedName="invoiceRowChanged" msprop:Generator_TablePropName="invoice" msprop:Generator_RowDeletingName="invoiceRowDeleting" msprop:Generator_RowChangingName="invoiceRowChanging" msprop:Generator_RowEvHandlerName="invoiceRowChangeEventHandler" msprop:Generator_RowDeletedName="invoiceRowDeleted" msprop:Generator_RowClassName="invoiceRow" msprop:Generator_UserTableName="invoice" msprop:Generator_RowEvArgName="invoiceRowChangeEvent">
+        <xs:element name="invoice" msprop:Generator_TableClassName="invoiceDataTable" msprop:Generator_TableVarName="tableinvoice" msprop:Generator_TablePropName="invoice" msprop:Generator_RowDeletingName="invoiceRowDeleting" msprop:Generator_RowChangingName="invoiceRowChanging" msprop:Generator_RowEvHandlerName="invoiceRowChangeEventHandler" msprop:Generator_RowDeletedName="invoiceRowDeleted" msprop:Generator_UserTableName="invoice" msprop:Generator_RowChangedName="invoiceRowChanged" msprop:Generator_RowEvArgName="invoiceRowChangeEvent" msprop:Generator_RowClassName="invoiceRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
@@ -381,7 +377,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="products" msprop:Generator_TableClassName="productsDataTable" msprop:Generator_TableVarName="tableproducts" msprop:Generator_RowChangedName="productsRowChanged" msprop:Generator_TablePropName="products" msprop:Generator_RowDeletingName="productsRowDeleting" msprop:Generator_RowChangingName="productsRowChanging" msprop:Generator_RowEvHandlerName="productsRowChangeEventHandler" msprop:Generator_RowDeletedName="productsRowDeleted" msprop:Generator_RowClassName="productsRow" msprop:Generator_UserTableName="products" msprop:Generator_RowEvArgName="productsRowChangeEvent">
+        <xs:element name="products" msprop:Generator_TableClassName="productsDataTable" msprop:Generator_TableVarName="tableproducts" msprop:Generator_TablePropName="products" msprop:Generator_RowDeletingName="productsRowDeleting" msprop:Generator_RowChangingName="productsRowChanging" msprop:Generator_RowEvHandlerName="productsRowChangeEventHandler" msprop:Generator_RowDeletedName="productsRowDeleted" msprop:Generator_UserTableName="products" msprop:Generator_RowChangedName="productsRowChanged" msprop:Generator_RowEvArgName="productsRowChangeEvent" msprop:Generator_RowClassName="productsRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
@@ -425,9 +421,9 @@
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="inv_detail_ibfk_1" msdata:parent="products" msdata:child="inv_detail" msdata:parentkey="ID" msdata:childkey="PROD_ID" msprop:Generator_UserChildTable="inv_detail" msprop:Generator_ChildPropName="Getinv_detailRows" msprop:Generator_UserRelationName="inv_detail_ibfk_1" msprop:Generator_ParentPropName="productsRow" msprop:Generator_RelationVarName="relationinv_detail_ibfk_1" msprop:Generator_UserParentTable="products" />
-      <msdata:Relationship name="inv_detail_ibfk_2" msdata:parent="invoice" msdata:child="inv_detail" msdata:parentkey="ID" msdata:childkey="INV_ID" msprop:Generator_UserChildTable="inv_detail" msprop:Generator_ChildPropName="Getinv_detailRows" msprop:Generator_UserRelationName="inv_detail_ibfk_2" msprop:Generator_ParentPropName="invoiceRow" msprop:Generator_RelationVarName="relationinv_detail_ibfk_2" msprop:Generator_UserParentTable="invoice" />
-      <msdata:Relationship name="invoice_ibfk_1" msdata:parent="customers" msdata:child="invoice" msdata:parentkey="ID" msdata:childkey="CUST_ID" msprop:Generator_UserChildTable="invoice" msprop:Generator_ChildPropName="GetinvoiceRows" msprop:Generator_UserRelationName="invoice_ibfk_1" msprop:Generator_RelationVarName="relationinvoice_ibfk_1" msprop:Generator_UserParentTable="customers" msprop:Generator_ParentPropName="customersRow" />
+      <msdata:Relationship name="inv_detail_ibfk_1" msdata:parent="products" msdata:child="inv_detail" msdata:parentkey="ID" msdata:childkey="PROD_ID" msprop:Generator_UserChildTable="inv_detail" msprop:Generator_ChildPropName="Getinv_detailRows" msprop:Generator_UserRelationName="inv_detail_ibfk_1" msprop:Generator_RelationVarName="relationinv_detail_ibfk_1" msprop:Generator_UserParentTable="products" msprop:Generator_ParentPropName="productsRow" />
+      <msdata:Relationship name="inv_detail_ibfk_2" msdata:parent="invoice" msdata:child="inv_detail" msdata:parentkey="ID" msdata:childkey="INV_ID" msprop:Generator_UserChildTable="inv_detail" msprop:Generator_ChildPropName="Getinv_detailRows" msprop:Generator_UserRelationName="inv_detail_ibfk_2" msprop:Generator_RelationVarName="relationinv_detail_ibfk_2" msprop:Generator_UserParentTable="invoice" msprop:Generator_ParentPropName="invoiceRow" />
+      <msdata:Relationship name="invoice_ibfk_1" msdata:parent="customers" msdata:child="invoice" msdata:parentkey="ID" msdata:childkey="CUST_ID" msprop:Generator_UserChildTable="invoice" msprop:Generator_ChildPropName="GetinvoiceRows" msprop:Generator_UserRelationName="invoice_ibfk_1" msprop:Generator_ParentPropName="customersRow" msprop:Generator_RelationVarName="relationinvoice_ibfk_1" msprop:Generator_UserParentTable="customers" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

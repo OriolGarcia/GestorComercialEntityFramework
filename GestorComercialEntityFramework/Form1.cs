@@ -41,15 +41,15 @@ namespace GestorComercialEntityFramework
         private void Form1_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'managerDataSet1.products' table. You can move, or remove it, as needed.
-            this.productsTableAdapter4.Fill(this.managerDataSet1.products);
+           // this.productsTableAdapter4.Fill(this.managerDataSet1.products);
             // TODO: This line of code loads data into the 'managerDataSet1.products' table. You can move, or remove it, as needed.
-            this.productsTableAdapter4.Fill(this.managerDataSet1.products);
+         //   this.productsTableAdapter4.Fill(this.managerDataSet1.products);
             // TODO: This line of code loads data into the 'managerDataSet1.invoice' table. You can move, or remove it, as needed.
-            this.invoiceTableAdapter.Fill(this.managerDataSet1.invoice);
+          //  this.invoiceTableAdapter.Fill(this.managerDataSet1.invoice);
+
             try
             {
-
-                managerDataSet.EnforceConstraints = false;
+               managerDataSet.EnforceConstraints = false;
                 managerDataSet1.EnforceConstraints = false;
                 mANAGERDataSetNou.EnforceConstraints = false;
                 // TODO: This line of code loads data into the 'mANAGERDataSetNou.customers' table. You can move, or remove it, as needed.
@@ -530,6 +530,11 @@ namespace GestorComercialEntityFramework
         }
 
         private void dataGridViewProductesFacturaSelect_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dataGridViewProductesFacturaSelect_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
 
         }
